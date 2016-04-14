@@ -35,6 +35,7 @@ func main() {
 	e.Post("/chat/telegram", controllers.TelegramBot)   //Telegram Bot
 	e.Post("/chat/skype", controllers.SkypeBot)         //Skype Bot
 	e.Post("/chat/messenger", controllers.MessengerBot) //Messenger Bot
+	e.Get("/chat/messenger", controllers.VerifyMessengerBot) //Facebook Callback Verification
 	e.Post("/chat/sms", controllers.SmsBot)             //Sms Bot
 
 	//User routes
