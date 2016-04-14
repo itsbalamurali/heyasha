@@ -1,0 +1,73 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "EO6PhxYtDevrnWA50a4LTbQJIog=",
+			"path": "github.com/labstack/echo",
+			"revision": "11eafe9b901c7598ddbac94294120e5c695941f1",
+			"revisionTime": "2016-04-13T20:48:33Z"
+		},
+		{
+			"checksumSHA1": "ZLf5JCkxKW0aJHvAKfrBRPdrGAc=",
+			"path": "github.com/labstack/echo/engine",
+			"revision": "11eafe9b901c7598ddbac94294120e5c695941f1",
+			"revisionTime": "2016-04-13T20:48:33Z"
+		},
+		{
+			"checksumSHA1": "ikZAqTdKcwums355aH4281Pl7sE=",
+			"path": "github.com/labstack/echo/engine/standard",
+			"revision": "11eafe9b901c7598ddbac94294120e5c695941f1",
+			"revisionTime": "2016-04-13T20:48:33Z"
+		},
+		{
+			"checksumSHA1": "EoOTMYUziNxYPwwZXiZMBjxm/0o=",
+			"path": "github.com/labstack/echo/middleware",
+			"revision": "11eafe9b901c7598ddbac94294120e5c695941f1",
+			"revisionTime": "2016-04-13T20:48:33Z"
+		},
+		{
+			"checksumSHA1": "jqc8PheU78wsk3o2QBnFZaq+ly4=",
+			"path": "github.com/labstack/gommon/color",
+			"revision": "f8343700e8769e645b5f9949ec2e3a69f9fd71eb",
+			"revisionTime": "2016-04-12T06:12:13Z"
+		},
+		{
+			"checksumSHA1": "GA+/MUJtSy7hA9soDU7SJU6+M0E=",
+			"path": "github.com/labstack/gommon/log",
+			"revision": "f8343700e8769e645b5f9949ec2e3a69f9fd71eb",
+			"revisionTime": "2016-04-12T06:12:13Z"
+		},
+		{
+			"checksumSHA1": "2tAkfEj/3MU7tkLbR5jIidbaLVs=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "9cbef7c35391cca05f15f8181dc0b18bc9736dbb",
+			"revisionTime": "2016-02-20T07:59:35Z"
+		},
+		{
+			"checksumSHA1": "lFTCvc9PnfeWLuoH5hpFJ1AgyUY=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "56b76bdf51f7708750eac80fa38b952bb9f32639",
+			"revisionTime": "2015-12-11T00:06:21Z"
+		},
+		{
+			"checksumSHA1": "kLYNAx9DYk4W/OuC6dl6W1yLaSk=",
+			"path": "github.com/valyala/fasttemplate",
+			"revision": "3b874956e03f1636d171bda64b130f9135f42cff",
+			"revisionTime": "2016-03-15T19:31:34Z"
+		},
+		{
+			"checksumSHA1": "9QKY4bQlbQ/VZZFP8/1WtH4b0mA=",
+			"path": "golang.org/x/net/context",
+			"revision": "4876518f9e71663000c348837735820161a42df7",
+			"revisionTime": "2016-03-22T02:00:46Z"
+		},
+		{
+			"checksumSHA1": "HluCryzlit2M/o0epZqSgz/2Q58=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "324e1375807370c3934e14f3a97e7d160832f6b4",
+			"revisionTime": "2016-04-12T09:10:46Z"
+		}
+	],
+	"rootPath": "github.com/itsbalamurali/bot"
+}
