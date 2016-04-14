@@ -1,7 +1,6 @@
 {
 	"ImportPath": "github.com/itsbalamurali/bot",
 	"GoVersion": "go1.6",
-	"GodepVersion": "v62",
 	"Packages": [
 		"./..."
 	],

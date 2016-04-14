@@ -7,6 +7,7 @@ import (
 	"github.com/labstack/echo/middleware"
 	"github.com/itsbalamurali/bot/controllers"
 	"net/http"
+	"os"
 )
 
 func main() {
@@ -14,6 +15,12 @@ func main() {
 
 	// Echo instance
 	e := echo.New()
+
+	port := os.Getenv("PORT")
+
+	if port == ""{
+		port = "80"
+	}
 
 	// Middleware
 	e.Use(middleware.Logger())
@@ -38,5 +45,5 @@ func main() {
 		e.Delete("/users/:id", controllers.DeleteUser)
 	*/
 	// Start server
-	e.Run(standard.New(":80"))
+	e.Run(standard.New(":"+ port))
 }
