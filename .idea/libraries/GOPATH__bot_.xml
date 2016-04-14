@@ -38,6 +38,7 @@
       <root url="file://$PROJECT_DIR$/../../mattn/go-isatty/_example" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-colorable/_example" />
       <root url="file://$PROJECT_DIR$/../../mattn/go-isatty/.git" />
+      <root url="file://$PROJECT_DIR$/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/labstack/gommon/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-colorable/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-isatty/_example" />
