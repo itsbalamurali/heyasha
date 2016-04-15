@@ -1,6 +1,7 @@
 <component name="libraryTable">
   <library name="GOPATH &lt;bot&gt;">
     <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in" />
       <root url="file://$PROJECT_DIR$/../../../golang.org" />
       <root url="file://$PROJECT_DIR$/../.." />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org" />
@@ -8,54 +9,61 @@
     <JAVADOC />
     <SOURCES />
     <excluded>
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-isatty/_example" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/html/testdata" />
-      <root url="file://$PROJECT_DIR$/../../tools/godep/.git" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/go-sql-driver/mysql/.git" />
       <root url="file://$PROJECT_DIR$/../../codegangsta/cli/.git" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/.git" />
-      <root url="file://$PROJECT_DIR$/../../dchest/stemmer/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-isatty/.git" />
+      <root url="file://$PROJECT_DIR$/../../../gopkg.in/resty.v0/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/labstack/echo/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/bpf/testdata" />
       <root url="file://$PROJECT_DIR$/../../itsabot/abot/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/valyala/fasttemplate/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/labstack/echo/_fixture" />
+      <root url="file://$PROJECT_DIR$/../../constabulary/gb/testdata" />
       <root url="file://$PROJECT_DIR$/../../labstack/echo/.git" />
       <root url="file://$PROJECT_DIR$/.idea" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/.git" />
       <root url="file://$PROJECT_DIR$/../../agonopol/go-stem/.git" />
-      <root url="file://$PROJECT_DIR$/../../lib/pq/.git" />
       <root url="file://$PROJECT_DIR$" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/http2/testdata" />
       <root url="file://$PROJECT_DIR$/../../labstack/echo/_fixture" />
-      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/charset/testdata" />
       <root url="file://$PROJECT_DIR$/../../jmoiron/sqlx/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/sys/.git" />
       <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/sha3/testdata" />
       <root url="file://$PROJECT_DIR$/../../agtorre/gocolorize/.git" />
-      <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/ssh/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/mrd0ll4r/tbotapi/.git" />
       <root url="file://$PROJECT_DIR$/../../valyala/fasttemplate/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/http2/testdata" />
       <root url="file://$PROJECT_DIR$/../../mattn/go-colorable/_example" />
-      <root url="file://$PROJECT_DIR$/../../julienschmidt/httprouter/.git" />
-      <root url="file://$PROJECT_DIR$/../../labstack/gommon/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/.idea" />
       <root url="file://$PROJECT_DIR$/../../robfig/glock/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/html/charset/testdata" />
+      <root url="file://$PROJECT_DIR$/../../kardianos/govendor/.git" />
       <root url="file://$PROJECT_DIR$/../../mattn/go-colorable/.git" />
-      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/go-xorm/xorm/.git" />
-      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/testdata" />
       <root url="file://$PROJECT_DIR$/../../mattn/go-isatty/_example" />
       <root url="file://$PROJECT_DIR$/../../tools/godep/Godeps/_workspace" />
-      <root url="file://$PROJECT_DIR$/../../../golang.org/x/sys/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-colorable/_example" />
       <root url="file://$PROJECT_DIR$/../../mattn/go-isatty/.git" />
+      <root url="file://$PROJECT_DIR$/../../constabulary/gb/fileutils/_testdata" />
       <root url="file://$PROJECT_DIR$/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/labstack/gommon/.git" />
       <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-colorable/.git" />
+      <root url="file://$PROJECT_DIR$/../../constabulary/gb/vendor/_testdata" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-isatty/_example" />
+      <root url="file://$PROJECT_DIR$/../../tools/godep/.git" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/go-sql-driver/mysql/.git" />
+      <root url="file://$PROJECT_DIR$/../../dchest/stemmer/.git" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/mattn/go-isatty/.git" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/github.com/valyala/fasttemplate/.git" />
+      <root url="file://$PROJECT_DIR$/../../lib/pq/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/charset/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/sys/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/crypto/ssh/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/http2/testdata" />
+      <root url="file://$PROJECT_DIR$/../../julienschmidt/httprouter/.git" />
+      <root url="file://$PROJECT_DIR$/../../labstack/gommon/.git" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/.idea" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/vendor/golang.org/x/net/html/charset/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../bitbucket.org/talkwithasha/asha/.git" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/net/html/testdata" />
+      <root url="file://$PROJECT_DIR$/../../../golang.org/x/sys/.git" />
+      <root url="file://$PROJECT_DIR$/../../constabulary/gb/.git" />
     </excluded>
   </library>
 </component>

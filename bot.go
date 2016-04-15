@@ -15,9 +15,7 @@ func main() {
 
 	// Echo instance
 	e := echo.New()
-
 	port := os.Getenv("PORT")
-
 	if port == ""{
 		port = "80"
 	}
@@ -29,6 +27,10 @@ func main() {
 	// Routes
 	e.Get("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Hello, World!\n")
+	})
+
+	e.Get("/api/query", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Query API")
 	})
 
 	e.Post("/chat/kik", controllers.KikBot)             //Kik Bot
