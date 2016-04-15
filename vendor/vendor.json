@@ -67,6 +67,12 @@
 			"path": "golang.org/x/sys/unix",
 			"revision": "324e1375807370c3934e14f3a97e7d160832f6b4",
 			"revisionTime": "2016-04-12T09:10:46Z"
+		},
+		{
+			"checksumSHA1": "yewRkKXStTqQjRAiXracRV916e4=",
+			"path": "gopkg.in/resty.v0",
+			"revision": "aed15a666de54595af7d8895aa7299ceff5635f8",
+			"revisionTime": "2016-02-04T00:52:22Z"
 		}
 	],
 	"rootPath": "github.com/itsbalamurali/bot"
