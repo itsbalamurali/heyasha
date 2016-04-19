@@ -29,16 +29,29 @@ func main() {
 		return c.String(http.StatusOK, "Hello, World!\n")
 	})
 
+	//speech recognition
+	e.Post("/api/speech", func(c echo.Context) error {
+		//c.File()
+		return c.String(http.StatusOK,"Audio Stream")
+	})
+
+	//general purpose http api
 	e.Get("/api/query", func(c echo.Context) error {
 		return c.String(http.StatusOK, "Query API")
 	})
 
+	e.Get("/api/extract", func(c echo.Context) error {
+		return c.String(http.StatusOK, "Extract Structured Intent in Text")
+	})
+
+	e.Post("/chat/slack",controllers.SlackBot) 	    //SlackBot
 	e.Post("/chat/kik", controllers.KikBot)             //Kik Bot
 	e.Post("/chat/telegram", controllers.TelegramBot)   //Telegram Bot
 	e.Post("/chat/skype", controllers.SkypeBot)         //Skype Bot
 	e.Post("/chat/messenger", controllers.MessengerBot) //Messenger Bot
 	e.Get("/chat/messenger", controllers.VerifyMessengerBot) //Facebook Callback Verification
 	e.Post("/chat/sms", controllers.SmsBot)             //Sms Bot
+	e.Post("/chat/email", controllers.EmailBot) //Email Bot
 
 	//User routes
 	/*
