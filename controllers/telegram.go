@@ -3,7 +3,7 @@ package controllers
 import (
 	"net/http"
 	"github.com/labstack/echo"
-	"github.com/itsbalamurali/bot/channels/telegram"
+	"github.com/itsbalamurali/bot/core/comm/channels/telegram"
 	"fmt"
 	"log"
 )
