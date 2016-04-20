@@ -54,7 +54,7 @@ func main() {
 	router.POST("/chat/email", platforms.EmailBot) //Email Bot
 
 	// Start server
-	//fmt.Println("Hi, I am running on port: "+ port +" !!")
+	fmt.Println("Hi, I am running on port: "+ port +" !!")
 	log.Fatal(http.ListenAndServe(":"+ port, router))
 
 }
