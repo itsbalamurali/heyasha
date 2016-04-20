@@ -47,6 +47,8 @@ ADD http://tenet.dl.sourceforge.net/project/cmusphinx/sphinxtrain/5prealpha/sphi
 ADD http://iweb.dl.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz /sphinx/
 ADD http://iweb.dl.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz /sphinx/
 
+RUN ls /sphinx/
+
 RUN mv /sphinx/sphinxbase-5prealpha   /sphinx/sphinxbase
 RUN mv /sphinx/pocketsphinx-5prealpha /sphinx/pocketsphinx
 RUN mv /sphinx/sphinxtrain-5prealpha  /sphinx/sphinxtrain
