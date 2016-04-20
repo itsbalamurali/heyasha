@@ -2,11 +2,238 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56570e68-6967-4577-a0df-707644bb5164" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/context.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/echo.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/engine.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/standard/header.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/standard/request.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/standard/response.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/standard/server.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/engine/standard/url.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/glide.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/glide.yaml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/group.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/auth.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/compress.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/cors.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/logger.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/recover.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/slash.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/middleware/static.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/echo/router.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/gommon/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/gommon/color/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/gommon/color/color.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/gommon/log/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/labstack/gommon/log/log.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/colorable_others.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-colorable/colorable_windows.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/doc.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_appengine.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_bsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_linux.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_solaris.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/mattn/go-isatty/isatty_windows.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/valyala/fasttemplate/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/valyala/fasttemplate/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/github.com/valyala/fasttemplate/template.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/PATENTS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/context/context.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/publicsuffix/gen.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/publicsuffix/list.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/net/publicsuffix/table.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/LICENSE" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/PATENTS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_darwin_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_darwin_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_darwin_arm.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_darwin_arm64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_dragonfly_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_dragonfly_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_freebsd_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_freebsd_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_freebsd_arm.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_arm.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_arm64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_mips64x.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_linux_ppc64x.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_netbsd_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_netbsd_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_netbsd_arm.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_openbsd_386.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_openbsd_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/asm_solaris_amd64.s" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/bluetooth_linux.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/constants.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/env_unix.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/env_unset.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/flock.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/flock_linux_32bit.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/gccgo.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/gccgo_c.c" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/gccgo_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkall.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mkerrors.sh" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksyscall_solaris.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysctl_openbsd.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_darwin.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_dragonfly.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_freebsd.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_linux.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_netbsd.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/mksysnum_openbsd.pl" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/race.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/race0.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/sockcmsg_linux.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/sockcmsg_unix.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/str.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_bsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_darwin.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_darwin_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_darwin_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_darwin_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_darwin_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_dragonfly.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_dragonfly_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_dragonfly_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_freebsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_mips64x.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_linux_ppc64x.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_netbsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_netbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_netbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_netbsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_no_getwd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_openbsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_openbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_openbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_solaris.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_solaris_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/syscall_unix.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_darwin.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_dragonfly.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_freebsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_linux.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_netbsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_openbsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/types_solaris.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_darwin_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_darwin_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_darwin_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_darwin_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_dragonfly_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_dragonfly_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_freebsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_freebsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_freebsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_mips64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_linux_ppc64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_netbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_netbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_netbsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_openbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_openbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zerrors_solaris_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_darwin_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_darwin_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_darwin_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_dragonfly_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_dragonfly_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_freebsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_mips64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_mips64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_ppc64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_linux_ppc64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_netbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_netbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_netbsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_openbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_openbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsyscall_solaris_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysctl_openbsd.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_darwin_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_darwin_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_darwin_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_darwin_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_dragonfly_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_dragonfly_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_freebsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_mips64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_mips64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_ppc64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_linux_ppc64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_netbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_netbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_netbsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_openbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_openbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/zsysnum_solaris_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_darwin_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_darwin_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_darwin_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_darwin_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_dragonfly_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_dragonfly_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_freebsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_freebsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_freebsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_arm64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_mips64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_mips64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_ppc64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_linux_ppc64le.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_netbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_netbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_netbsd_arm.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_openbsd_386.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_openbsd_amd64.go" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/vendor/golang.org/x/sys/unix/ztypes_solaris_amd64.go" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Dockerfile" afterPath="$PROJECT_DIR$/Dockerfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/intent.go" afterPath="$PROJECT_DIR$/controllers/intent.go" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controllers/platforms/telegram.go" afterPath="$PROJECT_DIR$/controllers/platforms/telegram.go" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.go" afterPath="$PROJECT_DIR$/server.go" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/vendor.json" afterPath="$PROJECT_DIR$/vendor/vendor.json" />
     </list>
     <ignored path="bot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,14 +267,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="telegram.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="telegram.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/platforms/telegram.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="391">
-              <caret line="57" column="21" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
               <folding>
                 <element signature="e#19#167#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="vendor.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/vendor.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -102,11 +349,9 @@
         <option value="$PROJECT_DIR$/core/engine/nlp/intent/intent_trainer.go" />
         <option value="$PROJECT_DIR$/bot.go" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/core/engine/stt/pocketsphinx.go" />
         <option value="$PROJECT_DIR$/core/engine/stt/config.go" />
         <option value="$PROJECT_DIR$/core/engine/stt/segment.go" />
-        <option value="$PROJECT_DIR$/vendor/vendor.json" />
         <option value="$PROJECT_DIR$/controllers/telegram.go" />
         <option value="$PROJECT_DIR$/controllers/users.go" />
         <option value="$PROJECT_DIR$/controllers/platforms/intent.go" />
@@ -124,7 +369,9 @@
         <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/server.go" />
         <option value="$PROJECT_DIR$/controllers/intent.go" />
+        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/controllers/platforms/telegram.go" />
+        <option value="$PROJECT_DIR$/vendor/vendor.json" />
       </list>
     </option>
   </component>
@@ -188,6 +435,52 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -663,12 +956,12 @@
       <workItem from="1460665433766" duration="24255000" />
       <workItem from="1460768162070" duration="9633000" />
       <workItem from="1461052567504" duration="34104000" />
-      <workItem from="1461189267554" duration="1096000" />
+      <workItem from="1461189267554" duration="2115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69186000" />
+    <option name="totallyTimeSpent" value="70205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="745" extended-state="0" />
@@ -753,6 +1046,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="9" selection-start-line="70" selection-start-column="9" selection-end-line="70" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -825,13 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/engine/stt/config.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-920">
@@ -850,13 +1137,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/vendor.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1018,13 +1298,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/platforms/telegram.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
-          <caret line="57" column="21" selection-start-line="57" selection-start-column="0" selection-end-line="58" selection-end-column="0" />
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
           <folding>
             <element signature="e#19#167#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/vendor.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
