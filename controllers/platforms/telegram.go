@@ -1,16 +1,17 @@
-package controllers
+package platforms
 
 import (
 	"net/http"
-	"github.com/labstack/echo"
-	"github.com/itsbalamurali/bot/core/comm/channels/telegram"
-	"fmt"
-	"log"
+	//"github.com/itsbalamurali/bot/core/platforms/telegram"
+	//"fmt"
+	//"log"
+
+	"github.com/julienschmidt/httprouter"
 )
 
 
-func TelegramBot(c echo.Context) error {
-
+func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	/*
 	update := &telegram.Update{}
 
 	apiToken := "213239467:AAGWDAvFMfdfXuwlMkC2dSwKWEaW-NVl4bo"
@@ -56,5 +57,5 @@ func TelegramBot(c echo.Context) error {
 
 	//log.Printf("Json Received: %s\n", update)
 	return c.String(http.StatusOK,"Telegram Bot Response!!")
-
+	*/
 }

@@ -1,11 +1,12 @@
-package controllers
+package platforms
 
 import (
-	"github.com/labstack/echo"
 	"net/http"
+	"github.com/julienschmidt/httprouter"
 )
 
-func VerifyMessengerBot(c echo.Context) error {
+func VerifyMessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	/*
 	verify_token := "er7Wq4yREXBKpdRKjhAg"
 	hub_mode := c.QueryParam("hub.mode")
 	hub_challenge := c.QueryParam("hub.challenge")
@@ -16,9 +17,9 @@ func VerifyMessengerBot(c echo.Context) error {
 	} else {
 		return c.String(http.StatusBadRequest, "Something went wrong!\n")
 	}
+	*/
 }
 
-func MessengerBot(c echo.Context) error {
-	return c.String(http.StatusOK, "MessengerBot Response!\n")
-
+func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	//return c.String(http.StatusOK, "MessengerBot Response!\n")
 }

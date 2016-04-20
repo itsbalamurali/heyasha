@@ -1,65 +1,60 @@
 package main
 
 import (
-	"fmt"
-	"github.com/labstack/echo"
-	"github.com/labstack/echo/engine/standard"
-	"github.com/labstack/echo/middleware"
-	"github.com/itsbalamurali/bot/controllers"
 	"net/http"
 	"os"
+	"log"
+	"github.com/itsbalamurali/bot/controllers"
+	"github.com/itsbalamurali/bot/controllers/platforms"
+	"github.com/julienschmidt/httprouter"
+	"runtime"
+	"fmt"
 )
 
-func main() {
-	fmt.Println("Hello!!")
+const MAX_UPLOAD_MEMORY = 1 * 1024 * 1024
 
-	// Echo instance
-	e := echo.New()
+func main() {
+
+	// maximize CPU usage for maximum performance
+	runtime.GOMAXPROCS(runtime.NumCPU())
+
+	//Port to Bind server to
 	port := os.Getenv("PORT")
 	if port == ""{
 		port = "80"
 	}
 
-	// Middleware
-	e.Use(middleware.Logger())
-	e.Use(middleware.Recover())
+	//New Router
+	router := httprouter.New()
 
-	// Routes
-	e.Get("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!\n")
+
+	//Hello!!
+	router.GET("/", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+		fmt.Fprint(w, "Welcome!\n")
 	})
+	//Core REST API routes
+	router.POST("/speech", controllers.AudioUpload) //speech recognition
+	router.GET("/message", controllers.Chat)  //chat with bot
+	router.GET("/extract", controllers.IntentExtract) //Extract Intent from Text
 
-	//speech recognition
-	e.Post("/api/speech", func(c echo.Context) error {
-		//c.File()
-		return c.String(http.StatusOK,"Audio Stream")
-	})
+	//User REST API routes
+	router.POST("/users/", controllers.CreateUser)
+	router.POST("/users/login", controllers.LoginUser)
+	router.GET("/users/{UserId}",controllers.GetUserDetails)
+	router.DELETE("/users/{UserId}", controllers.DeleteUser)
 
-	//general purpose http api
-	e.Get("/api/query", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Query API")
-	})
+	//Communication Platforms
+	router.POST("/chat/slack",platforms.SlackBot) 	    //SlackBot
+	router.POST("/chat/kik", platforms.KikBot)             //Kik Bot
+	router.POST("/chat/telegram", platforms.TelegramBot)   //Telegram Bot
+	router.POST("/chat/skype", platforms.SkypeBot)         //Skype Bot
+	router.POST("/chat/messenger", platforms.MessengerBot) //Messenger Bot
+	router.GET("/chat/messenger", platforms.VerifyMessengerBot) //Facebook Callback Verification
+	router.POST("/chat/sms", platforms.SmsBot)             //Sms Bot
+	router.POST("/chat/email", platforms.EmailBot) //Email Bot
 
-	e.Get("/api/extract", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Extract Structured Intent in Text")
-	})
-
-	e.Post("/chat/slack",controllers.SlackBot) 	    //SlackBot
-	e.Post("/chat/kik", controllers.KikBot)             //Kik Bot
-	e.Post("/chat/telegram", controllers.TelegramBot)   //Telegram Bot
-	e.Post("/chat/skype", controllers.SkypeBot)         //Skype Bot
-	e.Post("/chat/messenger", controllers.MessengerBot) //Messenger Bot
-	e.Get("/chat/messenger", controllers.VerifyMessengerBot) //Facebook Callback Verification
-	e.Post("/chat/sms", controllers.SmsBot)             //Sms Bot
-	e.Post("/chat/email", controllers.EmailBot) //Email Bot
-
-	//User routes
-	/*
-		e.Post("/users/", controllers.CreateUser)
-		e.Post("/users/login", controllers.LoginUser)
-		e.Get("/users/:id",controllers.GetUserDetails)
-		e.Delete("/users/:id", controllers.DeleteUser)
-	*/
 	// Start server
-	e.Run(standard.New(":"+ port))
+	//fmt.Println("Hi, I am running on port: "+ port +" !!")
+	log.Fatal(http.ListenAndServe(":"+ port, router))
+
 }
