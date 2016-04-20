@@ -2,21 +2,21 @@ package platforms
 
 import (
 	"net/http"
-	//"github.com/itsbalamurali/bot/core/platforms/telegram"
-	//"fmt"
-	//"log"
-
 	"github.com/julienschmidt/httprouter"
+	"github.com/itsbalamurali/bot/core/platforms/telegram"
+	"fmt"
+	"encoding/json"
+	"log"
 )
 
 
 func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	/*
+
 	update := &telegram.Update{}
 
 	apiToken := "213239467:AAGWDAvFMfdfXuwlMkC2dSwKWEaW-NVl4bo"
 
-	if err := c.Bind(update); err != nil {
+	if err := json.NewDecoder(r.Body).Decode(update); err != nil {
 		return  err
 	}
 
@@ -56,6 +56,8 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 
 	//log.Printf("Json Received: %s\n", update)
-	return c.String(http.StatusOK,"Telegram Bot Response!!")
-	*/
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(200)
+	fmt.Fprintf(w, "%s", "Webhook Success!!")
+
 }

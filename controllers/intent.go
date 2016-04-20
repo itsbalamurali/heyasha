@@ -7,3 +7,6 @@ import (
 
 func IntentExtract(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 }
+
+func SuggestQueries(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+}

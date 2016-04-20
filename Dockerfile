@@ -43,9 +43,11 @@ ENV SPHINXTRAIN  sphinxtrain-5prealpha.tar.gz
 #ADD  /data/pocketsphinx/sphinxbase-5prealpha.tar.gz /sphinx/
 #ADD  /data/pocketsphinx/pocketsphinx-5prealpha.tar.gz /sphinx/
 #ADD  /data/pocketsphinx/sphinxtrain-5prealpha.tar.gz  /sphinx/
-ADD http://tenet.dl.sourceforge.net/project/cmusphinx/sphinxtrain/5prealpha/sphinxtrain-5prealpha.tar.gz /sphinx/
-ADD http://iweb.dl.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz /sphinx/
-ADD http://iweb.dl.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz /sphinx/
+WORKDIR /sphinx
+
+RUN curl http://tenet.dl.sourceforge.net/project/cmusphinx/sphinxtrain/5prealpha/sphinxtrain-5prealpha.tar.gz | tar
+RUN curl http://iweb.dl.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz | tar
+RUN curl http://iweb.dl.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz | tar
 
 RUN ls /sphinx/
 

@@ -36,6 +36,7 @@ func main() {
 	router.POST("/speech", controllers.AudioUpload) //speech recognition
 	router.GET("/message", controllers.Chat)  //chat with bot
 	router.GET("/extract", controllers.IntentExtract) //Extract Intent from Text
+	router.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
 
 	//User REST API routes
 	router.POST("/users/", controllers.CreateUser)
