@@ -9,10 +9,10 @@ RUN \
 apt-get update && \
 apt-get install -y build-essential && \
 apt-get install -y swig python3-dev python3-numpy python3-scipy && \
-apt-get install -y sox bison
+apt-get install -y sox bison curl
 
 # gcc for cgo
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
 		g++ \
 		gcc \
 		libc6-dev \
@@ -42,10 +42,12 @@ ENV SPHINXBASE   sphinxbase-5prealpha.tar.gz
 ENV POCKETSPHINX pocketsphinx-5prealpha.tar.gz
 ENV SPHINXTRAIN  sphinxtrain-5prealpha.tar.gz
 
-ADD  /data/pocketsphinx/sphinxbase-5prealpha.tar.gz /sphinx/
-ADD  /data/pocketsphinx/pocketsphinx-5prealpha.tar.gz /sphinx/
-ADD  /data/pocketsphinx/sphinxtrain-5prealpha.tar.gz  /sphinx/
-
+#ADD  /data/pocketsphinx/sphinxbase-5prealpha.tar.gz /sphinx/
+#ADD  /data/pocketsphinx/pocketsphinx-5prealpha.tar.gz /sphinx/
+#ADD  /data/pocketsphinx/sphinxtrain-5prealpha.tar.gz  /sphinx/
+ADD http://tenet.dl.sourceforge.net/project/cmusphinx/sphinxtrain/5prealpha/sphinxtrain-5prealpha.tar.gz /sphinx/
+ADD http://iweb.dl.sourceforge.net/project/cmusphinx/sphinxbase/5prealpha/sphinxbase-5prealpha.tar.gz /sphinx/
+ADD http://iweb.dl.sourceforge.net/project/cmusphinx/pocketsphinx/5prealpha/pocketsphinx-5prealpha.tar.gz /sphinx/
 
 RUN mv /sphinx/sphinxbase-5prealpha   /sphinx/sphinxbase
 RUN mv /sphinx/pocketsphinx-5prealpha /sphinx/pocketsphinx
