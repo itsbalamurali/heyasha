@@ -49,11 +49,13 @@ func New(mo Options) *Messenger {
 		token: mo.Token,
 	}
 
-	if mo.Verify {
-		m.mux.HandleFunc(WebhookURL, newVerifyHandler(mo.VerifyToken))
-	} else {
+	//if mo.Verify {
+		//m.mux.HandleFunc(WebhookURL, newVerifyHandler(mo.VerifyToken))
+	//} else {
+
 		m.mux.HandleFunc(WebhookURL, m.handle)
-	}
+
+	//}
 
 	return m
 }
@@ -121,7 +123,7 @@ func (m *Messenger) handle(w http.ResponseWriter, r *http.Request) {
 func (m *Messenger) dispatch(r Receive) {
 	for _, entry := range r.Entry {
 		for _, info := range entry.Messaging {
-			a := m.classify(info, entry)
+			a := Classify(info, entry)
 			if a == UnknownAction {
 				fmt.Println("Unknown action:", info)
 				continue
@@ -152,7 +154,7 @@ func (m *Messenger) dispatch(r Receive) {
 }
 
 // classify determines what type of message a webhook event is.
-func (m *Messenger) classify(info MessageInfo, e Entry) Action {
+func Classify(info MessageInfo, e Entry) Action {
 	if info.Message != nil {
 		return TextAction
 	} else if info.Delivery != nil {
@@ -160,16 +162,4 @@ func (m *Messenger) classify(info MessageInfo, e Entry) Action {
 	}
 
 	return UnknownAction
-}
-
-// newVerifyHandler returns a function which can be used to handle webhook verification
-func newVerifyHandler(token string) func(w http.ResponseWriter, r *http.Request) {
-	return func(w http.ResponseWriter, r *http.Request) {
-		if r.FormValue("hub.verify_token") == token {
-			fmt.Fprintln(w, r.FormValue("hub.challenge"))
-			return
-		}
-
-		fmt.Fprintln(w, "Incorrect verify token.")
-	}
 }

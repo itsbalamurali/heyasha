@@ -50,7 +50,7 @@ func main() {
 	router.POST("/chat/telegram", platforms.TelegramBot)   //Telegram Bot
 	router.POST("/chat/skype", platforms.SkypeBot)         //Skype Bot
 	router.POST("/chat/messenger", platforms.MessengerBot) //Messenger Bot
-	router.GET("/chat/messenger", platforms.VerifyMessengerBot) //Facebook Callback Verification
+	router.GET("/chat/messenger", platforms.MessengerBot) //Facebook Callback Verification
 	router.POST("/chat/sms", platforms.SmsBot)             //Sms Bot
 	router.POST("/chat/email", platforms.EmailBot) //Email Bot
 
