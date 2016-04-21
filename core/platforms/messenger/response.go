@@ -18,14 +18,14 @@ const (
 
 // Response is used for responding to events with messages.
 type Response struct {
-	token string
-	to    Recipient
+	Token string
+	To    Recipient
 }
 
 // Text sends a textual message.
 func (r *Response) Text(message string) error {
 	m := SendMessage{
-		Recipient: r.to,
+		Recipient: r.To,
 		Message: MessageData{
 			Text: message,
 		},
@@ -42,7 +42,7 @@ func (r *Response) Text(message string) error {
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.URL.RawQuery = "access_token=" + r.token
+	req.URL.RawQuery = "access_token=" + r.Token
 
 	client := &http.Client{}
 
@@ -73,7 +73,7 @@ func (r *Response) Image(im image.Image) error {
 		return err
 	}
 
-	w.WriteField("recipient", fmt.Sprintf(`{"id":"%v"}`, r.to.ID))
+	w.WriteField("recipient", fmt.Sprintf(`{"id":"%v"}`, r.To.ID))
 	w.WriteField("message", `{"attachment":{"type":"image", "payload":{}}}`)
 
 	req, err := http.NewRequest("POST", SendMessageURL, &b)
@@ -81,7 +81,7 @@ func (r *Response) Image(im image.Image) error {
 		return err
 	}
 
-	req.URL.RawQuery = "access_token=" + r.token
+	req.URL.RawQuery = "access_token=" + r.Token
 
 	req.Header.Set("Content-Type", w.FormDataContentType())
 

@@ -8,6 +8,7 @@ import (
 	"github.com/itsbalamurali/bot/core/platforms/messenger"
 )
 
+
 func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	verify_token := "er7Wq4yREXBKpdRKjhAg"
 	hub_mode := ps.ByName("hub.mode")
@@ -34,12 +35,16 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 				fmt.Println("Unknown action:", info)
 				continue
 			}
-			fmt.Printf("Recieved Text: %s\n", info.Message.Text)
-			/*
+
 			resp := &messenger.Response{
-				to: messenger.Recipient{info.Sender.ID},
-				token: "",
-			}*/
+				"CAAQCVhc9mrYBAFxgONRKzps2FdCYaUrtIPRVtZBEi9yN8skZB5RyySwDWgMhyRtFZCyVcOVGMTQXUQ4uPEvkNy0ZBLjpyEZA6xhTzP7Np9N4UCDnBIGG9XKMVEXkiZAZBhICIem0m5P06iv1k24Fpbpxnh3fONAO8DAbKjRrRn2V9SvXS2iyCTj3IFxPkfoUu5vZC4c0aa1zOgZDZD",
+				messenger.Recipient{info.Sender.ID},
+			}
+
+			resp.Text(info.Message.Text)
+
+			fmt.Printf("Recieved Text: %s\n", info.Message.Text)
+
 
 		}
 		/*

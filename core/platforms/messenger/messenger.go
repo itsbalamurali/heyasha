@@ -130,8 +130,8 @@ func (m *Messenger) dispatch(r Receive) {
 			}
 
 			resp := &Response{
-				to:    Recipient{info.Sender.ID},
-				token: m.token,
+				To:    Recipient{info.Sender.ID},
+				Token: m.token,
 			}
 
 			switch a {
