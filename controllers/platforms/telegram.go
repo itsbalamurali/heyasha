@@ -7,6 +7,8 @@ import (
 	"fmt"
 	"encoding/json"
 	"log"
+	"github.com/itsbalamurali/bot/core/engine"
+	"strconv"
 )
 
 
@@ -37,8 +39,8 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		//fmt.Printf("Bot Name: %s\n", api.Name)
 		//fmt.Printf("Bot Username: %s\n", api.Username)
 		*/
-		// now simply echo that back
-		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), *msg.Text).Send()
+		// talk to api and send back response
+		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), engine.ChatConvoAI(strconv.Itoa(msg.Chat.ID),*msg.Text)).Send()
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)
 		}
