@@ -43,7 +43,7 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 				messenger.Recipient{info.Sender.ID},
 			}
 
-			ai_msg := engine.NewClient().ChatConvoAI(strconv.FormatInt(info.Message.Sender.ID,50), info.Message.Text)
+			ai_msg := engine.NewClient().ChatConvoAI(strconv.FormatInt(info.Message.Sender.ID,10), info.Message.Text)
 			resp.Text(ai_msg)
 			//fmt.Printf("Recieved Text: %s\n", info.Message.Text)
 

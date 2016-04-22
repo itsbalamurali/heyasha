@@ -28,10 +28,20 @@
         <entry file="file://$PROJECT_DIR$/controllers/platforms/messenger.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="45" column="108" selection-start-line="45" selection-start-column="108" selection-end-line="45" selection-end-column="108" />
+              <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
               <folding>
                 <element signature="e#19#216#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="itoa.go" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Go/src/strconv/itoa.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -736,12 +746,12 @@
       <workItem from="1461052567504" duration="34104000" />
       <workItem from="1461189267554" duration="7407000" />
       <workItem from="1461197279600" duration="1586000" />
-      <workItem from="1461351793195" duration="9336000" />
+      <workItem from="1461351793195" duration="9471000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86419000" />
+    <option name="totallyTimeSpent" value="86554000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1378" height="745" extended-state="0" />
@@ -1133,14 +1143,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Go/src/strconv/itoa.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/platforms/messenger/message.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1177,10 +1179,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Go/src/strconv/itoa.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/platforms/messenger.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="45" column="108" selection-start-line="45" selection-start-column="108" selection-end-line="45" selection-end-column="108" />
+          <caret line="45" column="79" selection-start-line="45" selection-start-column="79" selection-end-line="45" selection-end-column="79" />
           <folding>
             <element signature="e#19#216#0" expanded="true" />
           </folding>
