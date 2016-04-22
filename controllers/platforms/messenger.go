@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"encoding/json"
 	"github.com/itsbalamurali/bot/core/platforms/messenger"
+	"strconv"
+	"github.com/itsbalamurali/bot/core/engine"
 )
 
 
@@ -41,9 +43,9 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 				messenger.Recipient{info.Sender.ID},
 			}
 
-			resp.Text(info.Message.Text)
-
-			fmt.Printf("Recieved Text: %s\n", info.Message.Text)
+			ai_msg := engine.NewClient().ChatConvoAI(strconv.Itoa(info.Message.Sender), info.Message.Text)
+			resp.Text(ai_msg)
+			//fmt.Printf("Recieved Text: %s\n", info.Message.Text)
 
 
 		}
