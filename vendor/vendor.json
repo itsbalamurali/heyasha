@@ -9,10 +9,40 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "yWCnueUHZXuddtR0Zf+TVCLFZ+M=",
+			"path": "github.com/cenkalti/backoff",
+			"revision": "32cd0c5b3aef12c76ed64aaf678f6c79736be7dc",
+			"revisionTime": "2015-08-27T12:34:15Z"
+		},
+		{
+			"checksumSHA1": "4ovK8m27SVihHKAtDkQ5U4Z37LA=",
+			"path": "github.com/dghubble/go-twitter/twitter",
+			"revision": "6fd9c6878dbbf2022a511f063e618d5a2d168d89",
+			"revisionTime": "2016-04-10T02:21:01Z"
+		},
+		{
+			"checksumSHA1": "Eb+fpGARLG6q8OmPvR9RtStgNwM=",
+			"path": "github.com/dghubble/sling",
+			"revision": "00aa3a32dcef6cef1c7373a554516cc6970c81ea",
+			"revisionTime": "2016-04-10T02:17:24Z"
+		},
+		{
+			"checksumSHA1": "F+7lTlQMULu2pqest14vkT8vc7g=",
+			"path": "github.com/google/go-querystring/query",
+			"revision": "9235644dd9e52eeae6fa48efd539fdc351a0af53",
+			"revisionTime": "2016-03-11T01:20:12Z"
+		},
+		{
 			"checksumSHA1": "4Kx1+3EauYSBSaCrqzxOREV/XqM=",
 			"path": "github.com/julienschmidt/httprouter",
 			"revision": "77366a47451a56bb3ba682481eed85b64fea14e8",
 			"revisionTime": "2016-02-19T15:40:26Z"
+		},
+		{
+			"checksumSHA1": "55o15ik8txYXhsY0nFnJkkPEYFI=",
+			"path": "github.com/tbalthazar/onesignal-go",
+			"revision": "075ec354c7011b0355c10d018ac3a32e96c7853c",
+			"revisionTime": "2016-04-08T14:51:43Z"
 		},
 		{
 			"checksumSHA1": "GIGmSrYACByf5JDIP9ByBZksY80=",
