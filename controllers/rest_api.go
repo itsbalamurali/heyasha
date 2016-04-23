@@ -14,5 +14,8 @@ func LoginUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 func GetUserDetails(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 }
 
+func UpdateUserDetails(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+}
+
 func DeleteUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 }

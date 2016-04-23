@@ -10,7 +10,6 @@ import (
 	"github.com/itsbalamurali/bot/core/engine"
 )
 
-
 func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	verify_token := "er7Wq4yREXBKpdRKjhAg"
 	hub_mode := ps.ByName("hub.mode")
@@ -45,20 +44,7 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 
 			ai_msg := engine.NewClient().ChatConvoAI(strconv.FormatInt(info.Message.Sender.ID,10), info.Message.Text)
 			resp.Text(ai_msg)
-			//fmt.Printf("Recieved Text: %s\n", info.Message.Text)
-
-
 		}
-		/*
-		sender := event.Sender.ID
-		if event.Message != nil {
-			fmt.Printf("Recieved Text: %s\n", event.Message.Text)
-			err := messenger.SendMessage{}.SendTextMessage(sender, event.Message.Text)
-			if err != nil {
-				fmt.Printf("Something wrong: %s\n", err.Error())
-			}
-		}
-		*/
 	}
 }
 

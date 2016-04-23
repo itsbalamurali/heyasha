@@ -11,10 +11,7 @@ import (
 	"fmt"
 )
 
-const MAX_UPLOAD_MEMORY = 1 * 1024 * 1024
-
 func main() {
-
 	// maximize CPU usage for maximum performance
 	runtime.GOMAXPROCS(runtime.NumCPU())
 
@@ -26,7 +23,6 @@ func main() {
 
 	//New Router
 	router := httprouter.New()
-
 
 	//Hello!!
 	router.GET("/", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -41,6 +37,7 @@ func main() {
 	//User REST API routes
 	router.POST("/users/", controllers.CreateUser)
 	router.POST("/users/login", controllers.LoginUser)
+	router.PUT("/users/{UserId}", controllers.UpdateUserDetails)
 	router.GET("/users/{UserId}",controllers.GetUserDetails)
 	router.DELETE("/users/{UserId}", controllers.DeleteUser)
 
@@ -57,5 +54,4 @@ func main() {
 	// Start server
 	fmt.Println("Hi, I am running on port: "+ port +" !!")
 	log.Fatal(http.ListenAndServe(":"+ port, router))
-
 }
