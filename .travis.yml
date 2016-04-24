@@ -9,10 +9,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t itsbalamurali/heyasha .
+#  - docker build -t itsbalamurali/heyasha .
   - echo "machine github.com login $GITHUB_AUTH_TOKEN" > ~/.netrc
   - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-  - docker push itsbalamurali/heyasha
+#  - docker pull itsbalamurali/heyasha
 install:
   - go get -u github.com/kardianos/govendor
   - govendor sync
