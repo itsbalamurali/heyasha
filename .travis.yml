@@ -12,5 +12,5 @@ go:
 #  - docker build -t itsbalamurali/heyasha .
 
 install:
-  - go get govendor
+  - go get -u github.com/kardianos/govendor
   - govendor sync
