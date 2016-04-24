@@ -18,9 +18,8 @@ _cgo_gotypes.go
 _cgo_export.*
 
 _testmain.go
-
+*.exe~
 *.exe
 *.test
 *.prof
 core/engine/stt/*
-data/pocketsphinx/

@@ -33,8 +33,6 @@ func (ApiC *APIClient) ChatConvoAI(convo_id string, usersay string) string {
 
 	botresponse := &ChatResponse{}
 	params := &ChatParams{ConvoId: convo_id, UserSay: usersay}
-	//fmt.Println("Convo id: " + convo_id)
-	//fmt.Println("User Say: " + usersay)
 	res, err := ApiC.sling.New().QueryStruct(params).ReceiveSuccess(botresponse)
 	if err != nil{
 		log.Fatal(err)
