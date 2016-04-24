@@ -5,9 +5,9 @@ import (
 	"github.com/julienschmidt/httprouter"
 	"fmt"
 	"encoding/json"
-	"github.com/itsbalamurali/bot/core/platforms/messenger"
+	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"strconv"
-	"github.com/itsbalamurali/bot/core/engine"
+	"github.com/itsbalamurali/heyasha/core/engine"
 )
 
 func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {

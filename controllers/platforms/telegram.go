@@ -3,13 +3,11 @@ package platforms
 import (
 	"net/http"
 	"github.com/julienschmidt/httprouter"
-	"github.com/itsbalamurali/bot/core/platforms/telegram"
+	"github.com/itsbalamurali/heyasha/core/platforms/telegram"
 	"fmt"
 	"encoding/json"
 	"log"
-	//"github.com/itsbalamurali/bot/core/engine"
-	//"strconv"
-	"github.com/itsbalamurali/bot/core/engine"
+	"github.com/itsbalamurali/heyasha/core/engine"
 	"strconv"
 )
 
