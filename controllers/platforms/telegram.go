@@ -2,15 +2,14 @@ package platforms
 
 import (
 	"net/http"
-	"github.com/julienschmidt/httprouter"
-	"github.com/itsbalamurali/heyasha/core/platforms/telegram"
 	"fmt"
 	"encoding/json"
 	"log"
-	"github.com/itsbalamurali/heyasha/core/engine"
 	"strconv"
+	"github.com/julienschmidt/httprouter"
+	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/itsbalamurali/heyasha/core/platforms/telegram"
 )
-
 
 func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
@@ -40,7 +39,7 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		//fmt.Printf("Bot Username: %s\n", api.Username)
 		*/
 		// talk to api and send back response
-		ai_msg := engine.NewClient().ChatConvoAI(strconv.Itoa(msg.Chat.ID), *msg.Text)
+		ai_msg := engine.Brain().Reply(strconv.Itoa(msg.Chat.ID), *msg.Text)
 		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), ai_msg).Send()
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)

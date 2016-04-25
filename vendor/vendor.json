@@ -15,6 +15,12 @@
 			"revisionTime": "2016-03-09T02:19:12Z"
 		},
 		{
+			"checksumSHA1": "tG2mxHMcY5zzNwGYThQwNs5kiKY=",
+			"path": "github.com/aichaos/rivescript-go",
+			"revision": "66036bf91f92e74cb112721ccea630a9607ef1cc",
+			"revisionTime": "2016-04-18T02:21:57Z"
+		},
+		{
 			"checksumSHA1": "yWCnueUHZXuddtR0Zf+TVCLFZ+M=",
 			"path": "github.com/cenkalti/backoff",
 			"revision": "32cd0c5b3aef12c76ed64aaf678f6c79736be7dc",
