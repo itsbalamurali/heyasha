@@ -1,4 +1,4 @@
-box: wercker/golang
+box: golang
 # Build definition
 build:
   # The steps that will be executed on build
@@ -18,7 +18,7 @@ build:
     - script:
         name: go build
         code: |
-          go build server.go
+          go build ./...
     # Test the project
     - script:
         name: go test
