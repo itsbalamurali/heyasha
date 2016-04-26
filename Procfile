@@ -1,1 +1,1 @@
-web: bot
+web: bin/heyasha
