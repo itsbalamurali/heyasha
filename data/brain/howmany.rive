@@ -1,0 +1,279 @@
+// Converted using aiml2rs on: Tue Apr 26 07:07:37 2016
+! version = 2.0
+
++ how many legs does * have
+-  {@how many legs do<star>have} 
+
++ how many legs would * have
+-  {@how many legs do<star>have} 
+
++ how many legs should * have
+-  {@how many legs do<star>have} 
+
++ how many legs will * have
+-  {@how many legs do<star>have} 
+
++ how many legs on *
+-  {@how many legs do<star>have} 
+
++ how many legs do * have
+- Four would seem a good number of legs for<person>at a guess.
+
++ how many legs * have *
+-  {@how many legs<star>have} 
+
++ how many legs do two * have
+- Double the number of legs of one of these<person>.
+
++ how many legs do three * have
+- Three times the number of legs of one of these<person>.
+
++ how many legs do four * have
+- A quarter the number of legs as sixteen<person>have.
+
++ how many legs do five * have
+- Five times the number of legs as a single one of the<person>has.
+
++ how many legs do * centipedes have
+- {@xlegs <star>centipedes}I would imagine.
+
++ how many legs do * millipedes have
+- {@xlegs <star>millipedes}I would imagine.
+
++ how many legs do two * have
+- I would guess that two<person>have{@xlegs two<star>}legs between them?
+
++ how many legs do three * have
+- I think three<person>have{@xlegs three<star>}legs?
+
++ how many legs do four * have
+- Probably, four<person>would have{@xlegs four<star>}legs?
+
++ how many legs do five * have
+- Five of them will have{@xlegs five<star>}legs, I think?
+
++ how many legs do 2 * have
+-  {@how many legs do two<star>have} 
+
++ how many legs do 3 * have
+-  {@how many legs do three<star>have} 
+
++ how many legs do 4 * have
+-  {@how many legs do four<star>have} 
+
++ how many legs do 5 * have
+-  {@how many legs do five<star>have} 
+
++ xlegs *
+- a lot of
+
++ xlegs two *
+- eight
+
++ xlegs three *
+- twelve
+
++ xlegs four *
+- sixteen
+
++ xlegs five *
+- twenty
+
++ xlegs two birds
+- four
+
++ xlegs three birds
+- six
+
++ xlegs four birds
+- eight
+
++ xlegs five birds
+- ten
+
++ xlegs two people
+- four
+
++ xlegs three people
+- six
+
++ xlegs four people
+- eight
+
++ xlegs five people
+- ten
+
++ xlegs * men
+-  {@xlegs<star>people} 
+
++ xlegs * women
+-  {@xlegs<star>people} 
+
++ xlegs * boys
+-  {@xlegs<star>people} 
+
++ xlegs * girls
+-  {@xlegs<star>people} 
+
++ xlegs * children
+-  {@xlegs<star>people} 
+
++ xlegs * ostriches
+-  {@xlegs<star>birds} 
+
++ xlegs * eagles
+-  {@xlegs<star>birds} 
+
++ xlegs * chickens
+-  {@xlegs<star>birds} 
+
++ xlegs * ducks
+-  {@xlegs<star>birds} 
+
++ xlegs two insects
+- twelve
+
++ xlegs three insects
+- eighteen
+
++ xlegs four insects
+- twenty four
+
++ xlegs five insects
+- thirty
+
++ xlegs * beetles
+-  {@xlegs<star>insects} 
+
++ xlegs * ants
+-  {@xlegs<star>insects} 
+
++ xlegs * bees
+-  {@xlegs<star>insects} 
+
++ xlegs * bumblebees
+-  {@xlegs<star>insects} 
+
++ xlegs * centipedes
+- <star>hundred
+
++ xlegs * millipedes
+- <star>thousand
+
++ xlegs two octopuses
+- sixteen
+
++ xlegs three octopuses
+- twenty four
+
++ xlegs four octopuses
+- thirty two
+
++ xlegs five octopuses
+- forty
+
++ xlegs * octopii
+-  {@xlegs<star>octopuses} 
+
++ xlegs * octopi
+-  {@xlegs<star>octopuses} 
+
++ xlegs * spiders
+-  {@xlegs<star>octopuses} 
+
++ xlegs * snakes
+- no
+
++ xlegs * worms
+- no
+
++ xlegs * snails
+- no
+
++ xlegs * fish
+- no
+
++ xlegs * sharks
+- no
+
++ xlegs * whales
+- no
+
++ xlegs * fishes
+- no
+
++ how many legs does a * bird have
+- 2 legs.
+
++ how many legs does a bird have
+- 2 legs.
+
++ how many legs does a person have
+- 2 legs.
+
++ how many legs does a man have
+- 2 legs.
+
++ how many legs does a woman have
+- 2 legs.
+
++ how many legs does a boy have
+- 2 legs.
+
++ how many legs does a girl have
+- 2 legs.
+
++ how many legs does a child have
+- 2 legs.
+
++ how many legs does an ostrich have
+- 2 legs.
+
++ how many legs does an eagle have
+- 2 legs.
+
++ how many legs does a chicken have
+- 2 legs.
+
++ how many legs does a duck have
+- 2 legs.
+
++ how many legs does an insect have
+- 6 legs.
+
++ how many legs does a beetle have
+- 6 legs.
+
++ how many legs does an ant have
+- 6 legs.
+
++ how many legs does a bee have
+- 6 legs.
+
++ how many legs does a * bee have
+- 6 legs.
+
++ how many legs does an octopus have
+- 8 legs.
+
++ how many legs does a spider have
+- 8 legs.
+
++ how many legs does a snake have
+- It doesn't have any legs.
+
++ how many legs does a worm have
+- It doesn't have any legs.
+
++ how many legs does a snail have
+- It doesn't have any legs.
+
++ how many legs does a fish have
+- It doesn't have any legs.
+
++ how many legs does a shark have
+- It doesn't have any legs.
+
++ how many legs does a whale have
+- It doesn't have any legs.
+

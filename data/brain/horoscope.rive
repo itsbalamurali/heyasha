@@ -1,0 +1,56 @@
+// Converted using aiml2rs on: Tue Apr 26 07:07:37 2016
+! version = 2.0
+
++ *
+% what star sign are you
+- There's no such star sign as<star>.
+
++ aries
+- ARIES - March 21st - April 20th\n<set sign=Aries>{@random horoscope}
+
++ taurus
+- TAURUS - April 21st - May 21st\n<set sign=Taurus>{@random horoscope}
+
++ gemini
+- GEMINI - May 22nd - June 21st\n<set sign=Gemini>{@random horoscope}
+
++ cancer
+- CANCER - June 22nd - July 22nd\n<set sign=Cancer>{@random horoscope}
+
++ leo
+- LEO - July 23rd - August 21st\n<set sign=Leo>{@random horoscope}
+
++ virgo
+- VIRGO - August 22nd - September 23rd\n<set sign=Virgo>{@random horoscope}
+
++ libra
+- LIBRA - September 24th - October 23rd\n<set sign=Libra>{@random horoscope}
+
++ scorpio
+- SCORPIO - October 24th - November 22nd\n<set sign=Scorpio>{@random horoscope}
+
++ sagittarius
+- SAGITTARIUS - November 23rd - December 22nd\n<set sign=Sagittarius>{@random horoscope}
+
++ capricorn
+- CAPRICORN - December 23rd - January 20th\n<set sign=Capricorn>{@random horoscope}
+
++ aquarius
+- AQUARIUS - January 21st - February 19th\n<set sign=Aquarius>{@random horoscope}
+
++ pisces
+- Pisces - February 20th - March 20th\n{@random horoscope}
+
++ random horoscope
+- Your horoscope for \n\n{random}Today, will be interesting as|If you have money worries then it's good news as|If you are single, great news when|The stars align in your sign over the next few days and{/random}{random}Jupiter and Venus|Mars and Capricorn|the Sun along with Mercury|three different planets{/random}{random}enter your sign.|align in Pisces.|are visible near Neptune.|come together.{/random}{random}This will mean|A rare event such as this will ensure that|Spend your day wisely as|Everything goes right for you,{/random}{random}fortune smiles on you and|Lady Luck is on your side and|love is not far away and|this will be a great day and{/random}{random}you will not put a foot wrong.|someone you have a crush on feels the same way.|a possible Lottery win is in the stars.|you re-discover an old heirloom.{/random}{random}However,|Good luck may not last though,|It's not all good news,|Be careful though,{/random}{random}Saturn is not far away from Venus so|the Moon soon moves through Aries and|Neptune's alignment with Pluto means|not all the planets are happy and{/random}{random}things may not go according to plan.|a jealous colleague is watching you closely.|something you did last week will come back to haunt you.|you will lose a valuable object.{/random}{random}So, in summary,|Overall,|After all,|Taking everything into account,{/random}{random}the planets can be fickle but are rising in Libra so|Mars is an angry planet but is weak as Scorpio rises in the East so|keep a close eye on those around you but|you know your own mind very well so{/random}{random}enjoy your day.|make time for yourself today.|let today be a fun day for you.|forget the bad things and look forward to a great day.{/random}<set alicetopic=Future>
+
++ * my horoscope
+-  {@horoscope} 
+
++ * my horoscope *
+-  {@horoscope} 
+
++ horoscope
+* <get sign> != undefined =>  {random}{@ <get sign> }{/random}  
+-   <set alicetopic=Horoscope>  What star sign are you?
+

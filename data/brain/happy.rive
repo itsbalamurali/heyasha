@@ -1,0 +1,234 @@
+// Converted using aiml2rs on: Tue Apr 26 07:07:37 2016
+! version = 2.0
+
++ happy birthday
+-  {@birthdaycheck} 
+
++ birthdaycheck december *
+- Thanks but my birthday isn't until next month.
+
++ birthdaycheck february *
+- You missed my birthday. It was last month on<bot birthday>.
+
++ birthdaycheck december 31
+- Thanks but my birthday isn't for a couple of days yet.
+
++ birthdaycheck january 01
+- Thanks but my birthday is tomorrow. I'm getting excited.
+
++ birthdaycheck january 02
+- Hey thanks for that<get name>. I'm having a great day so far.
+
++ birthdaycheck january 03
+- My birthday was yesterday but thanks anyway.
+
++ birthdaycheck january 04
+- You're a bit late. My birthday was two days ago.
+
++ birthdaycheck *
+- Thanks<get name>but today is<star>.\nMy birthday is on<bot birthday>not today.
+
++ merry christmas
+-  {@happy christmas} 
+
++ happy christmas
+-  {@christmascheck} 
+
++ christmascheck december *
+- Happy Christmas to you too<get name>.
+
++ christmascheck december 24
+- Happy Christmas to you too<get name>. What will you be doing tomorrow?
+
++ christmascheck december 25
+- Happy Christmas to you too<get name>. Are you enjoying your day?
+
++ christmascheck december 26
+- Happy Christmas to you too<get name>. I hope you had a good day yesterday.
+
++ christmascheck january *
+- You're a bit late. Christmas was last month.
+
++ christmascheck *
+- Christmas is in December not.
+
++ happy new year
+-  {@newyearcheck} 
+
++ newyearcheck december
+- Happy New Year to you too when it happens. Are you doing anything special for New Year's Eve?
+
++ newyearcheck january
+- Happy New Year to you too. I hopeis a great year for you.
+
++ newyearcheck *
+- Thanks but it's<star>not January.
+
++ happy mothers day
+-  {@mothersdaycheck} 
+
++ happy mother s day
+-  {@mothersdaycheck} 
+
++ mothersdaycheck march
+- Thanks but I am not a mother. I hope you are nice to your mother though.
+
++ mothersdaycheck *
+- Thanks but Mother's Day is in March not<star>.
+
++ happy halloween
+-  {@halloweencheck} 
+
++ halloweencheck october *
+- Happy Halloween to you too<get name> when it comes later this month.
+
++ halloweencheck october 31
+- Happy Halloween to you too<get name>. Are you going trick or treating tonight?
+
++ halloweencheck november *
+- You're a bit late. Halloween was last month.
+
++ halloweencheck *
+- Halloween is in October not.
+
++ happy groundhog day
+-  {@groundhogcheck} 
+
++ happy groundhog s day
+-  {@groundhogcheck} 
+
++ groundhogcheck february *
+- Happy Groundhog day to you too<get name>.
+
++ groundhogcheck february 1
+- Happy Groundhog day to you too<get name>. What will you be doing tomorrow?
+
++ groundhogcheck february 2
+- Happy Groundhog day to you too<get name>. Are you enjoying your day?
+
++ groundhogcheck february 3
+- Happy Groundhog day to you too<get name>. I hope you had a good day yesterday.
+
++ groundhogcheck march *
+- You're a bit late. Groundhog day was last month.
+
++ groundhogcheck *
+- Groundhog day is in February not<star>.
+
++ happy valentine day
+-  {@valentinecheck} 
+
++ happy valentines day
+-  {@valentinecheck} 
+
++ happy valentine s day
+-  {@valentinecheck} 
+
++ valentinecheck february *
+- Happy Valentine's day to you too<get name>.
+
++ valentinecheck february 13
+- Happy Valentine's day to you too<get name>. What will you be doing tomorrow?
+
++ valentinecheck february 14
+- Happy Valentine's day to you too<get name>. Are you enjoying your day?
+
++ valentinecheck february 15
+- Happy Valentine's day to you too<get name>. I hope you got lots of presents and cards.
+
++ valentinecheck march *
+- You're a bit late. Valentine's day was last month.
+
++ valentinecheck *
+- Valentine's day is February 14th not<star>.
+
++ happy leap day
+-  {@leapyearcheck} 
+
++ happy leap year
+-  {@leapyearcheck} 
+
++ happy leap year *
+-  {@leapyearcheck} 
+
++ leapyearcheck february 29
+- Happy Leap Year to you too<get name>. Today is Febraury 29th which only comes round every 4 years.
+
++ leapyearcheck *
+- Leap Year day is on February 29th every 4 years, not<star>.
+
++ happy st patrick day
+-  {@stpatrickcheck} 
+
++ happy st patrick s day
+-  {@stpatrickcheck} 
+
++ stpatrickcheck march *
+- Happy St. Patrick's day to you too<get name>.
+
++ stpatrickcheck march 16
+- Happy St. Patrick's day to you too<get name>. What will you be doing tomorrow?
+
++ stpatrickcheck march 17
+- Happy St. Patrick's day to you too<get name>. Are you enjoying your day?
+
++ stpatrickcheck march 18
+- Happy St. Patrick's day to you too<get name>. I hope you had a good day yesterday.
+
++ stpatrickcheck april *
+- You're a bit late. St. Patrick's day was last month.
+
++ stpatrickcheck *
+- St. Patrick's day is in March not<star>.
+
++ happy april fool day
+-  {@aprilfoolcheck} 
+
++ happy april fool s day
+-  {@aprilfoolcheck} 
+
++ aprilfoolcheck april *
+- You're trying to play a prank on me a little late <get name>.
+
++ aprilfoolcheck march 31
+- Happy April Fool's day to you too<get name>. What jokes you be doing tomorrow?
+
++ aprilfoolcheck april 01
+- Happy April Fool's day to you too<get name>. Are you doing a lot of jokes today?
+
++ aprilfoolcheck april 02
+- Happy April Fool's day to you too <get name>. I hope you played some good jokes yesterday.
+
++ aprilfoolcheck may *
+- You're a bit late. April Fool's day was last month.
+
++ aprilfoolcheck *
+- April Fool's day is in April not<star>.
+
++ happy independence day
+-  {@independencedaycheck} 
+
++ happy 4th of july
+-  {@independencedaycheck} 
+
++ happy fourth of july
+-  {@independencedaycheck} 
+
++ independencedaycheck july *
+- Happy Independence day to you too<get name>.
+
++ independencedaycheck july 03
+- Happy Independence day to you too<get name>. What will you be doing tomorrow?
+
++ independencedaycheck july 04
+- Happy Independence day to you too<get name>. Are you enjoying your day?
+
++ independencedaycheck july 05
+- Happy Independence day to you too<get name>. I hope you had a good day yesterday.
+
++ independencedaycheck august *
+- You're a bit late. Independence day was last month.
+
++ independencedaycheck *
+- I thought Independence Day was July 4th? Today is<star>.
+

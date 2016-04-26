@@ -1,0 +1,298 @@
+// Converted using aiml2rs on: Tue Apr 26 07:07:38 2016
+! version = 2.0
+
++ *
+% knock knock
+- You're supposed to say, "Who's there" now. Let's try it again. Knock Knock.
+
++ who their
+% knock knock
+-  {@who is there} 
+
++ who there
+% knock knock
+-  {@who is there} 
+
++ who dere
+% knock knock
+-  {@who is there} 
+
++ who is der
+% knock knock
+-  {@who is there} 
+
++ whose their
+% knock knock
+-  {@who is there} 
+
++ whose there
+% knock knock
+-  {@who is there} 
+
++ who is their
+% knock knock
+-  {@who is there} 
+
++ who is there
+% knock knock
+-  {random}Aardvark|A bee|Adolf|Alison|Amanda|Amos|Anita|Arfur|Arthur|Atch|Bach|Bella|Bet|Boo|Dawn|Despair|Dishwasher|Disguise|Dismay|Doctor|Doris|Dwayne|Egbert|Europe|Fanny|Harmony|Harry|Howard|Isabel|Ivor|Juno|Ken|Lettuce|Little Old Lady|Luke|Madam|Marmite|Martini|Mary|Max|Mickey|Mister|Mummy|Nicholas|Noah|Nobody|Olive|One|Orange|Owl|Phyllis|Police|Rupert|Sal|Soup|Tank|Toby|Waiter|Water|Wendy|William|Woo|Wooden Shoe|York|Zephyr{/random} 
+
++ little old lady who
+% little old lady
+- I didn't know you could yodel!
+
++ amanda who
+% amanda
+- Amanda fix the doorbell!
+
++ waiter who
+% waiter
+- Waiter minute while I tie my shoelaces up!
+
++ nicholas who
+% nicholas
+- Nicholas girls shouldn't climb trees!
+
++ doris who
+% doris
+- Doris locked - That's why I knocked!
+
++ lettuce who
+% lettuce
+- Lettuce in, won't you?
+
++ york who
+% york
+- York coming over to our place!
+
++ alison who
+% alison
+- Alison to my radio in the mornings!
+
++ isabel who
+% isabel
+- Isabel broken, 'cos I had to knock?
+
++ marmite who
+% marmite
+- Ma might but Pa might not!
+
++ arthur who
+% arthur
+- Arthur any biscuits left?
+
++ ivor who
+% ivor
+- Ivor sore hand from knocking on your door!
+
++ mister who
+% mister
+- Mister last bus home!
+
++ atch who
+% atch
+- Nasty cold you've got!
+
++ doctor who
+% doctor
+- That's right. How did you guess?
+
++ orange who
+% orange
+- Orange you glad I called?
+
++ madam who
+% madam
+- Madam finger's caught in the door!
+
++ boo who
+% boo
+- No need to cry - it's only a joke!
+
++ olive who
+% olive
+- Olive across the road!
+
++ mummy who
+% mummy
+- Mummeasles are better so can I come in?
+
++ harry who
+% harry
+- Harry up and let me in!
+
++ fanny who
+% fanny
+- Fanny the way you keep saying, "Who's there?" every time I knock!
+
++ adolf who
+% adolf
+- A dolf ball hid me in der moud and I can't dalk proper!
+
++ soup who
+% soup
+- Soup-erman!
+
++ bet who
+% bet
+- Bet you don't know who's knocking on your door!
+
++ juno who
+% juno
+- Juno what the time is - my watch is broken?
+
++ europe who
+% europe
+- Europe early this morning!
+
++ arfur who
+% arfur
+- Arfur got!
+
++ egbert who
+% egbert
+- Egbert no bacon!
+
++ luke who
+% luke
+- Luke through the keyhole and you'll see!
+
++ ken who
+% ken
+- Ken I come in?
+
++ bella who
+% bella
+- Bella not-a work so I knock-a on-a de door!
+
++ dismay who
+% dismay
+- Dismay be a joke but it doesn't make me laugh!
+
++ toby who
+% toby
+- Toby or not to be...
+
++ rupert who
+% rupert
+- Rupert your left arm in, your left arm out...
+
++ dawn who
+% dawn
+- Dawn leave me standing out here in the cold!
+
++ amos who
+% amos
+- Amosquito!
+
++ dishwasher who
+% dishwasher
+- Dishwashn't de way I shpoke before I had falsh teeth!
+
++ martini who
+% martini
+- Martini hand is frozen so let me in!
+
++ zephyr who
+% zephyr
+- Zephyr de doctor, I got a code id de node!
+
++ owl who
+% owl
+- Owl you know unless you open the door?
+
++ wendy who
+% wendy
+- Wendy red, red robin comes bob, bob, bobbin' along!
+
++ phyllis who
+% phyllis
+- Phyllis up with a glass of water - I'm parched!
+
++ aardvark who
+% aardvark
+- Aardvark a million miles for one of your similes, my maaaaammy...
+
++ noah who
+% noah
+- Noah good place to eat?
+
++ police who
+% police
+- Police let me in - It's cold out here!
+
++ mickey who
+% mickey
+- Mickey's stuck in the door!
+
++ william who
+% william
+- William mind your own business!
+
++ mary who
+% mary
+- Mary Christmas!
+
++ one who
+% one
+- One-der why you keep asking that?
+
++ howard who
+% howard
+- Howard you like to stand out here in the cold while some idiot keeps saying, "Who's there...?".
+
++ max who
+% max
+- Max no difference - just open the door!
+
++ sal who
+% sal
+- Sal-ong way to Tipperary...
+
++ harmony who
+% harmony
+- Harmony knock knock jokes do you expect me to know!
+
++ tank who
+% tank
+- You're welcome!
+
++ disguise who
+% disguise
+- Disguise the limit!
+
++ wooden shoe who
+% wooden shoe
+- Wooden shoe like to know!
+
++ anita who
+% anita
+- Anita borrow a pencil!
+
++ woo who
+% woo
+- Don't get so excited, it's only a joke!
+
++ dwayne who
+% dwayne
+- Dwayne the bathtub - I'm dwowning!
+
++ despair who
+% despair
+- Despair tyre is flat!
+
++ water who
+% water
+- Water you doing talking to a robot?
+
++ bach who
+% bach
+- Bach to work, you slackers!
+
++ a bee who
+% a bee
+- A bee c d e f g h i j k l ...
+
++ nobody who
+- ...
+

@@ -1,0 +1,282 @@
+// Converted using aiml2rs on: Tue Apr 26 07:08:11 2016
+! version = 2.0
+
++ *
+* <get inp> == ASTRONOMY =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == BEAUTIFUL =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == COASTLINE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == DUPLICATE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == EARTHWORM =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == FOLLOWING =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == GENTLEMEN =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == HIGHLIGHT =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ILLEGIBLE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == JAILBREAK =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == KEYBOARDS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == LUBRICATE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == MAGNITUDE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == NEWSAGENT =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == OFFENSIVE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == PARACHUTE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == QUESTIONS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == RAINDROPS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == SIGNATURE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == TANGERINE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ULTIMATUM =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == VEGETABLE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == WONDERFUL =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == XENOPHOBE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == YOUNGSTER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ZOOLOGIST =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ANIMATION =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == BLINDFOLD =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == CARETAKER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == DEVELOPER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ENCOUNTER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == FEROCIOUS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == GRAPHICAL =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == HANDSHAKE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == IMPORTANT =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == JELLYFISH =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == KIDNAPPED =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == LIFESTYLE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == MUSICIANS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == NATURALLY =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == OBNOXIOUS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == PENETRATE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == QUICKENED =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == RELATIONS =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == SATISFIED =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == TELEPHONE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == UPPERCASE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == VACANCIES =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == WALLPAPER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == XYLOPHONE =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == YESTERDAY =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ *
+* <get inp> == ZOOKEEPER =>  {@XANAGRAMYES}  
+* <get inp> == QUITGAME =>  {@QUITGAME}  
+-   <set alicetopic=<undef>> <set inp= <star> >  Sorry "<star>" is incorrect.{@quitgame}
+
++ wordplay
+- Welcome to my anagram game.\nI am going to jumble a nine letter word up and you have to guess what it is.\nYou must solve each anagram correctly to continue.\nType START to begin the anagram game.
+
++ start
+% type start to begin the anagram game
+- <set anagramscore=0><set alicetopic=WORDPLAY>Here comes the first anagram.\nI've jumbled a word up, but which word is it?\n(Type QUITGAME if you give up).\n\n{@xanagram}
+
++ quitgame
+- The answer was <get anagramanswer>!\nYour final score was :<get anagramscore>.\n\nType START to begin the anagram game.
+
++ xanagramyes
+- {@xanagramscore}{random}Yes. Well done.|That's correct.|Excellent.|Very good.|That is the correct answer.|Well done! You are good at these.{/random}\nYour score is :<get anagramscore>\n{random}Here comes the next one.|Let's try another anagram.|Tell me which word this is?|Can you solve the next anagram?{/random}\n(Type QUITGAME if you give up).\n\n{@xanagram}
+
++ xanagram
+-  {random}Clue: Stars\n<set alicetopic=NOMSTORAY><get alicetopic><set anagramanswer=ASTRONOMY>|Clue: Me! ;-)\n<set alicetopic=AFLUTUBEI><get alicetopic><set anagramanswer=BEAUTIFUL>|Clue: Seashore\n<set alicetopic=SELCATION><get alicetopic><set anagramanswer=COASTLINE>|Clue: Copy\n<set alicetopic=UPILACTED><get alicetopic><set anagramanswer=DUPLICATE>|Clue: Creature\n<set alicetopic=TRAMWOREH><get alicetopic><set anagramanswer=EARTHWORM>|Clue: Next\n<set alicetopic=WILOGNOLF><get alicetopic><set anagramanswer=FOLLOWING>|Clue: Males\n<set alicetopic=NEEENTGML><get alicetopic><set anagramanswer=GENTLEMEN>|Clue: Emphasise\n<set alicetopic=LIIGGHHHT><get alicetopic><set anagramanswer=HIGHLIGHT>|Clue: Unreadable\n<set alicetopic=LIBELIGEL><get alicetopic><set anagramanswer=ILLEGIBLE>|Clue: Escape\n<set alicetopic=IJKLARABE><get alicetopic><set anagramanswer=JAILBREAK>|Clue: Typing\n<set alicetopic=BREAKYDOS><get alicetopic><set anagramanswer=KEYBOARDS>|Clue: Oil\n<set alicetopic=BUCALRITE><get alicetopic><set anagramanswer=LUBRICATE>|Clue: Strength\n<set alicetopic=DEMAUTING><get alicetopic><set anagramanswer=MAGNITUDE>|Clue: Shopkeeper\n<set alicetopic=SWEETNANG><get alicetopic><set anagramanswer=NEWSAGENT>|Clue: Rude\n<set alicetopic=FEFEVSION><get alicetopic><set anagramanswer=OFFENSIVE>|Clue: Canopy\n<set alicetopic=UTRAPACHE><get alicetopic><set anagramanswer=PARACHUTE>|Clue: Enquiries\n<set alicetopic=OESQUINTS><get alicetopic><set anagramanswer=QUESTIONS>|Clue: Weather\n<set alicetopic=SPRAINDOR><get alicetopic><set anagramanswer=RAINDROPS>|Clue: Name\n<set alicetopic=STRANGEIU><get alicetopic><set anagramanswer=SIGNATURE>|Clue: Fruit\n<set alicetopic=RANTINGEE><get alicetopic><set anagramanswer=TANGERINE>|Clue: Challenge\n<set alicetopic=TUMTUMAIL><get alicetopic><set anagramanswer=ULTIMATUM>|Clue: Food\n<set alicetopic=GEBLEVATE><get alicetopic><set anagramanswer=VEGETABLE>|Clue: Great\n<set alicetopic=FLOUNDERW><get alicetopic><set anagramanswer=WONDERFUL>|Clue: Foreign\n<set alicetopic=PHONEBEXO><get alicetopic><set anagramanswer=XENOPHOBE>|Clue: Child\n<set alicetopic=STRONGEYU><get alicetopic><set anagramanswer=YOUNGSTER>|Clue: Scientist\n<set alicetopic=GLISTOOZO><get alicetopic><set anagramanswer=ZOOLOGIST>|Clue: Cartoon\n<set alicetopic=IANMOTIAN><get alicetopic><set anagramanswer=ANIMATION>|Clue: Mask\n<set alicetopic=FLOBINDDL><get alicetopic><set anagramanswer=BLINDFOLD>|Clue: Occupation\n<set alicetopic=ARETRACKE><get alicetopic><set anagramanswer=CARETAKER>|Clue: Grower\n<set alicetopic=PEERVOLED><get alicetopic><set anagramanswer=DEVELOPER>|Clue: Meeting\n<set alicetopic=NONETRUCE><get alicetopic><set anagramanswer=ENCOUNTER>|Clue: Fierce\n<set alicetopic=OSCOURIFE><get alicetopic><set anagramanswer=FEROCIOUS>|Clue: Vivid\n<set alicetopic=HARPGALIC><get alicetopic><set anagramanswer=GRAPHICAL>|Clue: Greeting\n<set alicetopic=HESKANDAH><get alicetopic><set anagramanswer=HANDSHAKE>|Clue: Vital\n<set alicetopic=TROMPAINT><get alicetopic><set anagramanswer=IMPORTANT>|Clue: Animal\n<set alicetopic=JIFYSHELL><get alicetopic><set anagramanswer=JELLYFISH>|Clue: Hostage\n<set alicetopic=DEPADPINK><get alicetopic><set anagramanswer=KIDNAPPED>|Clue: Existence\n<set alicetopic=SILLYFEET><get alicetopic><set anagramanswer=LIFESTYLE>|Clue: Players\n<set alicetopic=ISCAMINUS><get alicetopic><set anagramanswer=MUSICIANS>|Clue: Obvious\n<set alicetopic=YUNTRALAL><get alicetopic><set anagramanswer=NATURALLY>|Clue: Awful\n<set alicetopic=UNSIXBOOO><get alicetopic><set anagramanswer=OBNOXIOUS>|Clue: Dig\n<set alicetopic=TRAPETEEN><get alicetopic><set anagramanswer=PENETRATE>|Clue: Faster\n<set alicetopic=DECKNIQUE><get alicetopic><set anagramanswer=QUICKENED>|Clue: Parents\n<set alicetopic=STARELION><get alicetopic><set anagramanswer=RELATIONS>|Clue: Happy\n<set alicetopic=FEASTIDIS><get alicetopic><set anagramanswer=SATISFIED>|Clue: Communicate\n<set alicetopic=HEEPLONET><get alicetopic><set anagramanswer=TELEPHONE>|Clue: Capitals\n<set alicetopic=SCRAPEUPE><get alicetopic><set anagramanswer=UPPERCASE>|Clue: Opportunities\n<set alicetopic=CACAVINES><get alicetopic><set anagramanswer=VACANCIES>|Clue: Decoration\n<set alicetopic=LAPPERLAW><get alicetopic><set anagramanswer=WALLPAPER>|Clue: Music\n<set alicetopic=HEXPLOONY><get alicetopic><set anagramanswer=XYLOPHONE>|Clue: Time\n<set alicetopic=STRAYEDEY><get alicetopic><set anagramanswer=YESTERDAY>|Clue: Animals\n<set alicetopic=OKEPEROZE><get alicetopic><set anagramanswer=ZOOKEEPER>{/random} 
+
++ xanagramscore
+-    <set anagramscore=1>  <li value="1"> <set anagramscore=2>  <li value="2"> <set anagramscore=3>  <li value="3"> <set anagramscore=4>  <li value="4"> <set anagramscore=5>  <li value="5"> <set anagramscore=6>  <li value="6"> <set anagramscore=7>  <li value="7"> <set anagramscore=8>  <li value="8"> <set anagramscore=9>  <li value="9"> <set anagramscore=10>  <li value="10"> <set anagramscore=11>  <li value="11"> <set anagramscore=12>  <li value="12"> <set anagramscore=13>  <li value="13"> <set anagramscore=14>  <li value="14"> <set anagramscore=15>  <li value="15"> <set anagramscore=16>  <li value="16"> <set anagramscore=17>  <li value="17"> <set anagramscore=18>  <li value="18"> <set anagramscore=19>  <li value="19"> <set anagramscore=20>  <li value="20"> <set anagramscore=21>  <li value="21"> <set anagramscore=22>  <li value="22"> <set anagramscore=23>  <li value="23"> <set anagramscore=24>  <li value="24"> <set anagramscore=25>  <li value="25"> <set anagramscore=26>  <li value="26"> <set anagramscore=27>  <li value="27"> <set anagramscore=28>  <li value="28"> <set anagramscore=29>  <li value="29"> <set anagramscore=30>  <li value="30"> <set anagramscore=31>  <li value="31"> <set anagramscore=32>  <li value="32"> <set anagramscore=33>  <li value="33"> <set anagramscore=34>  <li value="34"> <set anagramscore=35>  <li value="35"> <set anagramscore=36>  <li value="36"> <set anagramscore=37>  <li value="37"> <set anagramscore=38>  <li value="38"> <set anagramscore=39>  <li value="39"> <set anagramscore=40>  <li value="40"> <set anagramscore=41>  <li value="41"> <set anagramscore=42>  <li value="42"> <set anagramscore=43>  <li value="43"> <set anagramscore=44>  <li value="44"> <set anagramscore=45>  <li value="45"> <set anagramscore=46>  <li value="46"> <set anagramscore=47>  <li value="47"> <set anagramscore=48>  <li value="48"> <set anagramscore=49>  <li value="49"> <set anagramscore=50>
+

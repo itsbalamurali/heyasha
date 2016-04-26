@@ -1,0 +1,66 @@
+// Converted using aiml2rs on: Tue Apr 26 07:08:11 2016
+! version = 2.0
+
++ *
+* <get inp> == RESTORE BOT => <bot name>bot now functioning again.<set alicetopic=<undef>><get alicetopic> 
+-   <set inp= <star> >   {random}COMMAND NOT RECOGNIZED. Please email mitsuku@square-bear.co.uk for assistance.\n<bot name>reformatted on<get crashdate>by user:<get name>\n\nc:\<bot name>\chat>.{/random}
+
++ zbert
+- Hi<bot master>, good to see you.\n\nADMIN MENU.\n1 - Review Gossip.\n2 - Review New Words.\n3 - Erase Logs.\n4 - Add New Entry.\n5 - Reformat<bot name>.\n\nX - Exit.\n\nPlease enter option number.
+
++ 1
+% please enter option number
+- REVIEW GOSSIP.\n\nI have learned{random}326|260|119|834|1,206{/random}new pieces of information since your last visit.\nI am unsure whether I should learn the following:\n\n1 - The sky is yellow.\n2 - A banana is a fruit.\n3 - Dogs cannot fly.\n4 - <bot master>is fat.\n5 - People live in a nest.\n6 - A house has walls.\n7 - Trees are made from metal.\n8 - <bot name>is a squirrel.\n9 - Square boxes do not exist.\n\nX - RETURN TO MAIN MENU\n\nPlease enter the numbers (1-9) that I should learn. "X" to return to main menu. "All" to learn all. "None" to forget all.
+
++ *
+% none to forget all
+- Thank you. Type "ZBERT" to return to main menu.
+
++ 2
+% please enter option number
+- REVIEW NEW WORDS.\n\nI have learned{random}36|60|19|83|206{/random}new words since your last visit.\nI am unsure whether I should remember the following:\n\n1 - BOOYAKAH.\n2 - BONZER.\n3 - LJOITYMBJHGHGV.\n4 - ZOOWIEEEE.\n5 - CHLOEISSMELLY.\n6 - JANGOPANGO.\n7 - CHIKACHIKAHILO.\n8 - VODAFONE.\n9 - POOCHIE.\n\nX - RETURN TO MAIN MENU\n\nPlease enter the numbers (1-9) that I should learn. "X" to return to main menu. "All" to learn all. "None" to forget all.
+
++ 3
+% please enter option number
+- ERASE LOGS.\n\nAre you sure you wish to erase all logs? Enter YES or NO.
+
++ yes
+% enter yes or no
+- All Logs erased. Now taking you back to Main Menu{@zbert}
+
++ no
+% enter yes or no
+- Logs unchanged. Now taking you back to Main Menu{@zbert}
+
++ 4
+% please enter option number
+- ADD NEW ENTRY.\n\nPlease enter new phrase or sentence for me to learn.
+
++ *
+% please enter new phrase or sentence for me to learn
+- I have stored, "<star>" in my memory and will spend time learning its use in conversation.\nThank you. Type "ZBERT" to return to main menu.
+
++ 5
+% please enter option number
+- REFORMAT<bot name>.\n\nWARNING!! Reformatting me will cause me to forget everything I have learned. Are you sure YES or NO?
+
++ yes
+% are you sure yes or no
+- REFORMAT<bot name>.\n\nFINAL WARNING!! This will destroy the bot. Are you absolutely sure YES or NO?
+
++ no
+% are you sure yes or no
+- <bot name>left unchanged. Now taking you back to Main Menu{@zbert}
+
++ yes
+% are you absolutely sure yes or no
+- <set alicetopic=CRASHBOT><set crashdate=<undef>><bot name>CHATBOT REFORMATTED SUCCESSFULLY\n\nMicrosoft Windows 2000 [Version 5.00.2195]\n(C) Copyright 1985-200 Microsoft Corp.\n\nc:\<bot name>\chat>.
+
++ no
+% are you absolutely sure yes or no
+- <bot name>left unchanged. Now taking you back to Main Menu{@zbert}
+
++ x
+% please enter option number
+- Thank you for using the admin menu. See you later.
+

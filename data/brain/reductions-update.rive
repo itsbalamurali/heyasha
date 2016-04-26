@@ -1,0 +1,15 @@
+// Converted using aiml2rs on: Tue Apr 26 07:08:08 2016
+! version = 2.0
+
++ * you know
+- {@you know} <@>
+
++ * i thought
+- {@i thought} <@>
+
++ i am * years old i *
+- {@i am <star> years old}{@i <star2>}
+
++ * for me
+- {@for me} {@<star>}
+

@@ -1,0 +1,116 @@
+// Converted using aiml2rs on: Tue Apr 26 07:07:38 2016
+! version = 2.0
+
++ learn my * are *
+- {@xlearnfact} Ok I will learn that your <star> are <star2> .{@xeducate what are xsplit my <star> xsplit <star2> }{@xeducate who are xsplit my <star> xsplit <star2> }{@xeducate where are xsplit my <star> xsplit <star2> }{@xeducate what _ are xsplit my <star> xsplit <star2> }{@xeducate what is xsplit my <star> xsplit <star2> }{@xeducate who is xsplit my <star> xsplit <star2> }{@xeducate where is xsplit my <star> xsplit <star2> }{@xeducate what _ is xsplit my <star> xsplit <star2> }
+
++ learn my * is *
+- {@xlearnfact} Ok I will learn that your <star> is <star2> .{@xeducate what is xsplit my <star> xsplit <star2> }{@xeducate who is xsplit my <star> xsplit <star2> }{@xeducate where is xsplit my <star> xsplit <star2> }{@xeducate what _ is xsplit my <star> xsplit <star2> }
+
++ my * are *
+- {@xlearnfact} Ok I will learn that your <star> are <star2> .{@xeducate what are xsplit my <star> xsplit <star2> }{@xeducate who are xsplit my <star> xsplit <star2> }{@xeducate where are xsplit my <star> xsplit <star2> }{@xeducate what _ are xsplit my <star> xsplit <star2> }{@xeducate what is xsplit my <star> xsplit <star2> }{@xeducate who is xsplit my <star> xsplit <star2> }{@xeducate where is xsplit my <star> xsplit <star2> }{@xeducate what _ is xsplit my <star> xsplit <star2> }
+
++ my * is *
+- {@xlearnfact} Ok I will learn that your <star> is <star2> .{@xeducate what is xsplit my <star> xsplit <star2> }{@xeducate who is xsplit my <star> xsplit <star2> }{@xeducate where is xsplit my <star> xsplit <star2> }{@xeducate what _ is xsplit my <star> xsplit <star2> }
+
++ learn * means *
+- {@xlearnfact} Ok I will learn that <star> is <star2> .{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ learn * is *
+- {@xlearnfact} Ok I will learn that <star> is <star2> .{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ learn * was *
+- {@xlearnfact} Ok I will learn that <star> was <star2> .{@xeducate what was xsplit <star> xsplit <star2> }{@xeducate where was xsplit <star> xsplit <star2> }{@xeducate who was xsplit <star> xsplit <star2> }{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ was xsplit <star> xsplit <star2> }
+
++ learn * has *
+- {@xlearnfact} Ok I will learn that <star> has <star2> .{@xeducate what has xsplit <star> xsplit <star2> }{@xeducate where has xsplit <star> xsplit <star2> }{@xeducate who has xsplit <star> xsplit <star2> }{@xeducate what does xsplit <star> xsplit have xsplit <star2> }
+
++ my * has *
+- {@xlearnfact} Ok I will learn that your <star> has <star2> .{@xeducate what has xsplit my <star> xsplit <star2> }{@xeducate where has xsplit my <star> xsplit <star2> }{@xeducate who has xsplit my <star> xsplit <star2> }{@xeducate what does xsplit my <star> xsplit have xsplit <star2> }
+
++ learn my * has *
+- {@xlearnfact} Ok I will learn that your <star> has <star2> .{@xeducate what has xsplit my <star> xsplit <star2> }{@xeducate where has xsplit my <star> xsplit <star2> }{@xeducate who has xsplit my <star> xsplit <star2> }{@xeducate what does xsplit my <star> xsplit have xsplit <star2> }
+
++ learn * are *
+- {@xlearnfact} Ok I will learn that <star> are <star2> .{@xeducate what are xsplit <star> xsplit <star2> }{@xeducate where are xsplit <star> xsplit <star2> }{@xeducate who are xsplit <star> xsplit <star2> }{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducate what _ are xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ * is going *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is going xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit going xsplit <star2> }{@xeducate who is going xsplit <star> xsplit <star2> }
+
++ * means *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ * is an *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what is an xsplit <star> xsplit <star2> }{@xeducate where is an xsplit <star> xsplit <star2> }{@xeducate who is an xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }
+
++ * is a *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what is a xsplit <star> xsplit <star2> }{@xeducate where is a xsplit <star> xsplit <star2> }{@xeducate who is a xsplit <star> xsplit <star2> }{@xeducate what _ is a xsplit <star> xsplit <star2> }
+
++ * is the *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is the xsplit <star> xsplit <star2> }{@xeducate where is the xsplit <star> xsplit <star2> }{@xeducate who is the xsplit <star> xsplit <star2> }{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }
+
++ an * is *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducate what is an xsplit <star> xsplit <star2> }{@xeducate where is an xsplit <star> xsplit <star2> }{@xeducate who is an xsplit <star> xsplit <star2> }{@xeducate what _ is an xsplit <star> xsplit <star2> }
+
++ a * is *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what is a xsplit <star> xsplit <star2> }{@xeducate where is a xsplit <star> xsplit <star2> }{@xeducate who is a xsplit <star> xsplit <star2> }{@xeducate what _ is a xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }
+
++ * is *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ * was *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what was xsplit <star> xsplit <star2> }{@xeducate where was xsplit <star> xsplit <star2> }{@xeducate who was xsplit <star> xsplit <star2> }{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducate what _ was xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ an * has *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what has xsplit <star> xsplit <star2> }{@xeducate where has xsplit <star> xsplit <star2> }{@xeducate who has xsplit <star> xsplit <star2> }{@xeducate what does an xsplit <star> xsplit have xsplit <star2> }
+
++ a * has *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what has xsplit <star> xsplit <star2> }{@xeducate where has xsplit <star> xsplit <star2> }{@xeducate who has xsplit <star> xsplit <star2> }{@xeducate what does a xsplit <star> xsplit have xsplit <star2> }
+
++ * has *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what has xsplit <star> xsplit <star2> }{@xeducate where has xsplit <star> xsplit <star2> }{@xeducate who has xsplit <star> xsplit <star2> }{@xeducate what does xsplit <star> xsplit have xsplit <star2> }
+
++ * are *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what are xsplit <star> xsplit <star2> }{@xeducate where are xsplit <star> xsplit <star2> }{@xeducate who are xsplit <star> xsplit <star2> }{@xeducate what is xsplit <star> xsplit <star2> }{@xeducate who is xsplit <star> xsplit <star2> }{@xeducate where is xsplit <star> xsplit <star2> }{@xeducate what _ is xsplit <star> xsplit <star2> }{@xeducatelang <star> xsplit <star2> xsplit a language xsplit}
+
++ * will be *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what will be xsplit <star> xsplit <star2> }{@xeducate what will xsplit <star> xsplit be xsplit <star2> }{@xeducate where will xsplit <star> xsplit be xsplit <star2> }{@xeducate who will be xsplit <star> xsplit <star2> }
+
++ learn * will be *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what will be xsplit <star> xsplit <star2> }{@xeducate what will xsplit <star> xsplit be xsplit <star2> }{@xeducate where will xsplit <star> xsplit be xsplit <star2> }{@xeducate who will be xsplit <star> xsplit <star2> }
+
++ * said *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what did xsplit <star> xsplit say xsplit <star2> }{@xeducate who said xsplit <star> xsplit <star2> }
+
++ learn * said *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what did xsplit <star> xsplit say xsplit <star2> }{@xeducate who said xsplit <star> xsplit <star2> }
+
++ * is from *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where is xsplit <star> xsplit from xsplit <star2> }{@xeducate who is from xsplit <star> xsplit <star2> }{@xeducate what is from xsplit <star> xsplit <star2> }
+
++ learn * is from *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where is xsplit <star> xsplit from xsplit <star2> }{@xeducate who is from xsplit <star> xsplit <star2> }
+
++ a * lives in *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where does a xsplit <star> xsplit live xsplit <star2> }{@xeducate who lives in xsplit <star> xsplit <star2> }{@xeducate what lives in xsplit <star> xsplit <star2> }
+
++ an * lives in *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where does an xsplit <star> xsplit live xsplit <star2> }{@xeducate who lives in xsplit <star> xsplit <star2> }{@xeducate what lives in xsplit <star> xsplit <star2> }{@xeducate what _ lives in xsplit <star> xsplit <star2> }
+
++ * lives in *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where does xsplit <star> xsplit live xsplit <star2> }{@xeducate who lives in xsplit <star> xsplit <star2> }{@xeducate what lives in xsplit <star> xsplit <star2> }{@xeducate what _ lives in xsplit <star> xsplit <star2> }
+
++ learn * lives in *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate where does xsplit <star> xsplit live xsplit <star2> }{@xeducate who lives in xsplit <star> xsplit <star2> }{@xeducate what lives in xsplit <star> xsplit <star2> }{@xeducate what _ lives in xsplit <star> xsplit <star2> }
+
++ learn * means * in *
+- {@xlearnfact} Ok I will add that fact about<person>to my database.{@xeducate what is xsplit <star> xsplit <star2> in <star3> }{@xeducate where is xsplit <star> xsplit <star2> in <star3> }{@xeducate who is xsplit <star> xsplit <star2> in <star3> }{@xeducate what _ is xsplit <star> xsplit <star2> in <star3> }{@xeducatelang <star> xsplit <star2> xsplit <star3> xsplit}
+
++ * means * in *
+-  {@learn<star>means <star2> in <star3> } 
+
++ * in * means *
+-  {@<star>means <star3> in <star2> } 
+
++ xlearnfact
+
