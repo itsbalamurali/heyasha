@@ -3,20 +3,19 @@ package engine
 import (
 	"github.com/aichaos/rivescript-go"
 	"fmt"
-	"go/build"
+	"path/filepath"
 )
 
 //  Reply from Brain.
 func BotReply(user_id string, usersay string) string {
 	base := rivescript.New()
 	base.UTF8 = true
-	p, err := build.Default.Import("github.com/itsbalamurali/heyasha/data/brain", "", build.FindOnly)
-	if err != nil {
-		// handle error
-		fmt.Printf("Unable to locate package")
+	path, notfound_err := filepath.Abs("./data/brain")
+	if notfound_err != nil {
+		fmt.Println(notfound_err)
 	}
-	loaderr := base.LoadDirectory(p.Dir)
-	if loaderr != nil {
+	err := base.LoadDirectory(path)
+	if err != nil {
 		fmt.Printf("Error loading from directory: %s", err)
 	}
 	base.SortReplies()
