@@ -15,6 +15,8 @@ import (
 	"net/http"
 	"os"
 	"runtime"
+	"github.com/itsbalamurali/heyasha/shared/datatypes"
+	"encoding/json"
 )
 
 func main() {
@@ -32,7 +34,9 @@ func main() {
 
 	//Hello!!
 	router.GET("/", func(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
-		fmt.Fprint(w, "Welcome!\n")
+		//w.WriteHeader(http.StatusOK)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(datatypes.ApiDefaultResponse{Version:"1.0",Message:"Hello, I'm listening!"})
 	})
 	//Core REST API routes
 	router.POST("/speech", controllers.AudioUpload)    //speech recognition

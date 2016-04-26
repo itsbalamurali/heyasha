@@ -39,7 +39,7 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		//fmt.Printf("Bot Username: %s\n", api.Username)
 		*/
 		// talk to api and send back response
-		ai_msg := engine.Brain().Reply(strconv.Itoa(msg.Chat.ID), *msg.Text)
+		ai_msg := engine.BotReply(strconv.Itoa(msg.Chat.ID), *msg.Text)
 		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), ai_msg).Send()
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)
@@ -54,7 +54,7 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	}
 
 	//log.Printf("Json Received: %s\n", update)
-	w.Header().Set("Content-Type", "application/json")
+	//w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(200)
 	fmt.Fprintf(w, "%s", "Webhook Success!!")
 

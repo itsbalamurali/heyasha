@@ -3,30 +3,23 @@ package engine
 import (
 	"github.com/aichaos/rivescript-go"
 	"fmt"
+	"go/build"
 )
 
-type BotBrain struct {
-	bot     *rivescript.RiveScript
-}
-
-// New returns a new Brain.
-func Brain() *BotBrain {
+//  Reply from Brain.
+func BotReply(user_id string, usersay string) string {
 	base := rivescript.New()
 	base.UTF8 = true
-	return &BotBrain{
-		bot:  base,
-	}
-}
-
-func (brain *BotBrain) Reply(user_id string, usersay string) string {
-
-	// Load a directory full of RiveScript documents (.rive files)
-	err := brain.bot.LoadDirectory("../../data/brain")
+	p, err := build.Default.Import("github.com/itsbalamurali/heyasha/data/brain", "", build.FindOnly)
 	if err != nil {
+		// handle error
+		fmt.Printf("Unable to locate package")
+	}
+	loaderr := base.LoadDirectory(p.Dir)
+	if loaderr != nil {
 		fmt.Printf("Error loading from directory: %s", err)
 	}
-	brain.bot.SortReplies()
-	reply := brain.bot.Reply(user_id,usersay)
-
+	base.SortReplies()
+	reply := base.Reply(user_id,usersay)
 	return reply
 }
