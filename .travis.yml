@@ -20,3 +20,4 @@ install:
 
 notifications:
   slack: heyasha:m1OwwwmiydtXPLKeUY1jwGzd
+  email: false
