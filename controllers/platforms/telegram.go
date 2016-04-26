@@ -32,19 +32,13 @@ func TelegramBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 		if err != nil {
 			log.Fatal(err)
 		}
-		/*
-		// just to show its working
-		//fmt.Printf("User ID: %d\n", api.ID)
-		//fmt.Printf("Bot Name: %s\n", api.Name)
-		//fmt.Printf("Bot Username: %s\n", api.Username)
-		*/
-		// talk to api and send back response
+
 		ai_msg := engine.BotReply(strconv.Itoa(msg.Chat.ID), *msg.Text)
-		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), ai_msg).Send()
+		_, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), ai_msg).Send()
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)
 		}
-		fmt.Printf("->%d, To:\t%s, Text: %s\n", outMsg.Message.ID, outMsg.Message.Chat, *outMsg.Message.Text)
+		//fmt.Printf("->%d, To:\t%s, Text: %s\n", outMsg.Message.ID, outMsg.Message.Chat, *outMsg.Message.Text)
 	case telegram.InlineQueryUpdate:
 		fmt.Println("Ignoring received inline query: ", update.InlineQuery.Query)
 	case telegram.ChosenInlineResultUpdate:
