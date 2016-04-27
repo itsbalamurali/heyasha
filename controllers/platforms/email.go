@@ -1,9 +1,10 @@
 package platforms
 
 import (
-	"net/http"
 	"github.com/julienschmidt/httprouter"
+	"net/http"
 )
 
 func EmailBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+	json.NewDecoder(r.Body).Decode(update)
 }

@@ -1,7 +1,7 @@
 web:
   build: .
-  command: 'bash -c ''bot'''
-  working_dir: \app\user
+  command: 'bash -c ''heyasha'''
+  working_dir: \go\src
   environment:
     PORT: 8080
     DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'

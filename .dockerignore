@@ -1,0 +1,11 @@
+.idea
+bin
+.gitattributes
+.gitignore
+.travis.yml
+app.json
+docker-compose.yml
+Procfile
+wercker.yml
+README.md
+core/engine/stt
