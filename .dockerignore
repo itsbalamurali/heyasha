@@ -3,7 +3,6 @@ bin
 .gitattributes
 .gitignore
 .travis.yml
-app.json
 docker-compose.yml
 Procfile
 wercker.yml

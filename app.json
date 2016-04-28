@@ -1,8 +1,0 @@
-{
-  "name": "Hey Asha!",
-  "description": "Hey Asha App container info for heroku-docker",
-  "image": "itsbalamurali/heyasha",
-  "addons": [
-    "heroku-postgresql"
-  ]
-}

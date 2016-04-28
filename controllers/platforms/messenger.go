@@ -3,11 +3,12 @@ package platforms
 import (
 	"net/http"
 	"github.com/julienschmidt/httprouter"
-	"fmt"
+	log "github.com/Sirupsen/logrus"
 	"encoding/json"
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"strconv"
 	"github.com/itsbalamurali/heyasha/core/engine"
+	"fmt"
 )
 
 func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
@@ -25,7 +26,7 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 	var msg = messenger.Receive{}
 	err := json.NewDecoder(r.Body).Decode(&msg)
 	if err != nil {
-		fmt.Printf("Something wrong: %s\n", err.Error())
+		log.Errorln("Something wrong: %s\n", err.Error())
 		return
 	}
 

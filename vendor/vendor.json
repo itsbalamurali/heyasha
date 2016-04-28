@@ -15,6 +15,12 @@
 			"revisionTime": "2016-03-09T02:19:12Z"
 		},
 		{
+			"checksumSHA1": "4VNYIr1c9GYIo0tToZdpOGLm/YQ=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "cd7d1bbe41066b6c1f19780f895901052150a575",
+			"revisionTime": "2016-04-25T09:32:37Z"
+		},
+		{
 			"checksumSHA1": "tG2mxHMcY5zzNwGYThQwNs5kiKY=",
 			"path": "github.com/aichaos/rivescript-go",
 			"revision": "66036bf91f92e74cb112721ccea630a9607ef1cc",
@@ -73,6 +79,12 @@
 			"path": "golang.org/x/net/publicsuffix",
 			"revision": "fb93926129b8ec0056f2f458b1f519654814edf0",
 			"revisionTime": "2016-04-12T22:48:50Z"
+		},
+		{
+			"checksumSHA1": "c8iMfP5+K3GEg26HJiO0OVVLiM4=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "f64b50fbea64174967a8882830d621a18ee1548e",
+			"revisionTime": "2016-04-14T13:31:22Z"
 		},
 		{
 			"checksumSHA1": "lzxr2rdWylya6Z5Ft4oA0Fvr4TU=",

@@ -10,7 +10,7 @@ import (
 
 const MAX_MEMORY = 1 * 1024 * 1024
 
-func AudioUpload(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func SpeechProcess(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
 	//w.Header().Set("Connection", "Keep-Alive")
 	//w.Header().Set("Transfer-Encoding", "chunked")

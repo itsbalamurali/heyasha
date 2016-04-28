@@ -3,25 +3,35 @@
 //Unauthorized copying of this file, via any medium is strictly prohibited
 //Proprietary and confidential
 //Written by Balamurali Pandranki <balamurali@live.com>, 25/4/2016 4:27 PM
-
 package main
 
 import (
-	"fmt"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
 	"github.com/julienschmidt/httprouter"
-	"log"
 	"net/http"
 	"os"
 	"runtime"
 	"github.com/itsbalamurali/heyasha/shared/datatypes"
 	"encoding/json"
+	log "github.com/Sirupsen/logrus"
 )
 
 func main() {
 	// maximize CPU usage for maximum performance
 	runtime.GOMAXPROCS(runtime.NumCPU())
+
+	//Init Logger
+	log.SetFormatter(&log.JSONFormatter{})
+	log.SetOutput(os.Stderr)
+
+	env := os.Getenv("ENV")
+	if *env == "production" {
+		log.SetLevel(log.WarnLevel)
+	} else {
+		log.SetLevel(log.DebugLevel)
+	}
+	log.Infoln("Starting server...")
 
 	//Port to Bind server to
 	port := os.Getenv("PORT")
@@ -39,7 +49,7 @@ func main() {
 		json.NewEncoder(w).Encode(datatypes.ApiDefaultResponse{Version:"1.0",Message:"Hello, I'm listening!"})
 	})
 	//Core REST API routes
-	router.POST("/speech", controllers.AudioUpload)    //speech recognition
+	router.POST("/speech", controllers.SpeechProcess)    //speech recognition
 	router.GET("/message", controllers.Chat)           //chat with bot
 	router.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
 	router.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
@@ -62,6 +72,6 @@ func main() {
 	router.POST("/chat/email", platforms.EmailBot)         //Email Bot
 
 	// Start server
-	fmt.Println("Hi, I am running on port: " + port + " !!")
-	log.Fatal(http.ListenAndServe(":"+port, router))
+	log.Infoln("Hi, I am running on port: " + port + " !!")
+	log.Fatalln(http.ListenAndServe(":"+port, router))
 }
