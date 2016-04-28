@@ -5,11 +5,11 @@
 //Written by Balamurali Pandranki <balamurali@live.com>, 25/4/2016 4:30 PM
 package main
 
-/*import (
+import (
 	"os"
 	"github.com/BurntSushi/toml"
-	"log"
-)*/
+	log "github.com/Sirupsen/logrus"
+)
 
 // Info from config file
 type Config struct {
@@ -19,7 +19,7 @@ type Config struct {
 	Metadata  string
 	Index     string
 }
-/*
+
 // Reads info from config file
 func ReadConfig() Config {
 	var configfile = ""//flag.Configfile
@@ -35,4 +35,3 @@ func ReadConfig() Config {
 	//log.Print(config.Index)
 	return config
 }
-*/

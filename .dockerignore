@@ -7,4 +7,4 @@ docker-compose.yml
 Procfile
 wercker.yml
 README.md
-core/engine/stt
+#core/engine/stt

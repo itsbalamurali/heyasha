@@ -1,1 +1,2 @@
 ./data/pocketsphinx/*.tar.gz filter=lfs diff=lfs merge=lfs -text
+./data/stt/models/* filter=lfs diff=lfs merge=lfs -text

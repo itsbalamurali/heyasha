@@ -4,11 +4,19 @@ import (
 	"net/http"
 	"fmt"
 	"io/ioutil"
-	"log"
+	log "github.com/Sirupsen/logrus"
 	"github.com/julienschmidt/httprouter"
+	"github.com/shunsukeaihara/sphinx-httpserver/sphinx"
+	"golang.org/x/net/context"
+	"encoding/json"
+	"errors"
+	ps "github.com/itsbalamurali/heyasha/core/engine/stt"
+	"github.com/unrolled/render"
 )
 
-const MAX_MEMORY = 1 * 1024 * 1024
+//const MAX_MEMORY = 1 * 1024 * 1024
+
+var renderer = render.New(render.Options{})
 
 func SpeechProcess(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
@@ -40,4 +48,68 @@ func SpeechProcess(w http.ResponseWriter, r *http.Request, ps httprouter.Params)
 			ioutil.WriteFile(path, buf, os.ModePerm)
 		}
 	}*/
+}
+
+type Rsponse struct {
+	Response ps.Result `json:"response"`
+}
+
+func WriteJsonErrorResponse(w http.ResponseWriter, message string, code int) {
+	renderer.JSON(w, code, map[string]string{
+		"message": message,
+	})
+}
+
+func getSphinx(ctx context.Context) (*sphinx.PsInstance, string, string, error) {
+	lang := sphinx.LangFromContext(ctx)
+	sp, ok := sphinx.FromContext(ctx)
+	if !ok {
+		log.Errorln("speech recognition engine is not ready")
+		return nil, lang, "speech recognition engine is not ready", errors.New("speech recognition engine is not ready")
+	}
+	ps, err := sp.GetSphinxFromLanguage(lang)
+	if err != nil {
+		log.Errorln(err)
+		return nil, lang, "invalid accept-language", err
+
+	}
+	return ps, lang, "", nil
+}
+
+func dictationHandler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
+
+	ps, lang, errmsg, err := getSphinx(ctx)
+	if err != nil {
+		WriteJsonErrorResponse(w, errmsg, 500)
+		return
+	}
+	log.WithFields(log.Fields{
+		"lang": lang,
+	}).Info()
+
+	log.Infoln(lang)
+	ps.Lock()
+	defer ps.Unlock()
+
+	buf := make([]byte, 1024)
+	ps.StartUtt()
+	for {
+		size, err := r.Body.Read(buf)
+		if err != nil {
+			break
+		}
+		ps.ProcessRaw(buf[:size], false, false)
+	}
+	ps.EndUtt()
+	res, err := ps.GetHyp(false)
+	if err != nil {
+		WriteJsonErrorResponse(w, "recognition error", 500)
+		return
+	}
+	bytes, err := json.Marshal(Rsponse{res})
+	if err != nil {
+		WriteJsonErrorResponse(w, "error", 500)
+	}
+	renderer.JSON(w, http.StatusOK, bytes)
+	return
 }

@@ -25,8 +25,8 @@ func main() {
 	log.SetFormatter(&log.JSONFormatter{})
 	log.SetOutput(os.Stderr)
 
-	env := os.Getenv("ENV")
-	if *env == "production" {
+	app_env := os.Getenv("ENV")
+	if app_env == "production" {
 		log.SetLevel(log.WarnLevel)
 	} else {
 		log.SetLevel(log.DebugLevel)
