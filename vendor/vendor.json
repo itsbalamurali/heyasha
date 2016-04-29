@@ -103,6 +103,30 @@
 			"revisionTime": "2016-04-14T13:31:22Z"
 		},
 		{
+			"checksumSHA1": "b4IcLhsmpoUaNiqOsBvb0L8FGGA=",
+			"path": "golang.org/x/text/internal/gen",
+			"revision": "3100578f0f8093e37883ba48c9187fe51367ad05",
+			"revisionTime": "2016-04-17T05:19:09Z"
+		},
+		{
+			"checksumSHA1": "hyNCcTwMQnV6/MK8uUW9E5H0J0M=",
+			"path": "golang.org/x/text/internal/tag",
+			"revision": "3100578f0f8093e37883ba48c9187fe51367ad05",
+			"revisionTime": "2016-04-17T05:19:09Z"
+		},
+		{
+			"checksumSHA1": "moIdN+sCVUh01nbgFALhZpLYhqo=",
+			"path": "golang.org/x/text/language",
+			"revision": "3100578f0f8093e37883ba48c9187fe51367ad05",
+			"revisionTime": "2016-04-17T05:19:09Z"
+		},
+		{
+			"checksumSHA1": "5mvOiysjF+twWH6KlLsKcm8AdFw=",
+			"path": "golang.org/x/text/unicode/cldr",
+			"revision": "3100578f0f8093e37883ba48c9187fe51367ad05",
+			"revisionTime": "2016-04-17T05:19:09Z"
+		},
+		{
 			"checksumSHA1": "lzxr2rdWylya6Z5Ft4oA0Fvr4TU=",
 			"path": "gopkg.in/bsm/ratelimit.v1",
 			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",

@@ -6,12 +6,12 @@ import (
 	"io/ioutil"
 	log "github.com/Sirupsen/logrus"
 	"github.com/julienschmidt/httprouter"
-	"github.com/shunsukeaihara/sphinx-httpserver/sphinx"
 	"golang.org/x/net/context"
 	"encoding/json"
 	"errors"
 	ps "github.com/itsbalamurali/heyasha/core/engine/stt"
 	"github.com/unrolled/render"
+	"github.com/itsbalamurali/heyasha/controllers/stt"
 )
 
 //const MAX_MEMORY = 1 * 1024 * 1024
@@ -60,9 +60,9 @@ func WriteJsonErrorResponse(w http.ResponseWriter, message string, code int) {
 	})
 }
 
-func getSphinx(ctx context.Context) (*sphinx.PsInstance, string, string, error) {
-	lang := sphinx.LangFromContext(ctx)
-	sp, ok := sphinx.FromContext(ctx)
+func getSphinx(ctx context.Context) (*ps.PsInstance, string, string, error) {
+	lang := stt.LangFromContext(ctx)
+	sp, ok := ps.FromContext(ctx)
 	if !ok {
 		log.Errorln("speech recognition engine is not ready")
 		return nil, lang, "speech recognition engine is not ready", errors.New("speech recognition engine is not ready")

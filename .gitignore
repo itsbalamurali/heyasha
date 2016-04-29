@@ -22,6 +22,6 @@ _testmain.go
 *.exe
 *.test
 *.prof
-core/engine/stt/*
+#core/engine/stt/*
 .idea
 bin/
