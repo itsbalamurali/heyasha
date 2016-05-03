@@ -7,11 +7,17 @@ import (
 	"testing"
 )
 
+const (
+	hmm_path, hmmerr  = filepath.Abs("data/stt/models/en-us/en-us")
+	dict_path, dicterr = filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict")
+	lm_path, lmerr   = filepath.Abs("data/stt/models/en-us/en-us.lm.bin")
+)
+
 func TestProcessUTT(t *testing.T) {
 	conf := Config{
-		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
-		Lm:          filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
+		Hmm:         hmm_path,
+		Dict:        dict_path,
+		Lm:          lm_path,
 		DisableInfo: true,
 	}
 
@@ -40,9 +46,9 @@ func TestProcessUTT(t *testing.T) {
 
 func TestProcessRaw(t *testing.T) {
 	conf := Config{
-		Hmm:  filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict: filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
-		Lm:   filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
+		Hmm:  hmm_path,
+		Dict: dict_path,
+		Lm:   lm_path,
 		//Beam:        FloatParam(1e-400),
 		//Wbeam:       FloatParam(1e-400),
 		//Bestpath:    "no",
@@ -99,10 +105,11 @@ func TestProcessRaw(t *testing.T) {
 }
 
 func TestProcessRawIncremental(t *testing.T) {
+
 	conf := Config{
-		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
-		Lm:          filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
+		Hmm:         hmm_path,
+		Dict:        dict_path,
+		Lm:          lm_path,
 		DisableInfo: true,
 	}
 	ps := NewPocketSphinx(conf)
@@ -136,8 +143,8 @@ func TestProcessRawIncremental(t *testing.T) {
 
 func TestWordSpottingUtt(t *testing.T) {
 	conf := Config{
-		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Hmm:         hmm_path,
+		Dict:        dict_path,
 		Keyphrase:   "forward",
 		DisableInfo: true,
 	}
@@ -160,8 +167,8 @@ func TestWordSpottingUtt(t *testing.T) {
 }
 func TestWordSpotting(t *testing.T) {
 	conf := Config{
-		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Hmm:         hmm_path,
+		Dict:        dict_path,
 		Keyphrase:   "forward",
 		DisableInfo: true,
 	}
@@ -197,10 +204,12 @@ func TestWordSpotting(t *testing.T) {
 }
 
 func TestEndUttErr(t *testing.T) {
-	conf := Config{Hmm: filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+	conf := Config{
+		Hmm:         hmm_path,
+		Dict:        dict_path,
 		Keyphrase:   "forward",
-		DisableInfo: true}
+		DisableInfo: true,
+	}
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
 	if ps.EndUtt() == nil {
@@ -210,8 +219,8 @@ func TestEndUttErr(t *testing.T) {
 
 func TestStartUttErr(t *testing.T) {
 	conf := Config{
-		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
-		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Hmm:         hmm_path,
+		Dict:        dict_path,
 		Keyphrase:   "forward",
 		DisableInfo: true,
 	}
