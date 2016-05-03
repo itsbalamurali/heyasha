@@ -8,12 +8,22 @@ go:
 #services:
   #- docker
 
-#before_install:
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -y build-essential swig sox bison curl python-dev pkg-config libsasl2-dev
+  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig && export LD_LIBRARY_PATH=/usr/local/lib
+
   #- docker build -t itsbalamurali/heyasha .
   #- echo "machine github.com login $GITHUB_AUTH_TOKEN" > ~/.netrc
   #- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   #- docker push itsbalamurali/heyasha
 install:
+  - tar -xzvf ./data/pocketsphinx/sphinxbase-5prealpha.tar.gz
+  - cd sphinxbase-5prealpha && ./autogen.sh && ./configure && make && sudo make install
+  - cd ..
+  - tar -xzvf ./data/pocketsphinx/pocketsphinx-5prealpha.tar.gz
+  - cd pocketsphinx-5prealpha && ./configure && make && sudo make install
+  - cd ..
   - go get -u github.com/kardianos/govendor
   - govendor sync
   - go get -t ./...
