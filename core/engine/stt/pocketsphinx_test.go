@@ -3,19 +3,27 @@ package stt
 import (
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"testing"
 )
 
 func TestProcessUTT(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
-		Lm:          "./models/en-us/en-us.lm.bin",
-		DisableInfo: true}
+	conf := Config{
+		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Lm:          filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
+		DisableInfo: true,
+	}
 
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
 	ps.StartStream()
-	dat, err := ioutil.ReadFile("./data/goforward.raw")
+	file, fileerr := filepath.Abs("data/stt/speech/goforward.raw")
+	if fileerr != nil {
+		t.Error(fileerr)
+		return
+	}
+	dat, err := ioutil.ReadFile(file)
 	results, err := ps.ProcessUtt(dat, 2, true)
 	if err != nil {
 		t.Error(err)
@@ -31,18 +39,25 @@ func TestProcessUTT(t *testing.T) {
 }
 
 func TestProcessRaw(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict: "./models/en-us/cmudict-en-us.dict",
-		Lm:   "./models/en-us/en-us.lm.bin",
+	conf := Config{
+		Hmm:  filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict: filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Lm:   filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
 		//Beam:        FloatParam(1e-400),
 		//Wbeam:       FloatParam(1e-400),
 		//Bestpath:    "no",
-		DisableInfo: true}
+		DisableInfo: true,
+	}
 
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
 	ps.StartStream()
-	dat, _ := ioutil.ReadFile("./data/something.raw")
+	file, fileerr := filepath.Abs("data/stt/speech/goforward.raw")
+	if fileerr != nil {
+		t.Error(fileerr)
+		return
+	}
+	dat, _ := ioutil.ReadFile(file)
 	err := ps.StartUtt()
 	if err != nil {
 		t.Error(err)
@@ -62,7 +77,7 @@ func TestProcessRaw(t *testing.T) {
 	if r.Text != "go somewhere and do something" {
 		t.Error("could not recognize", r.Text, r.Score)
 	}
-	dat, _ = ioutil.ReadFile("./data/goforward.raw")
+	dat, _ = ioutil.ReadFile(file)
 	err = ps.StartUtt()
 	if err != nil {
 		t.Error(err)
@@ -84,13 +99,20 @@ func TestProcessRaw(t *testing.T) {
 }
 
 func TestProcessRawIncremental(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
-		Lm:          "./models/en-us/en-us.lm.bin",
-		DisableInfo: true}
+	conf := Config{
+		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
+		Lm:          filepath.Abs("data/stt/models/en-us/en-us.lm.bin"),
+		DisableInfo: true,
+	}
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
-	file, _ := os.Open("./data/goforward.raw")
+	filepath, file_err := filepath.Abs("data/stt/speech/goforward.raw")
+	if file_err != nil {
+		t.Error(file_err)
+		return
+	}
+	file, _ := os.Open(filepath)
 	defer file.Close()
 	buf := make([]byte, 1024)
 	var lastr Result
@@ -113,14 +135,21 @@ func TestProcessRawIncremental(t *testing.T) {
 }
 
 func TestWordSpottingUtt(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
+	conf := Config{
+		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
 		Keyphrase:   "forward",
-		DisableInfo: true}
+		DisableInfo: true,
+	}
 
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
-	dat, _ := ioutil.ReadFile("./data/goforward.raw")
+	file, fileerr := filepath.Abs("data/stt/speech/goforward.raw")
+	if fileerr != nil {
+		t.Error(fileerr)
+		return
+	}
+	dat, _ := ioutil.ReadFile(file)
 	ps.StartUtt()
 	ps.ProcessRaw(dat, false, true)
 	ps.EndUtt()
@@ -130,13 +159,20 @@ func TestWordSpottingUtt(t *testing.T) {
 	}
 }
 func TestWordSpotting(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
+	conf := Config{
+		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
 		Keyphrase:   "forward",
-		DisableInfo: true}
+		DisableInfo: true,
+	}
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
-	file, _ := os.Open("./data/goforward.raw")
+	filepath, fileerr := filepath.Abs("data/stt/speech/goforward.raw")
+	if fileerr != nil {
+		t.Error(fileerr)
+		return
+	}
+	file, _ := os.Open(filepath)
 	defer file.Close()
 	c := 0
 	buf := make([]byte, 1024)
@@ -161,8 +197,8 @@ func TestWordSpotting(t *testing.T) {
 }
 
 func TestEndUttErr(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
+	conf := Config{Hmm: filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
 		Keyphrase:   "forward",
 		DisableInfo: true}
 	ps := NewPocketSphinx(conf)
@@ -173,10 +209,12 @@ func TestEndUttErr(t *testing.T) {
 }
 
 func TestStartUttErr(t *testing.T) {
-	conf := Config{Hmm: "./models/en-us/en-us",
-		Dict:        "./models/en-us/cmudict-en-us.dict",
+	conf := Config{
+		Hmm:         filepath.Abs("data/stt/models/en-us/en-us"),
+		Dict:        filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict"),
 		Keyphrase:   "forward",
-		DisableInfo: true}
+		DisableInfo: true,
+	}
 	ps := NewPocketSphinx(conf)
 	defer ps.Free()
 	if err := ps.StartUtt(); err != nil {
