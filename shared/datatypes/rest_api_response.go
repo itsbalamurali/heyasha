@@ -6,13 +6,13 @@
 package datatypes
 
 var (
-	ErrNotAcceptable        = &Error{"not_acceptable", 406, "Not Acceptable", "Accept header must be set to 'application/vnd.api+json'."}
-	ErrInternalServer       = &Error{"internal_server_error", 500, "Internal Server Error", "Something went wrong."}
+	ErrNotAcceptable  = &Error{"not_acceptable", 406, "Not Acceptable", "Accept header must be set to 'application/vnd.api+json'."}
+	ErrInternalServer = &Error{"internal_server_error", 500, "Internal Server Error", "Something went wrong."}
 )
 
 type ApiDefaultResponse struct {
 	Version string `json:"version"`
-	Message	string `json:"message"`
+	Message string `json:"message"`
 }
 
 type Errors struct {
@@ -25,4 +25,3 @@ type Error struct {
 	Title  string `json:"title"`
 	Detail string `json:"detail"`
 }
-

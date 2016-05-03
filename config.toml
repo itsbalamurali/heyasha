@@ -1,0 +1,39 @@
+#Environment Dev/Prod?
+environment = "dev"
+
+#Database Settings
+[database]
+	#Mongodb Settings
+	[database.mongodb]
+	dbhost = ""
+	dbport = ""
+	dbuser = ""
+	dbname = ""
+	dbpassword = ""
+	#MySql Settings
+	[database.mysql]
+	dbhost = ""
+	dbport = ""
+	dbuser = ""
+	dbname = ""
+	dbpassword = ""
+#SMTP email settings
+[email]
+
+#SMS settings
+[sms]
+
+#Google Cloud Bucket
+[google_cloud]
+	[google_cloud.storage]
+	bucket_name = ""
+
+#PocketSphinx Settings	
+[pocketsphinx]
+	#Language models
+    [pocketsphinx.en]
+        hmm= "path_to_hmm"
+        dic= "path_to_dic"
+        kws= "path_to_kws"
+        kws_threshold= "1e-60"
+        kws_plp= "1e-60"

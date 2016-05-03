@@ -1,21 +1,20 @@
 package controllers
 
 import (
-	"net/http"
-	"github.com/julienschmidt/httprouter"
+	"github.com/gin-gonic/gin"
 )
 
-func CreateUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func CreateUser(c *gin.Context) {
 }
 
-func LoginUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func LoginUser(c *gin.Context) {
 }
 
-func GetUserDetails(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func GetUserDetails(c *gin.Context) {
 }
 
-func UpdateUserDetails(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func UpdateUserDetails(c *gin.Context) {
 }
 
-func DeleteUser(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func DeleteUser(c *gin.Context) {
 }
