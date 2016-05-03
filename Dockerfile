@@ -5,6 +5,11 @@ RUN \
 apt-get update && \
 apt-get install -y build-essential swig sox bison curl python-dev pkg-config libsasl2-dev
 
+RUN \
+apt-get update && \
+apt-get install -y gcc automake autoconf libtool && \
+apt-get install -y swig python3-dev python3-numpy python3-scipy
+
 ENV LD_LIBRARY_PATH=/usr/local/lib
 ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
