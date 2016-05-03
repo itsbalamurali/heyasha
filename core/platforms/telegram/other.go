@@ -14,4 +14,3 @@ type file struct {
 	fileName  string
 	r         io.Reader
 }
-

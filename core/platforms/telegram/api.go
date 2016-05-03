@@ -316,4 +316,3 @@ func (api *TelegramBotAPI) send(s sendable) (resp *MessageResponse, err error) {
 	}
 	return resp, nil
 }
-

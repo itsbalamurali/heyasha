@@ -6,7 +6,6 @@ import (
 	"io"
 )
 
-
 // outgoingBase contains fields shared by most of the outgoing requests
 type outgoingBase struct {
 	api       *TelegramBotAPI
@@ -377,9 +376,9 @@ type ReplyMarkup interface {
 	replyMarkup()
 }
 
-func (ReplyKeyboardHide) replyMarkup() {}
+func (ReplyKeyboardHide) replyMarkup()   {}
 func (ReplyKeyboardMarkup) replyMarkup() {}
-func (ForceReply) replyMarkup() {}
+func (ForceReply) replyMarkup()          {}
 
 // ForceReply represents the values sent by a bot so that clients will be presented with a forced reply, see https://core.telegram.org/bots/api#forcereply
 type ForceReply struct {
@@ -407,8 +406,8 @@ type ParseMode string
 //ParseModes
 const (
 	ModeMarkdown = ParseMode("Markdown") // parse as Markdown
-	ModeHTML = ParseMode("HTML")     // parse as HTML
-	ModeDefault = ParseMode("")         // parse as text
+	ModeHTML     = ParseMode("HTML")     // parse as HTML
+	ModeDefault  = ParseMode("")         // parse as text
 )
 
 // OutgoingChatAction represents an outgoing chat action
@@ -422,14 +421,14 @@ type ChatAction string
 
 // Represents all the possible ChatActions to be sent, see https://core.telegram.org/bots/api#sendchataction
 const (
-	ChatActionTyping ChatAction = "typing"
-	ChatActionUploadPhoto = "upload_photo"
-	ChatActionRecordVideo = "record_video"
-	ChatActionUploadVideo = "upload_video"
-	ChatActionRecordAudio = "record_audio"
-	ChatActionUploadAudio = "upload_audio"
-	ChatActionUploadDocument = "upload_document"
-	ChatActionFindLocation = "find_location"
+	ChatActionTyping         ChatAction = "typing"
+	ChatActionUploadPhoto               = "upload_photo"
+	ChatActionRecordVideo               = "record_video"
+	ChatActionUploadVideo               = "upload_video"
+	ChatActionRecordAudio               = "record_audio"
+	ChatActionUploadAudio               = "upload_audio"
+	ChatActionUploadDocument            = "upload_document"
+	ChatActionFindLocation              = "find_location"
 )
 
 // InlineQueryAnswer represents a response to an inline query.
@@ -448,11 +447,11 @@ type InlineQueryResultType string
 
 // Inline query result type constants
 const (
-	ArticleResult = InlineQueryResultType("article")
-	PhotoResult = InlineQueryResultType("photo")
-	GifResult = InlineQueryResultType("gif")
+	ArticleResult  = InlineQueryResultType("article")
+	PhotoResult    = InlineQueryResultType("photo")
+	GifResult      = InlineQueryResultType("gif")
 	Mpeg4GifResult = InlineQueryResultType("mpeg4_gif")
-	VideoResult = InlineQueryResultType("video")
+	VideoResult    = InlineQueryResultType("video")
 )
 
 // InlineQueryResultBase is the base for all InlineQueryResults
@@ -469,11 +468,11 @@ type InlineQueryResult interface {
 	result()
 }
 
-func (*InlineQueryResultArticle) result() {}
-func (*InlineQueryResultPhoto) result() {}
-func (*InlineQueryResultGif) result() {}
+func (*InlineQueryResultArticle) result()  {}
+func (*InlineQueryResultPhoto) result()    {}
+func (*InlineQueryResultGif) result()      {}
 func (*InlineQueryResultMpeg4Gif) result() {}
-func (*InlineQueryResultVideo) result() {}
+func (*InlineQueryResultVideo) result()    {}
 
 // InlineQueryResultArticle represents a link to an article or web page
 type InlineQueryResultArticle struct {
@@ -614,4 +613,3 @@ func NewInlineQueryResultVideo(id, videoURL, thumbURL, title, text string, mimeT
 		Text:     text,
 	}
 }
-

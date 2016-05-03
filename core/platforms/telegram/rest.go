@@ -10,22 +10,22 @@ import (
 type method string
 
 const (
-	getMe = method("GetMe")
-	sendMessage = method("SendMessage")
-	forwardMessage = method("ForwardMessage")
-	sendPhoto = method("SendPhoto")
-	sendAudio = method("SendAudio")
-	sendDocument = method("SendDocument")
-	sendSticker = method("SendSticker")
-	sendVideo = method("SendVideo")
-	sendVoice = method("SendVoice")
-	sendLocation = method("SendLocation")
-	sendChatAction = method("SendChatAction")
+	getMe                = method("GetMe")
+	sendMessage          = method("SendMessage")
+	forwardMessage       = method("ForwardMessage")
+	sendPhoto            = method("SendPhoto")
+	sendAudio            = method("SendAudio")
+	sendDocument         = method("SendDocument")
+	sendSticker          = method("SendSticker")
+	sendVideo            = method("SendVideo")
+	sendVoice            = method("SendVoice")
+	sendLocation         = method("SendLocation")
+	sendChatAction       = method("SendChatAction")
 	getUserProfilePhotos = method("GetUserProfilePhotos")
-	getUpdates = method("GetUpdates")
-	setWebhook = method("SetWebhook")
-	getFile = method("GetFile")
-	answerInlineQuery = method("AnswerInlineQuery")
+	getUpdates           = method("GetUpdates")
+	setWebhook           = method("SetWebhook")
+	getFile              = method("GetFile")
+	answerInlineQuery    = method("AnswerInlineQuery")
 )
 
 type client struct {
@@ -110,4 +110,3 @@ func createEndpoints(baseURI string) map[method]string {
 
 	return toReturn
 }
-

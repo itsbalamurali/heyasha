@@ -1,30 +1,28 @@
 package platforms
 
 import (
-	"net/http"
-	"github.com/julienschmidt/httprouter"
-	log "github.com/Sirupsen/logrus"
-	"encoding/json"
-	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
-	"strconv"
-	"github.com/itsbalamurali/heyasha/core/engine"
 	"fmt"
+	log "github.com/Sirupsen/logrus"
+	"github.com/gin-gonic/gin"
+	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
+	"net/http"
+	"strconv"
 )
 
-func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func MessengerBot(c *gin.Context) {
 	verify_token := "er7Wq4yREXBKpdRKjhAg"
-	hub_mode := ps.ByName("hub.mode")
-	hub_challenge := ps.ByName("hub.challenge")
-	hub_verify_token := ps.ByName("hub.verify_token")
+
+	hub_mode := c.Query("hub.mode")
+	hub_challenge := c.Query("hub.challenge")
+	hub_verify_token := c.Query("hub.verify_token")
 	if hub_verify_token == verify_token && hub_challenge != "" {
-		w.Header().Set("Hub Mode",hub_mode)
-		w.WriteHeader(200)
-		fmt.Fprintln(w, hub_challenge)
-		return
+		c.Header("Hub Mode", hub_mode)
+		c.String(http.StatusOK, hub_challenge)
 	}
 
 	var msg = messenger.Receive{}
-	err := json.NewDecoder(r.Body).Decode(&msg)
+	err := c.BindJSON(&msg)
 	if err != nil {
 		log.Errorln("Something wrong: %s\n", err.Error())
 		return
@@ -43,9 +41,8 @@ func MessengerBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) 
 				messenger.Recipient{info.Sender.ID},
 			}
 
-			ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID,10), info.Message.Text)
+			ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
 			resp.Text(ai_msg)
 		}
 	}
 }
-

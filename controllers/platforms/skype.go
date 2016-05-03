@@ -2,9 +2,9 @@ package platforms
 
 import (
 	"net/http"
-	"github.com/julienschmidt/httprouter"
+	"github.com/gin-gonic/gin"
 )
 
-func SkypeBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	//return c.String(http.StatusOK, "Skype Bot Response!\n")
+func SkypeBot(c *gin.Context) {
+	c.String(http.StatusOK, "Skype Bot Response!\n")
 }

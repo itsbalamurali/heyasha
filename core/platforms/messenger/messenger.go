@@ -50,10 +50,10 @@ func New(mo Options) *Messenger {
 	}
 
 	//if mo.Verify {
-		//m.mux.HandleFunc(WebhookURL, newVerifyHandler(mo.VerifyToken))
+	//m.mux.HandleFunc(WebhookURL, newVerifyHandler(mo.VerifyToken))
 	//} else {
 
-		m.mux.HandleFunc(WebhookURL, m.handle)
+	m.mux.HandleFunc(WebhookURL, m.handle)
 
 	//}
 

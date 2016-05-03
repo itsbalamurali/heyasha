@@ -1,9 +1,10 @@
 package platforms
 
 import (
+	"github.com/gin-gonic/gin"
 	"net/http"
-	"github.com/julienschmidt/httprouter"
 )
 
-func SlackBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func SlackBot(c *gin.Context) {
+	c.String(http.StatusOK, "Slack Bot Response!\n")
 }

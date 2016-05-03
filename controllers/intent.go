@@ -1,12 +1,11 @@
 package controllers
 
 import (
-	"net/http"
-	"github.com/julienschmidt/httprouter"
+	"github.com/gin-gonic/gin"
 )
 
-func IntentExtract(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func IntentExtract(c *gin.Context) {
 }
 
-func SuggestQueries(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func SuggestQueries(c *gin.Context) {
 }

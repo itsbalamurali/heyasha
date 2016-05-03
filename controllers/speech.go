@@ -1,88 +1,51 @@
 package controllers
 
 import (
-	"net/http"
-	"fmt"
-	"io/ioutil"
-	log "github.com/Sirupsen/logrus"
-	"github.com/julienschmidt/httprouter"
-	"golang.org/x/net/context"
 	"encoding/json"
-	"errors"
+	log "github.com/Sirupsen/logrus"
 	ps "github.com/itsbalamurali/heyasha/core/engine/stt"
 	"github.com/unrolled/render"
-	"github.com/itsbalamurali/heyasha/controllers/stt"
+	"golang.org/x/text/language"
+	"net/http"
+	"runtime"
+	"github.com/gin-gonic/gin"
+	"github.com/itsbalamurali/heyasha/config"
 )
 
-//const MAX_MEMORY = 1 * 1024 * 1024
-
-var renderer = render.New(render.Options{})
-
-func SpeechProcess(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-
-	//w.Header().Set("Connection", "Keep-Alive")
-	//w.Header().Set("Transfer-Encoding", "chunked")
-
-	content_type := r.Header.Get("Content-Type")
-	fmt.Println(content_type)
-	buf, err := ioutil.ReadAll(r.Body)
-	if err!=nil {log.Fatal("request",err)}
-	fmt.Println(buf)
-
-	/*
-	if err := r.ParseMultipartForm(MAX_MEMORY); err != nil {
-		log.Println(err)
-		http.Error(w, err.Error(), http.StatusForbidden)
-	}
-
-	for key, value := range r.MultipartForm.Value {
-		fmt.Fprintf(w, "%s:%s ", key, value)
-		log.Printf("%s:%s", key, value)
-	}
-
-	for _, fileHeaders := range r.MultipartForm.File {
-		for _, fileHeader := range fileHeaders {
-			file, _ := fileHeader.Open()
-			path := fmt.Sprintf("files/%s", fileHeader.Filename)
-			buf, _ := ioutil.ReadAll(file)
-			ioutil.WriteFile(path, buf, os.ModePerm)
-		}
-	}*/
-}
+type langkey int
 
 type Rsponse struct {
 	Response ps.Result `json:"response"`
 }
 
-func WriteJsonErrorResponse(w http.ResponseWriter, message string, code int) {
-	renderer.JSON(w, code, map[string]string{
-		"message": message,
-	})
-}
+var (
+	englishBase, _         = language.AmericanEnglish.Base()
+	lkey           langkey = 0
+)
 
-func getSphinx(ctx context.Context) (*ps.PsInstance, string, string, error) {
-	lang := stt.LangFromContext(ctx)
-	sp, ok := ps.FromContext(ctx)
-	if !ok {
-		log.Errorln("speech recognition engine is not ready")
-		return nil, lang, "speech recognition engine is not ready", errors.New("speech recognition engine is not ready")
+var renderer = render.New(render.Options{})
+
+func SpeechProcess(c *gin.Context) {
+	// Detect Language from accept-language
+	lang := ""
+	if tags, _, err := language.ParseAcceptLanguage(c.Request.Header.Get("Accept-Language")); err == nil {
+		if len(tags) > 0 {
+			t := tags[0]
+			base, _, _ := t.Raw() // base, sscript, region
+			if base == englishBase {
+				lang = "en-US"
+			} else if t == language.BritishEnglish {
+				lang = "en-GB"
+			}
+		}
 	}
-	ps, err := sp.GetSphinxFromLanguage(lang)
+	ps, lang, errmsg, err := getSphinx(lang)
 	if err != nil {
-		log.Errorln(err)
-		return nil, lang, "invalid accept-language", err
-
-	}
-	return ps, lang, "", nil
-}
-
-func dictationHandler(ctx context.Context, w http.ResponseWriter, r *http.Request) {
-
-	ps, lang, errmsg, err := getSphinx(ctx)
-	if err != nil {
-		WriteJsonErrorResponse(w, errmsg, 500)
+		//WriteJsonErrorResponse(w, errmsg, 500)
+		c.JSON(http.StatusInternalServerError,errmsg)
 		return
 	}
+
 	log.WithFields(log.Fields{
 		"lang": lang,
 	}).Info()
@@ -94,7 +57,7 @@ func dictationHandler(ctx context.Context, w http.ResponseWriter, r *http.Reques
 	buf := make([]byte, 1024)
 	ps.StartUtt()
 	for {
-		size, err := r.Body.Read(buf)
+		size, err := c.Request.Body.Read(buf)
 		if err != nil {
 			break
 		}
@@ -103,13 +66,41 @@ func dictationHandler(ctx context.Context, w http.ResponseWriter, r *http.Reques
 	ps.EndUtt()
 	res, err := ps.GetHyp(false)
 	if err != nil {
-		WriteJsonErrorResponse(w, "recognition error", 500)
+		c.JSON(http.StatusInternalServerError,errmsg)
+		//WriteJsonErrorResponse(w, "recognition error", 500)
 		return
 	}
 	bytes, err := json.Marshal(Rsponse{res})
 	if err != nil {
-		WriteJsonErrorResponse(w, "error", 500)
+		c.JSON(http.StatusInternalServerError,gin.H{"error":"error"})
+
+		//WriteJsonErrorResponse(w, "error", 500)
 	}
-	renderer.JSON(w, http.StatusOK, bytes)
+	//renderer.JSON(w, http.StatusOK, bytes)
+	c.JSON(http.StatusOK,bytes)
 	return
+
+}
+
+func WriteJsonErrorResponse(w http.ResponseWriter, message string, code int) {
+	renderer.JSON(w, code, map[string]string{
+		"message": message,
+	})
+}
+
+func getSphinx(lang string) (*ps.PsInstance, string, string, error) {
+	cpus := runtime.NumCPU()
+	psAll := ps.NewSphinx(config.LoadConfig().Pocketsphinx, cpus)
+	sp := psAll
+	/*
+		if sp != n {
+			log.Errorln("speech recognition engine is not ready")
+			return nil, lang, "speech recognition engine is not ready", errors.New("speech recognition engine is not ready")
+		}*/
+	ps, err := sp.GetSphinxFromLanguage(lang)
+	if err != nil {
+		//log.Errorln(err)
+		return nil, lang, "invalid accept-language", err
+	}
+	return ps, lang, "", nil
 }

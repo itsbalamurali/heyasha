@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	"net/http"
-	"github.com/julienschmidt/httprouter"
+	"github.com/gin-gonic/gin"
 )
 
-func Chat(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func Chat(c *gin.Context) {
 }

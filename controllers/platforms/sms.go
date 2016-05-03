@@ -2,10 +2,9 @@ package platforms
 
 import (
 	"net/http"
-	"github.com/julienschmidt/httprouter"
+	"github.com/gin-gonic/gin"
 )
 
-func SmsBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	//return c.String(http.StatusOK, "Sms Bot Response!\n")
-
+func SmsBot(c *gin.Context) {
+	c.String(http.StatusOK, "Sms Bot Response!\n")
 }

@@ -1,17 +1,10 @@
 package platforms
 
 import (
-	"github.com/julienschmidt/httprouter"
-	"net/http"
-	/*"strings"
-	"mime"
-	"mime/multipart"
-	"io"
-	"io/ioutil"
-	"fmt"*/
+	"github.com/gin-gonic/gin"
 )
 
-func EmailBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func EmailBot(c *gin.Context) {
 	//json.NewDecoder(r.Body).Decode(update)
 	//r.MultipartForm.Value
 	/*mediaType, params, err := mime.ParseMediaType(msg.Header.Get("Content-Type"))

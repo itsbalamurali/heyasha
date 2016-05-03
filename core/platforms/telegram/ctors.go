@@ -257,4 +257,3 @@ func (api *TelegramBotAPI) NewInlineQueryAnswer(queryID string, results []Inline
 		Results: results,
 	}
 }
-

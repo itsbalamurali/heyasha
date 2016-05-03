@@ -117,4 +117,3 @@ func (ia *InlineQueryAnswer) Send() error {
 	}
 	return nil
 }
-

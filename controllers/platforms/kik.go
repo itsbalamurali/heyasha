@@ -1,10 +1,10 @@
 package platforms
 
-import ("net/http"
-	"github.com/julienschmidt/httprouter"
+import (
+	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
-func KikBot(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
-	//return c.String(http.StatusOK, "Kik Bot Response!\n")
-
+func KikBot(c *gin.Context) {
+	c.String(http.StatusOK, "Kik Bot Response!\n")
 }
