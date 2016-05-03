@@ -5,13 +5,22 @@ import (
 	"os"
 	"path/filepath"
 	"testing"
+	"github.com/Sirupsen/logrus"
 )
 
 const (
-	hmm_path, hmmerr  = filepath.Abs("data/stt/models/en-us/en-us")
-	dict_path, dicterr = filepath.Abs("data/stt/models/en-us/cmudict-en-us.dict")
-	lm_path, lmerr   = filepath.Abs("data/stt/models/en-us/en-us.lm.bin")
+	hmm_path  = datapath("data/stt/models/en-us/en-us")
+	dict_path = datapath("data/stt/models/en-us/cmudict-en-us.dict")
+	lm_path   = datapath("data/stt/models/en-us/en-us.lm.bin")
 )
+
+func datapath(path string) string {
+	fpath, err := filepath.Abs(path)
+	if err != nil {
+		logrus.Fatalln(err)
+	}
+	return fpath
+}
 
 func TestProcessUTT(t *testing.T) {
 	conf := Config{
