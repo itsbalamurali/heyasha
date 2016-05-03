@@ -51,6 +51,10 @@ func NewPocketSphinx(config Config) *PocketSphinx {
 	return &PocketSphinx{ps: ps, Config: config}
 }
 
+func (p *PocketSphinx) GetInSpeech() bool {
+	return C.ps_get_in_speech(p.ps) != 0
+}
+
 //Free releases all resources associated with the PocketSphinx.
 func (p *PocketSphinx) Free() {
 	C.ps_free(p.ps)
@@ -129,7 +133,8 @@ func (p *PocketSphinx) getNbestHyp(nbest *C.ps_nbest_t, segment bool) Result {
 func (p *PocketSphinx) GetNbest(numNbest int, segment bool) []Result {
 	ret := make([]Result, 0, numNbest)
 
-	nbestIt := C.ps_nbest(p.ps, 0, -1, nil, nil)
+	//nbestIt := C.ps_nbest(p.ps, 0, -1, nil, nil)
+	nbestIt := C.ps_nbest(p.ps)
 	for {
 		if nbestIt == nil {
 			break

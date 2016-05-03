@@ -10,7 +10,6 @@ import (
 	"math/rand"
 	"sync"
 	"time"
-	"golang.org/x/net/context"
 )
 
 type key int
@@ -47,14 +46,15 @@ func (p *PsInstance) Unlock() {
 	p.mu.Unlock()
 }
 
+/*
 func NewContext(ctx context.Context, sp Sphinx) context.Context {
 	return context.WithValue(ctx, psKey, sp)
-}
-
+}*/
+/*
 func FromContext(ctx context.Context) (Sphinx, bool) {
 	ps, ok := ctx.Value(psKey).(Sphinx)
 	return ps, ok
-}
+}*/
 
 func (t Sphinx) GetSphinxFromLanguage(lang string) (*PsInstance, error) {
 	instances, ok := t[lang]

@@ -78,7 +78,7 @@ type Config struct {
 	Kws_threshold NullFloat
 	Kws_plp       NullFloat
 	Debug         NullInt
-	SamplingRate  NullInt
+	SamplingRate  NullFloat
 	DisableInfo   bool
 	Language      string
 }
