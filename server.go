@@ -14,7 +14,7 @@ import (
 	"net/http"
 	"os"
 	"runtime"
-	"github.com/itsbalamurali/heyasha/controllers/middleware"
+	"github.com/itsbalamurali/heyasha/middleware"
 )
 
 //var engine *xorm.Engine

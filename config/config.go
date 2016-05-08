@@ -8,7 +8,6 @@ package config
 import (
 	"github.com/BurntSushi/toml"
 	log "github.com/Sirupsen/logrus"
-	ps "github.com/itsbalamurali/heyasha/core/engine/stt"
 	"path/filepath"
 )
 
@@ -19,7 +18,6 @@ type Config struct {
 	Email        email                `toml:"email"`
 	Sms          sms                  `toml:"sms"`
 	GCloud       map[string]gcloud    `toml:"google_cloud"`
-	Pocketsphinx map[string]ps.Config `toml:"pocketsphinx"`
 }
 
 type database struct {
