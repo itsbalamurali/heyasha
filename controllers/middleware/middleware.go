@@ -20,6 +20,7 @@ func respondWithError(code int, message string,c *gin.Context) {
 
 func TokenAuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
+		//token := c.Request.Header.Get()
 		token := c.Request.FormValue("api_token")
 
 		if token == "" {

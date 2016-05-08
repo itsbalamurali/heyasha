@@ -40,25 +40,6 @@ type gcloud struct {
 	Bucket string `toml:"bucket_name"`
 }
 
-/*
-type pocketsphinx struct {
-	Hmm           string
-	Dict          string
-	Lm            string
-	Jsgf          string
-	Bestpath      string
-	Beam          NullFloat
-	Wbeam         NullFloat
-	Keyphrase     string
-	Kws           string
-	Kws_threshold NullFloat
-	Kws_plp       NullFloat
-	Debug         NullInt
-	SamplingRate  NullFloat
-	DisableInfo   bool
-	Language      string
-}*/
-
 // Reads info from config file
 func LoadConfig() Config {
 	configfile, err := filepath.Abs("config.toml") //flag.Configfile

@@ -23,4 +23,3 @@ _testmain.go
 *.exe
 *.test
 *.prof
-#core/engine/stt/*

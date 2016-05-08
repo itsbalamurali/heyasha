@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/aichaos/rivescript-go"
 	"fmt"
+	"github.com/aichaos/rivescript-go"
 	"path/filepath"
 )
 
@@ -19,6 +19,6 @@ func BotReply(user_id string, usersay string) string {
 		fmt.Printf("Error loading from directory: %s", err)
 	}
 	base.SortReplies()
-	reply := base.Reply(user_id,usersay)
+	reply := base.Reply(user_id, usersay)
 	return reply
 }

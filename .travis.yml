@@ -5,31 +5,30 @@ language: go
 go:
   - tip
 
-services:
-  - docker
+#services:
+ # - docker
 
 cache:
   - apt
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install -y build-essential swig sox bison curl python-dev pkg-config libsasl2-dev
-  - export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig && export LD_LIBRARY_PATH=/usr/local/lib
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  #- sudo apt-get -qq update
+  #- sudo apt-get install -y build-essential swig sox bison curl python-dev pkg-config libsasl2-dev
+  #- export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig && export LD_LIBRARY_PATH=/usr/local/lib
+  #- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+  #- docker build -t itsbalamurali/heyasha .
+  #- docker push itsbalamurali/heyasha
 
 install:
-  - tar -xzvf ./data/pocketsphinx/sphinxbase-5prealpha.tar.gz
-  - cd sphinxbase-5prealpha && ./autogen.sh && ./configure && make && sudo make install
-  - cd ..
-  - tar -xzvf ./data/pocketsphinx/pocketsphinx-5prealpha.tar.gz
-  - cd pocketsphinx-5prealpha && ./configure && make && sudo make install
-  - cd ..
+  #- tar -xzvf ./data/pocketsphinx/sphinxbase-5prealpha.tar.gz
+  #- cd sphinxbase-5prealpha && ./autogen.sh && ./configure && make && sudo make install
+  #- cd .. && rm -rf sphinxbase-5prealpha
+  #- tar -xzvf ./data/pocketsphinx/pocketsphinx-5prealpha.tar.gz
+  #- cd pocketsphinx-5prealpha && ./configure && make && sudo make install
+  #- cd .. && rm -rf pocketsphinx-5prealpha
   - go get -u github.com/kardianos/govendor
   - govendor sync
   - go get -t ./...
-  - docker build -t itsbalamurali/heyasha .
-  - docker push itsbalamurali/heyasha
-
 notifications:
   slack: heyasha:m1OwwwmiydtXPLKeUY1jwGzd
   email: false

@@ -1,19 +1,19 @@
 package tts
 
 import (
-	"io/ioutil"
-	"os"
-	"net/http"
 	"fmt"
-	"net/url"
 	"io"
+	"io/ioutil"
+	"net/http"
+	"net/url"
+	"os"
 )
 
 // Speaker implements the Speaker interface for Google TTS
 type Speaker struct{}
 
 const urlFmt = "http://translate.google.com/translate_tts?ie=UTF-8&tl=%s&q=%s"
-const Lang  = "en_US"
+const Lang = "en_US"
 
 // Say says phrase aloud using Google TTS
 func (s *Speaker) Say(phrase string) {

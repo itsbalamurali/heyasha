@@ -14,9 +14,13 @@ import (
 	"net/http"
 	"os"
 	"runtime"
+	"github.com/itsbalamurali/heyasha/controllers/middleware"
 )
 
 //var engine *xorm.Engine
+func init() {
+
+}
 
 func main() {
 	// maximize CPU usage for maximum performance
@@ -53,13 +57,16 @@ func main() {
 	// Global middleware
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
+	router.Use(middleware.RequestIdMiddleware())
+
 
 	//Hello!!
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
+
 	//Core REST API routes
-	//router.POST("/speech", controllers.SpeechProcess)    //speech recognition
+	router.POST("/speech", controllers.SpeechProcess)    //speech recognition
 	router.GET("/message", controllers.Chat)           //chat with bot
 	router.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
 	router.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
@@ -71,6 +78,11 @@ func main() {
 	router.GET("/users/{UserId}", controllers.GetUserDetails)
 	router.DELETE("/users/{UserId}", controllers.DeleteUser)
 
+	//Sync Adapters
+	//router.POST("/sync/contacts")
+	//router.POST("/sync/calender")
+	//router.POST("/sync/notes")
+
 	//Communication Platforms
 	router.POST("/chat/slack", platforms.SlackBot)         //SlackBot
 	router.POST("/chat/kik", platforms.KikBot)             //Kik Bot
@@ -81,10 +93,16 @@ func main() {
 	router.POST("/chat/sms", platforms.SmsBot)             //Sms Bot
 	router.POST("/chat/email", platforms.EmailBot)         //Email Bot
 
-	//404 Handler
-	/*router.NotFound = http.HandleFunc("",func(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 
-	})*/
+	//Method not allowed
+	router.NoMethod(func(c *gin.Context) {
+		c.JSON(http.StatusMethodNotAllowed, gin.H{"message": "method not allowed"} )
+	})
+
+	//404 Handler
+	router.NoRoute(func(c *gin.Context) {
+		c.JSON(http.StatusNotFound, gin.H{"message": "method not found"})
+	})
 
 	// Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")

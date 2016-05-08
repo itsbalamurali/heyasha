@@ -6,14 +6,14 @@ environment = "dev"
 	#Mongodb Settings
 	[database.mongodb]
 	dbhost = ""
-	dbport = ""
+	dbport = 27017
 	dbuser = ""
 	dbname = ""
 	dbpassword = ""
 	#MySql Settings
 	[database.mysql]
 	dbhost = ""
-	dbport = ""
+	dbport = 3306
 	dbuser = ""
 	dbname = ""
 	dbpassword = ""
@@ -32,8 +32,9 @@ environment = "dev"
 [pocketsphinx]
 	#Language models
     [pocketsphinx.en]
-        hmm= "path_to_hmm"
-        dic= "path_to_dic"
-        kws= "path_to_kws"
-        kws_threshold= "1e-60"
-        kws_plp= "1e-60"
+        hmm= "data/stt/models/en-us/en-us"
+        dic= "data/stt/models/en-us/cmudict-en-us.dict"
+        disableinfo = false
+        #kws= "path_to_kws"
+        #kws_threshold= "1e-60"
+        #kws_plp= "1e-60"
