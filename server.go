@@ -8,14 +8,16 @@ package main
 import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
-	"net/http"
+	"github.com/itsbalamurali/heyasha/middleware"
 	"os"
 	"runtime"
-	"github.com/itsbalamurali/heyasha/middleware"
+	"net/http"
+	"github.com/sebest/logrusly"
 )
+
+var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
 //var engine *xorm.Engine
 func init() {
@@ -36,6 +38,8 @@ func main() {
 	} else {
 		log.SetLevel(log.DebugLevel)
 	}
+	hook := logrusly.NewLogglyHook(logglyToken, "www.hostname.com", log.WarnLevel, "tag1", "tag2")
+	log.AddHook(hook)
 	log.Infoln("Starting server...")
 
 	//Database error variable and engine
@@ -58,7 +62,7 @@ func main() {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
-
+	router.Use(middleware.TokenAuthMiddleware())
 
 	//Hello!!
 	router.GET("/", func(c *gin.Context) {
@@ -66,37 +70,41 @@ func main() {
 	})
 
 	//Core REST API routes
-	router.POST("/speech", controllers.SpeechProcess)    //speech recognition
-	router.GET("/message", controllers.Chat)           //chat with bot
-	router.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
-	router.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
+	router.POST("/v1/speech", controllers.SpeechProcess)  //speech recognition
+	router.GET("/v1/chat", controllers.Chat)              //chat with bot
+	router.GET("/v1/extract", controllers.IntentExtract)  //Extract Intent from Text
+	router.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
 
 	//User REST API routes
-	router.POST("/users/", controllers.CreateUser)
-	router.POST("/users/login", controllers.LoginUser)
-	router.PUT("/users/{UserId}", controllers.UpdateUserDetails)
-	router.GET("/users/{UserId}", controllers.GetUserDetails)
-	router.DELETE("/users/{UserId}", controllers.DeleteUser)
+	router.POST("/v1/users/", controllers.CreateUser)
+	router.POST("/v1/users/login", controllers.LoginUser)
+	router.POST("/v1/users/logout", controllers.LoginUser)
+	router.GET("/v1/users/{UserId}", controllers.GetUserDetails)
+	router.GET("/v1/users/me", controllers.GetUserDetails)
+	router.PUT("/v1/users/{UserId}", controllers.UpdateUserDetails)
+	router.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
+	router.DELETE("/v1/users/reset_password", controllers.DeleteUser)
+
+	//TODO Sessions & Files
 
 	//Sync Adapters
-	//router.POST("/sync/contacts")
-	//router.POST("/sync/calender")
-	//router.POST("/sync/notes")
+	router.POST("/v1/sync/contacts")
+	router.POST("/sync/calender")
+	router.POST("/v1/sync/notes")
 
 	//Communication Platforms
-	router.POST("/chat/slack", platforms.SlackBot)         //SlackBot
-	router.POST("/chat/kik", platforms.KikBot)             //Kik Bot
-	router.POST("/chat/telegram", platforms.TelegramBot)   //Telegram Bot
-	router.POST("/chat/skype", platforms.SkypeBot)         //Skype Bot
-	router.POST("/chat/messenger", platforms.MessengerBot) //Messenger Bot
-	router.GET("/chat/messenger", platforms.MessengerBot)  //Facebook Callback Verification
-	router.POST("/chat/sms", platforms.SmsBot)             //Sms Bot
-	router.POST("/chat/email", platforms.EmailBot)         //Email Bot
-
+	router.POST("/v1/chat/slack", platforms.SlackBot)         //SlackBot
+	router.POST("/v1/chat/kik", platforms.KikBot)             //Kik Bot
+	router.POST("/v1/chat/telegram", platforms.TelegramBot)   //Telegram Bot
+	router.POST("/v1/chat/skype", platforms.SkypeBot)         //Skype Bot
+	router.POST("/v1/chat/messenger", platforms.MessengerBot) //Messenger Bot
+	router.GET("/v1/chat/messenger", platforms.MessengerBot)  //Facebook Callback Verification
+	router.POST("/v1/chat/sms", platforms.SmsBot)             //Sms Bot
+	router.POST("/v1/chat/email", platforms.EmailBot)         //Email Bot
 
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {
-		c.JSON(http.StatusMethodNotAllowed, gin.H{"message": "method not allowed"} )
+		c.JSON(http.StatusMethodNotAllowed, gin.H{"message": "method not allowed"})
 	})
 
 	//404 Handler
@@ -104,7 +112,13 @@ func main() {
 		c.JSON(http.StatusNotFound, gin.H{"message": "method not found"})
 	})
 
-	// Start server
+	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
 	log.Infoln(router.Run(":" + port))
+
+	//Flush loggly hook
+	// Flush is automatic for panic/fatal
+	// Just make sure to Flush() before exiting or you may loose up to 5 seconds
+	// worth of messages.
+	hook.Flush()
 }

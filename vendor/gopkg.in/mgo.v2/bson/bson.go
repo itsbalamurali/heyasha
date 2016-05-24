@@ -408,7 +408,7 @@ type Binary struct {
 // individual characters defining the way in which the pattern should be
 // applied, and must be sorted. Valid options as of this writing are 'i' for
 // case insensitive matching, 'm' for multi-line matching, 'x' for verbose
-// mode, 'l' to make \w, \W, and similar be locale-dependent, 's' for dot-all
+// mode, 'l' to make \w, \W, and similar be locale.json-dependent, 's' for dot-all
 // mode (a '.' matches everything), and 'u' to make \w, \W, and similar match
 // unicode. The value of the Options parameter is not verified before being
 // marshaled into the BSON format.

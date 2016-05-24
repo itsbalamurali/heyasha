@@ -218,7 +218,7 @@ func walkXPath(e Elem, path string) (res Elem, err error) {
 const absPrefix = "//ldml/"
 
 func (cldr *CLDR) resolveAlias(e Elem, src, path string) (res Elem, err error) {
-	if src != "locale" {
+	if src != "locale.json" {
 		if !strings.HasPrefix(path, absPrefix) {
 			return nil, fmt.Errorf("cldr: expected absolute path, found %q", path)
 		}
@@ -554,7 +554,7 @@ func (cldr *CLDR) resolve(loc string) (res *LDML, err error) {
 	}
 	x := cldr.RawLDML(loc)
 	if x == nil {
-		return nil, fmt.Errorf("cldr: unknown locale %q", loc)
+		return nil, fmt.Errorf("cldr: unknown locale.json %q", loc)
 	}
 	var v reflect.Value
 	if loc == "root" {

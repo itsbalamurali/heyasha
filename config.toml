@@ -1,15 +1,14 @@
 #Environment Dev/Prod?
 environment = "dev"
-
 #Database Settings
 [database]
 	#Mongodb Settings
 	[database.mongodb]
-	dbhost = ""
-	dbport = 27017
-	dbuser = ""
-	dbname = ""
-	dbpassword = ""
+	dbhost = "ds011872.mlab.com"
+	dbport = 11872
+	dbuser = "murali"
+	dbname = "heyasha"
+	dbpassword = "yourass1994"
 	#MySql Settings
 	[database.mysql]
 	dbhost = ""

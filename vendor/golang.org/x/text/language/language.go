@@ -12,7 +12,7 @@
 // information that may be valuable in certain contexts. As a consequence, two
 // different tags may represent identical languages.
 //
-// Initializing language- or locale-specific components usually consists of
+// Initializing language- or locale.json-specific components usually consists of
 // two steps. The first step is to select a display language based on the
 // preferred languages of the user and the languages supported by an application.
 // The second step is to create the language-specific services based on
@@ -126,7 +126,7 @@ const (
 )
 
 // Tag represents a BCP 47 language tag. It is used to specify an instance of a
-// specific language or locale. All language tag values are guaranteed to be
+// specific language or locale.json. All language tag values are guaranteed to be
 // well-formed.
 type Tag struct {
 	lang     langID
@@ -608,7 +608,7 @@ func (t Tag) Extensions() []Extension {
 }
 
 // TypeForKey returns the type associated with the given key, where key and type
-// are of the allowed values defined for the Unicode locale extension ('u') in
+// are of the allowed values defined for the Unicode locale.json extension ('u') in
 // http://www.unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers.
 // TypeForKey will traverse the inheritance chain to get the correct value.
 func (t Tag) TypeForKey(key string) string {
@@ -624,7 +624,7 @@ var (
 )
 
 // SetTypeForKey returns a new Tag with the key set to type, where key and type
-// are of the allowed values defined for the Unicode locale extension ('u') in
+// are of the allowed values defined for the Unicode locale.json extension ('u') in
 // http://www.unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers.
 // An empty value removes an existing pair with the same key.
 func (t Tag) SetTypeForKey(key, value string) (Tag, error) {

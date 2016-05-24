@@ -12,7 +12,7 @@ import (
 )
 
 //Api authentication middleware
-func respondWithError(code int, message string,c *gin.Context) {
+func respondWithError(code int, message string, c *gin.Context) {
 	resp := map[string]string{"error": message}
 	c.JSON(code, resp)
 	c.AbortWithStatus(code)
@@ -20,8 +20,8 @@ func respondWithError(code int, message string,c *gin.Context) {
 
 func TokenAuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		//token := c.Request.Header.Get()
-		token := c.Request.FormValue("api_token")
+		token := c.Request.Header.Get("X-Auth-Token")
+		token := c.Request.FormValue("auth_token")
 
 		if token == "" {
 			respondWithError(401, "API token required", c)

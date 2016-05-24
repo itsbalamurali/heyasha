@@ -132,10 +132,10 @@ var comments = map[string]string{
 `,
 	"supplementalData": `
 // SupplementalData holds information relevant for internationalization
-// and proper use of CLDR, but that is not contained in the locale hierarchy.
+// and proper use of CLDR, but that is not contained in the locale.json hierarchy.
 `,
 	"ldml": `
-// LDML is the top-level type for locale-specific data.
+// LDML is the top-level type for locale.json-specific data.
 `,
 	"collation": `
 // Collation contains rules that specify a certain sort-order,
