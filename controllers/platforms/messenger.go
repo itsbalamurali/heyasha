@@ -35,7 +35,7 @@ func MessengerBot(c *gin.Context) {
 			}
 
 			resp := &messenger.Response{
-				"EAAIkwCguBLUBAACSg08vFX7dM1fztZAYYbLrjymtqsK1UfSZCxL77TUfZCZCbO9zNi4JrAAQC4PFl1EhMCM1xL0EySu3JId1k2NfmFUXLf3tFHIGc7aaZBZAf3PiZATAJrs6B11suxemxN77ZAotSlxOW1eWTdVWO8iBYNsrT466hQZDZD",
+				"EAAIkwCguBLUBAOkHgbtqcvI6HUe5jmt4xOXDyZAdJZCb5LuWdOdjiOeFH5L3GctprFj7OEi9CSfwmPtQCvScNH8UESabATIPkPnLiVcAUb345MQ1qeHQwlB3z43RYKkPevq0he9GVTOv3P4WSmNgWa0bANRZCbalmsxyZAjE3wZDZD",
 				messenger.Recipient{info.Sender.ID},
 			}
 
