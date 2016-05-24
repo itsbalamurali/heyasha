@@ -28,6 +28,7 @@ func init() {
 func main() {
 	// maximize CPU usage for maximum performance
 	runtime.GOMAXPROCS(runtime.NumCPU())
+	gin.SetMode(gin.ReleaseMode)
 
 	//Init Logger
 	log.SetFormatter(&log.JSONFormatter{})
@@ -58,7 +59,6 @@ func main() {
 
 	//New Router
 	router := gin.Default()
-
 	// Global middleware
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
@@ -96,6 +96,7 @@ func main() {
 	router.PUT("/v1/users/{UserId}", controllers.UpdateUserDetails)
 	router.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
 	router.DELETE("/v1/users/reset_password", controllers.DeleteUser)
+
 
 	//TODO Sessions & Files
 	/*
