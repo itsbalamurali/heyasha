@@ -70,11 +70,22 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
 
+
 	//Core REST API routes
 	router.POST("/v1/speech", controllers.SpeechProcess)  //speech recognition
 	router.GET("/v1/chat", controllers.Chat)              //chat with bot
 	router.GET("/v1/extract", controllers.IntentExtract)  //Extract Intent from Text
 	router.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
+
+	//Communication Platforms
+	router.POST("/v1/chat/slack", platforms.SlackBot)         //SlackBot
+	router.POST("/v1/chat/kik", platforms.KikBot)             //Kik Bot
+	router.POST("/v1/chat/telegram", platforms.TelegramBot)   //Telegram Bot
+	router.POST("/v1/chat/skype", platforms.SkypeBot)         //Skype Bot
+	router.POST("/v1/chat/messenger", platforms.MessengerBot) //Messenger Bot
+	router.GET("/v1/chat/messenger", platforms.MessengerBot)  //Facebook Callback Verification
+	router.POST("/v1/chat/sms", platforms.SmsBot)             //Sms Bot
+	router.POST("/v1/chat/email", platforms.EmailBot)         //Email Bot
 
 	//User REST API routes
 	router.POST("/v1/users/", controllers.CreateUser)
@@ -87,21 +98,13 @@ func main() {
 	router.DELETE("/v1/users/reset_password", controllers.DeleteUser)
 
 	//TODO Sessions & Files
-
+	/*
 	//Sync Adapters
 	router.POST("/v1/sync/contacts")
-	router.POST("/sync/calender")
+	router.POST("/v1/sync/calender")
 	router.POST("/v1/sync/notes")
+	*/
 
-	//Communication Platforms
-	router.POST("/v1/chat/slack", platforms.SlackBot)         //SlackBot
-	router.POST("/v1/chat/kik", platforms.KikBot)             //Kik Bot
-	router.POST("/v1/chat/telegram", platforms.TelegramBot)   //Telegram Bot
-	router.POST("/v1/chat/skype", platforms.SkypeBot)         //Skype Bot
-	router.POST("/v1/chat/messenger", platforms.MessengerBot) //Messenger Bot
-	router.GET("/v1/chat/messenger", platforms.MessengerBot)  //Facebook Callback Verification
-	router.POST("/v1/chat/sms", platforms.SmsBot)             //Sms Bot
-	router.POST("/v1/chat/email", platforms.EmailBot)         //Email Bot
 
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {
@@ -116,10 +119,4 @@ func main() {
 	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
 	log.Infoln(router.Run(":" + port))
-
-	//Flush loggly hook
-	// Flush is automatic for panic/fatal
-	// Just make sure to Flush() before exiting or you may loose up to 5 seconds
-	// worth of messages.
-	//hook.Flush()
 }

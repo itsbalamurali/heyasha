@@ -17,7 +17,7 @@ func MessengerBot(c *gin.Context) {
 	if hub_verify_token == verify_token && hub_challenge != "" {
 		c.Header("Hub Mode", hub_mode)
 		c.String(http.StatusOK, hub_challenge)
-	}
+	} else {
 
 	var msg = messenger.Receive{}
 	err := c.BindJSON(&msg)
@@ -42,5 +42,7 @@ func MessengerBot(c *gin.Context) {
 			//ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
 			resp.Text(info.Message.Text)
 		}
+	}
+		c.String(http.StatusOK,"Webhook Success!!!")
 	}
 }

@@ -7,7 +7,6 @@ package database
 
 import (
 	"gopkg.in/mgo.v2"
-	"github.com/itsbalamurali/heyasha/config"
 	"log"
 )
 
@@ -26,11 +25,11 @@ const (
 
 // Connect connects to mongodb
 func Connect() {
-	config := config.LoadConfig()
-	uri := config.MongoURI
-	if len(uri) == 0 {
-		uri = MongoDBUrl
-	}
+	//config := config.LoadConfig()
+	//uri := config.MongoURI
+	//if len(uri) == 0 {
+	uri := MongoDBUrl
+	//}
 	mongo, err := mgo.ParseURL(uri)
 	s, err := mgo.Dial(uri)
 	if err != nil {
