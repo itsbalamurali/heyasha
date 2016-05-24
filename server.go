@@ -7,14 +7,14 @@ package main
 
 import (
 	log "github.com/Sirupsen/logrus"
-	db "github.com/itsbalamurali/heyasha/core/database"
 	"github.com/gin-gonic/gin"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
+	db "github.com/itsbalamurali/heyasha/core/database"
 	"github.com/itsbalamurali/heyasha/middleware"
+	"net/http"
 	"os"
 	"runtime"
-	"net/http"
 	//"github.com/sebest/logrusly"
 )
 
@@ -63,7 +63,7 @@ func main() {
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
-	router.Use(middleware.TokenAuthMiddleware())
+	//router.Use(middleware.TokenAuthMiddleware())
 
 	//Hello!!
 	router.GET("/", func(c *gin.Context) {
