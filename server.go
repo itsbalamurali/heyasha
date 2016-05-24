@@ -7,6 +7,7 @@ package main
 
 import (
 	log "github.com/Sirupsen/logrus"
+	db "github.com/itsbalamurali/heyasha/core/database"
 	"github.com/gin-gonic/gin"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
@@ -14,14 +15,14 @@ import (
 	"os"
 	"runtime"
 	"net/http"
-	"github.com/sebest/logrusly"
+	//"github.com/sebest/logrusly"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
 //var engine *xorm.Engine
 func init() {
-
+	db.Connect()
 }
 
 func main() {
@@ -30,7 +31,7 @@ func main() {
 
 	//Init Logger
 	log.SetFormatter(&log.JSONFormatter{})
-	log.SetOutput(os.Stderr)
+	//log.SetOutput(os.Stderr)
 
 	app_env := os.Getenv("ENV")
 	if app_env == "production" {
@@ -38,8 +39,8 @@ func main() {
 	} else {
 		log.SetLevel(log.DebugLevel)
 	}
-	hook := logrusly.NewLogglyHook(logglyToken, "www.hostname.com", log.WarnLevel, "tag1", "tag2")
-	log.AddHook(hook)
+	//hook := logrusly.NewLogglyHook(logglyToken, "heyasha.loggly.com", log.InfoLevel)
+	//log.AddHook(hook)
 	log.Infoln("Starting server...")
 
 	//Database error variable and engine
@@ -120,5 +121,5 @@ func main() {
 	// Flush is automatic for panic/fatal
 	// Just make sure to Flush() before exiting or you may loose up to 5 seconds
 	// worth of messages.
-	hook.Flush()
+	//hook.Flush()
 }

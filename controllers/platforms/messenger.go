@@ -4,10 +4,8 @@ import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	"github.com/itsbalamurali/heyasha/core/engine"
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"net/http"
-	"strconv"
 )
 
 func MessengerBot(c *gin.Context) {
@@ -37,12 +35,12 @@ func MessengerBot(c *gin.Context) {
 			}
 
 			resp := &messenger.Response{
-				"CAAQCVhc9mrYBAGYZCX9c0EQlIwecNPE5Th4b8T1zVvIumZA3verOV1RZC5ZBvQIqJJRZAHD4TYCHVeZBVOL1lpwn9qxEGLih0qUCR3ZC57kEY8O5BlflKNEmKyxDKpPpgambCWgWLizhkmsfob1d5OHDHGUILeaZBqbuyuk5ix2J9FJ7GjwCE0zwxLF76KidSQMDA5OMz7vlLgZDZD",
+				"EAAQCVhc9mrYBAGbDYZB8tBoga9A6QIsWwLQV5IEGCWupO3h2V9MjQw7SAZBkZAKgyROJcr1hEyaw2VERTd6dT2RoqhadTxdfadmdjetpozlSsokFRoz4hq9QU3C3HDEkqGlC3qbk6ihrbruwIyCjxSQZCNiWLrV5KmX0kzYyXwZDZD",
 				messenger.Recipient{info.Sender.ID},
 			}
 
-			ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
-			resp.Text(ai_msg)
+			//ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
+			resp.Text(info.Message.Text)
 		}
 	}
 }

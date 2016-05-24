@@ -13,29 +13,17 @@ import (
 
 // Info from config file
 type Config struct {
-	Environment  string
-	Databases    map[string]database  `toml:"database"`
-	Email        email                `toml:"email"`
-	Sms          sms                  `toml:"sms"`
-	GCloud       map[string]gcloud    `toml:"google_cloud"`
-}
-
-type database struct {
-	Name     string `toml:"dbname"`
-	Host     string `toml:"dbhost"`
-	Port     int    `toml:"dbport"`
-	User     string `toml:"dbuser"`
-	Password string `toml:"dbpassword"`
+	Environment string
+	MongoURI    string `toml:"mongo_uri"`
+	Email       email  `toml:"email"`
+	Sms         sms    `toml:"sms"`
+	CloudBucket string `toml:"google_cloud_bucket"`
 }
 
 type email struct {
 }
 
 type sms struct {
-}
-
-type gcloud struct {
-	Bucket string `toml:"bucket_name"`
 }
 
 // Reads info from config file

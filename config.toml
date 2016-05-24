@@ -1,31 +1,17 @@
 #Environment Dev/Prod?
 environment = "dev"
 #Database Settings
-[database]
-	#Mongodb Settings
-	[database.mongodb]
-	dbhost = "ds011872.mlab.com"
-	dbport = 11872
-	dbuser = "murali"
-	dbname = "heyasha"
-	dbpassword = "yourass1994"
-	#MySql Settings
-	[database.mysql]
-	dbhost = ""
-	dbport = 3306
-	dbuser = ""
-	dbname = ""
-	dbpassword = ""
 #SMTP email settings
 [email]
+
+#Mongodb Settings
+mongo_uri = "mongodb://murali:yourass1994@ds011872.mlab.com:11872/heyasha"
 
 #SMS settings
 [sms]
 
 #Google Cloud Bucket
-[google_cloud]
-	[google_cloud.storage]
-	bucket_name = ""
+google_cloud_bucket = ""
 
 #PocketSphinx Settings	
 [pocketsphinx]
