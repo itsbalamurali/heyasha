@@ -29,8 +29,8 @@ func TelegramBot(c *gin.Context) {
 			log.Fatal(err)
 		}
 
-		ai_msg := engine.BotReply(strconv.Itoa(msg.Chat.ID), *msg.Text)
-		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), ai_msg).Send()
+		//ai_msg := engine.BotReply(strconv.Itoa(msg.Chat.ID), *msg.Text)
+		outMsg, err := api.NewOutgoingMessage(telegram.NewRecipientFromChat(msg.Chat), *msg.Text).Send()
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)
 		}
