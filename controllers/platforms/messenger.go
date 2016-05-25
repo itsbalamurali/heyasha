@@ -5,6 +5,7 @@ import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
+	"io/ioutil"
 	"net/http"
 )
 
@@ -17,9 +18,10 @@ func MessengerBot(c *gin.Context) {
 	if hub_verify_token == verify_token && hub_challenge != "" {
 		c.Header("Hub Mode", hub_mode)
 		c.String(http.StatusOK, hub_challenge)
-	} else {
-
+	}
 	var msg = messenger.Receive{}
+	x, _ := ioutil.ReadAll(c.Request.Body)
+	fmt.Printf("%s", string(x))
 	err := c.BindJSON(&msg)
 	if err != nil {
 		log.Errorln("Something wrong: %s\n", err.Error())
@@ -35,7 +37,7 @@ func MessengerBot(c *gin.Context) {
 			}
 
 			resp := &messenger.Response{
-				"EAAIkwCguBLUBAOkHgbtqcvI6HUe5jmt4xOXDyZAdJZCb5LuWdOdjiOeFH5L3GctprFj7OEi9CSfwmPtQCvScNH8UESabATIPkPnLiVcAUb345MQ1qeHQwlB3z43RYKkPevq0he9GVTOv3P4WSmNgWa0bANRZCbalmsxyZAjE3wZDZD",
+				"EAAIkwCguBLUBAAVB0PQJDtfn7rI8HLMb17ouGxfkXDhRFvYsWTwcj0UfJ1mKXRrVJSRSZBlpbYVIZCzRpazEZCoSdtWyQROPhaogz4qNROZCiVVNfS178CQFjgQ3dolApZAaareEmo9yXIQ0zzD6rzrU36efHyXI3gY3OoZCgVagZDZD",
 				messenger.Recipient{info.Sender.ID},
 			}
 
@@ -43,6 +45,6 @@ func MessengerBot(c *gin.Context) {
 			resp.Text(info.Message.Text)
 		}
 	}
-		c.String(http.StatusOK,"Webhook Success!!!")
-	}
+	c.String(http.StatusOK, "Webhook Success!!!")
+
 }
