@@ -87,12 +87,13 @@ func main() {
 		v1.DELETE("/users/{UserId}", controllers.DeleteUser)
 		v1.DELETE("/users/reset_password", controllers.ResetPassword)
 	}
+
 	//TODO Sessions & Files
 	/*
-		//Sync Adapters
-		router.POST("/sync/contacts")
-		router.POST("/sync/calender")
-		router.POST("/sync/notes")
+	//Sync Adapters
+	router.POST("/sync/contacts")
+	router.POST("/sync/calender")
+	router.POST("/sync/notes")
 	*/
 
 	//Method not allowed

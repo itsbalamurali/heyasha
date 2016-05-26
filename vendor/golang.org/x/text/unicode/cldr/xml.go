@@ -46,7 +46,7 @@ type LDMLBCP47 struct {
 }
 
 // SupplementalData holds information relevant for internationalization
-// and proper use of CLDR, but that is not contained in the locale.json hierarchy.
+// and proper use of CLDR, but that is not contained in the locale hierarchy.
 type SupplementalData struct {
 	Common
 	Version *struct {
@@ -599,7 +599,7 @@ type SupplementalData struct {
 	} `xml:"idValidity"`
 }
 
-// LDML is the top-level type for locale.json-specific data.
+// LDML is the top-level type for locale-specific data.
 type LDML struct {
 	Common
 	Version  string `xml:"version,attr"`

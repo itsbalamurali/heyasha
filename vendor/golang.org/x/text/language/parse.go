@@ -238,7 +238,7 @@ func Parse(s string) (t Tag, err error) {
 // http://www.unicode.org/reports/tr35/#Unicode_Language_and_Locale_Identifiers.
 // The resulting tag is canonicalized using the the canonicalization type c.
 func (c CanonType) Parse(s string) (t Tag, err error) {
-	// TODO: consider supporting old-style locale.json key-value pairs.
+	// TODO: consider supporting old-style locale key-value pairs.
 	if s == "" {
 		return und, errSyntax
 	}

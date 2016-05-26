@@ -9,22 +9,6 @@
 	"ignore": "test",
 	"package": [
 		{
-			"path": "appengine",
-			"revision": ""
-		},
-		{
-			"path": "appengine_internal",
-			"revision": ""
-		},
-		{
-			"path": "appengine_internal/base",
-			"revision": ""
-		},
-		{
-			"path": "context",
-			"revision": ""
-		},
-		{
 			"checksumSHA1": "7YHBDrGrtpWlJHx2wL6qCmgQdVk=",
 			"path": "github.com/BurntSushi/toml",
 			"revision": "bbd5bb678321a0d6e58f1099321dfa73391c1b6f",
@@ -79,7 +63,7 @@
 			"revisionTime": "2016-04-14T23:39:28Z"
 		},
 		{
-			"checksumSHA1": "BIY45G2IVrTttD4Rlk9tHwiIOCM=",
+			"checksumSHA1": "cT/dcEd4iioWi6q/Pi8sTF9gHiE=",
 			"path": "github.com/go-sql-driver/mysql",
 			"revision": "7ebe0a500653eeb1859664bed5e48dec1e164e73",
 			"revisionTime": "2016-04-11T07:50:31Z"
@@ -115,16 +99,16 @@
 			"revisionTime": "2016-03-17T23:05:54Z"
 		},
 		{
-			"checksumSHA1": "bJ/MkgAvXQuz+VsUnKIR4I28HrY=",
-			"path": "github.com/jinzhu/gorm",
-			"revision": "27522453dea253cf90dcb5345286a5fcf0fbed7c",
-			"revisionTime": "2016-05-22T11:10:33Z"
-		},
-		{
 			"checksumSHA1": "BwhKb5ZaJpGR8xO9JF6WvzJ6uwU=",
 			"path": "github.com/jinzhu/inflection",
 			"revision": "3272df6c21d04180007eb3349844c89a3856bc25",
 			"revisionTime": "2015-10-09T08:41:29Z"
+		},
+		{
+			"checksumSHA1": "0J13qB+LJjl87S/OZsamOXkXRDY=",
+			"path": "github.com/jsgoecke/go-wit",
+			"revision": "4dd03e19c801b3dc7d7e0a6be4fc95265bc82374",
+			"revisionTime": "2015-11-30T03:26:04Z"
 		},
 		{
 			"checksumSHA1": "8sba7NooZnLTY8zidsbqBeDUjxI=",
@@ -137,18 +121,6 @@
 			"path": "github.com/satori/go.uuid",
 			"revision": "f9ab0dce87d815821e221626b772e3475a0d2749",
 			"revisionTime": "2016-03-24T11:22:44Z"
-		},
-		{
-			"checksumSHA1": "FlXuVZwHSnT6ghnX53Qmn+cE7qs=",
-			"path": "github.com/sebest/logrusly",
-			"revision": "d2415b54e6af1e6b3d9b1ab9a49c779f25599922",
-			"revisionTime": "2016-05-11T02:44:51Z"
-		},
-		{
-			"checksumSHA1": "Z5dCWhCkJzpIbX8H29rK/IZgKsw=",
-			"path": "github.com/segmentio/go-loggly",
-			"revision": "e78f6971ebca5835614673e2f5f6a47ca5f13501",
-			"revisionTime": "2014-11-14T01:47:07Z"
 		},
 		{
 			"checksumSHA1": "55o15ik8txYXhsY0nFnJkkPEYFI=",

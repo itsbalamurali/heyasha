@@ -34,7 +34,7 @@ func Comprehends(speaker, alternative Tag) Confidence {
 //
 // The index returned by the Match method corresponds to the index of the
 // matched tag in t, but is augmented with the Unicode extension ('u')of the
-// corresponding preferred tag. This allows user locale.json options to be passed
+// corresponding preferred tag. This allows user locale options to be passed
 // transparently.
 func NewMatcher(t []Tag) Matcher {
 	return newMatcher(t)
@@ -89,10 +89,10 @@ func (t *Tag) setUndefinedRegion(id regionID) {
 // to compute likely values of missing tags.
 var ErrMissingLikelyTagsData = errors.New("missing likely tags data")
 
-// addLikelySubtags sets subtags to their most likely value, given the locale.json.
+// addLikelySubtags sets subtags to their most likely value, given the locale.
 // In most cases this means setting fields for unknown values, but in some
 // cases it may alter a value.  It returns a ErrMissingLikelyTagsData error
-// if the given locale.json cannot be expanded.
+// if the given locale cannot be expanded.
 func (t Tag) addLikelySubtags() (Tag, error) {
 	id, err := addTags(t)
 	if err != nil {
@@ -366,8 +366,8 @@ func minimizeTags(t Tag) (Tag, error) {
 // [4] In case of deprecated, macro-equivalents and legacy mappings, we assign
 //     the MaxExact level to allow iw vs he to still be a closer match than
 //     en-AU vs en-US, for example.
-// [5] In CLDR a locale.json inherits fields that are unspecified for this locale.json
-//     from its parent. Therefore, if a locale.json is a parent of another locale.json,
+// [5] In CLDR a locale inherits fields that are unspecified for this locale
+//     from its parent. Therefore, if a locale is a parent of another locale,
 //     it is a strong measure for closeness, especially when no other tie
 //     breaker rule applies. One could also argue it is inconsistent, for
 //     example, when pt-AO matches pt (which CLDR equates with pt-BR), even
