@@ -97,6 +97,24 @@
 			"revisionTime": "2016-04-10T18:53:17Z"
 		},
 		{
+			"checksumSHA1": "z5IYXAbLSEkLfTlioVPh7IR1mjc=",
+			"path": "github.com/iron-io/iron_go3/api",
+			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
+			"revisionTime": "2016-03-17T23:05:54Z"
+		},
+		{
+			"checksumSHA1": "/XPOPYH/zwek5OKuv7oyRJMdCcE=",
+			"path": "github.com/iron-io/iron_go3/config",
+			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
+			"revisionTime": "2016-03-17T23:05:54Z"
+		},
+		{
+			"checksumSHA1": "viVk+xdw+Bwt6mGoFLkL+4cmMGE=",
+			"path": "github.com/iron-io/iron_go3/mq",
+			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
+			"revisionTime": "2016-03-17T23:05:54Z"
+		},
+		{
 			"checksumSHA1": "bJ/MkgAvXQuz+VsUnKIR4I28HrY=",
 			"path": "github.com/jinzhu/gorm",
 			"revision": "27522453dea253cf90dcb5345286a5fcf0fbed7c",
