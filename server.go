@@ -28,7 +28,7 @@ func init() {
 func main() {
 	// maximize CPU usage for maximum performance
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	gin.SetMode(gin.ReleaseMode)
+	//gin.SetMode(gin.ReleaseMode)
 
 	//Init Logger
 	log.SetFormatter(&log.JSONFormatter{})
@@ -70,7 +70,6 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
 
-
 	//Core REST API routes
 	router.POST("/v1/speech", controllers.SpeechProcess)  //speech recognition
 	router.GET("/v1/chat", controllers.Chat)              //chat with bot
@@ -78,14 +77,14 @@ func main() {
 	router.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
 
 	//Communication Platforms
-	router.POST("/v1/chat/slack", platforms.SlackBot)         //SlackBot
-	router.POST("/v1/chat/kik", platforms.KikBot)             //Kik Bot
-	router.POST("/v1/chat/telegram", platforms.TelegramBot)   //Telegram Bot
-	router.POST("/v1/chat/skype", platforms.SkypeBot)         //Skype Bot
-	router.POST("/v1/chat/messenger", platforms.MessengerBot) //Messenger Bot
-	router.GET("/v1/chat/messenger", platforms.MessengerBot)  //Facebook Callback Verification
-	router.POST("/v1/chat/sms", platforms.SmsBot)             //Sms Bot
-	router.POST("/v1/chat/email", platforms.EmailBot)         //Email Bot
+	router.POST("/v1/chat/slack", platforms.SlackBot)              //SlackBot
+	router.POST("/v1/chat/kik", platforms.KikBot)                  //Kik Bot
+	router.POST("/v1/chat/telegram", platforms.TelegramBot)        //Telegram Bot
+	router.POST("/v1/chat/skype", platforms.SkypeBot)              //Skype Bot
+	router.POST("/v1/chat/messenger", platforms.MessengerBotChat)  //Messenger Bot
+	router.GET("/v1/chat/messenger", platforms.MessengerBotVerify) //Facebook Callback Verification
+	router.POST("/v1/chat/sms", platforms.SmsBot)                  //Sms Bot
+	router.POST("/v1/chat/email", platforms.EmailBot)              //Email Bot
 
 	//User REST API routes
 	router.POST("/v1/users/", controllers.CreateUser)
@@ -97,15 +96,13 @@ func main() {
 	router.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
 	router.DELETE("/v1/users/reset_password", controllers.DeleteUser)
 
-
 	//TODO Sessions & Files
 	/*
-	//Sync Adapters
-	router.POST("/v1/sync/contacts")
-	router.POST("/v1/sync/calender")
-	router.POST("/v1/sync/notes")
+		//Sync Adapters
+		router.POST("/v1/sync/contacts")
+		router.POST("/v1/sync/calender")
+		router.POST("/v1/sync/notes")
 	*/
-
 
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {

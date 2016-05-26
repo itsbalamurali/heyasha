@@ -12,7 +12,7 @@ type Receive struct {
 // Entry is a batch of events which were sent in this webhook trigger.
 type Entry struct {
 	// ID is the ID of the batch.
-	ID int64 `json:"id"`
+	ID string `json:"id"`
 	// Time is when the batch was sent.
 	Time int64 `json:"time"`
 	// Messaging is the events that were sent in this Entry
@@ -37,12 +37,12 @@ type MessageInfo struct {
 
 // Sender is who the message was sent from.
 type Sender struct {
-	ID int64 `json:"id"`
+	ID string `json:"id"`
 }
 
 // Recipient is who the message was sent to.
 type Recipient struct {
-	ID int64 `json:"id"`
+	ID string `json:"id"`
 }
 
 // Attachment is a file which used in a message.

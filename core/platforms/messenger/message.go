@@ -18,7 +18,7 @@ type Message struct {
 	Text string `json:"text"`
 	// Attachments is the information about the attachments which were sent
 	// with the message.
-	Attachments []Attachment `json:"attachments"`
+	Attachments []Attachment `json:"attachments,omitempty"`
 }
 
 // Delivery represents a the event fired when a recipient reads one of Messengers sent
