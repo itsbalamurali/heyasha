@@ -4,8 +4,16 @@ import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
+	"github.com/iron-io/iron_go3/mq"
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"net/http"
+	"github.com/itsbalamurali/heyasha/models"
+	"gopkg.in/mgo.v2"
+	"gopkg.in/mgo.v2/bson"
+)
+
+const (
+	token = "EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD"
 )
 
 func MessengerBotVerify(c *gin.Context) {
@@ -25,9 +33,11 @@ func MessengerBotVerify(c *gin.Context) {
 
 func MessengerBotChat(c *gin.Context) {
 	var msg = messenger.Receive{}
+	var queue = mq.New("messages");
+
 	err := c.BindJSON(&msg)
 	if err != nil {
-		log.Errorln("Something wrong: %s", err.Error())
+		c.Error(err)
 		return
 	}
 
@@ -39,12 +49,49 @@ func MessengerBotChat(c *gin.Context) {
 				continue
 			}
 			resp := &messenger.Response{
-				"EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD",
+				token,
 				messenger.Recipient{info.Sender.ID},
 			}
 			//fmt.Println("Message: " +info.Message.Text)
 			//fmt.Println("Sender: " + info.Sender.ID)
 			//ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
+			profile, fberr := messenger.ProfileByID(info.Sender.ID,token)
+			if fberr != nil {
+				log.Errorln(err.Error())
+			}
+
+			user := &models.User{
+				Pid: "fb"+info.Sender.ID,
+				FirstName:profile.FirstName,
+				LastName:profile.LastName,
+				ProfilePicURL:profile.ProfilePicURL,
+				Platforms:[]models.Platform{
+					{
+					PlatformID:info.Sender.ID,
+					Name:"facebook",
+					},
+				},
+			}
+
+			db := c.MustGet("db").(*mgo.Database)
+
+			count, err := db.C("users").Find(bson.M{"pid": "fb"+info.Sender.ID}).Limit(1).Count()
+			if err != nil {
+				c.Error(err)
+			}
+			if count == 0 {
+				//Document doesnt exist
+				//Insert Document
+				err = db.C("users").Insert(user)
+				if err != nil {
+					c.Error(err)
+				}
+			}
+			_, qerr := queue.PushString(user.Pid+":----:"+info.Message.Text)
+			if qerr != nil {
+				c.Error(qerr)
+			}
+
 			resp.Text(info.Message.Text)
 		}
 	}

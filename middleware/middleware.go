@@ -8,6 +8,7 @@ package middleware
 import (
 	"github.com/gin-gonic/gin"
 	"github.com/satori/go.uuid"
+	"github.com/itsbalamurali/heyasha/core/database"
 )
 
 
@@ -40,7 +41,20 @@ func TokenAuthMiddleware() gin.HandlerFunc {
 //Request ID middleware
 func RequestIdMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		c.Writer.Header().Set("X-Request-Id", uuid.NewV4().String())
+		uuid := uuid.NewV4().String()
+		c.Writer.Header().Set("X-Request-Id", uuid)
+		c.Set("x-request-id",uuid)
+		c.Next()
+	}
+}
+
+// Connect middleware clones the database session for each request and
+// makes the `db` object available for each handler
+func Connect() gin.HandlerFunc{
+	return func(c *gin.Context) {
+		s := database.Session.Clone()
+		defer s.Close()
+		c.Set("db", s.DB(database.Mongo.Database))
 		c.Next()
 	}
 }

@@ -7,6 +7,7 @@ package database
 
 import (
 	"gopkg.in/mgo.v2"
+	"os"
 	"log"
 )
 
@@ -25,16 +26,17 @@ const (
 
 // Connect connects to mongodb
 func Connect() {
-	//config := config.LoadConfig()
-	//uri := config.MongoURI
-	//if len(uri) == 0 {
-	uri := MongoDBUrl
-	//}
+	uri := os.Getenv("MONGODB_URL")
+
+	if len(uri) == 0 {
+		uri = MongoDBUrl
+	}
+
 	mongo, err := mgo.ParseURL(uri)
 	s, err := mgo.Dial(uri)
 	if err != nil {
-		log.Printf("Can't connect to mongo, go error %v\n", err.Error())
-		//panic(err.Error())
+		log.Printf("Can't connect to mongo, go error %v\n", err)
+		panic(err.Error())
 	}
 	s.SetSafe(&mgo.Safe{})
 	log.Println("Connected to", uri)

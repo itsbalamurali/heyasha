@@ -78,7 +78,7 @@ func (m *Messenger) Handler() http.Handler {
 }
 
 // ProfileByID retrieves the Facebook user associated with that ID
-func (m *Messenger) ProfileByID(id int64) (Profile, error) {
+func ProfileByID(id string,token string) (Profile, error) {
 	p := Profile{}
 	url := fmt.Sprintf("%v%v", ProfileURL, id)
 
@@ -87,7 +87,7 @@ func (m *Messenger) ProfileByID(id int64) (Profile, error) {
 		return p, err
 	}
 
-	req.URL.RawQuery = "fields=first_name,last_name,profile_pic&access_token=" + m.token
+	req.URL.RawQuery = "fields=first_name,last_name,profile_pic&access_token=" + token
 
 	client := &http.Client{}
 	resp, err := client.Do(req)

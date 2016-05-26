@@ -10,19 +10,17 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
-	db "github.com/itsbalamurali/heyasha/core/database"
 	"github.com/itsbalamurali/heyasha/middleware"
 	"net/http"
 	"os"
 	"runtime"
-	//"github.com/sebest/logrusly"
+	"github.com/itsbalamurali/heyasha/core/database"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
-//var engine *xorm.Engine
 func init() {
-	db.Connect()
+	database.Connect()
 }
 
 func main() {
@@ -32,7 +30,7 @@ func main() {
 
 	//Init Logger
 	log.SetFormatter(&log.JSONFormatter{})
-	//log.SetOutput(os.Stderr)
+	log.SetOutput(os.Stderr)
 
 	app_env := os.Getenv("ENV")
 	if app_env == "production" {
@@ -60,6 +58,7 @@ func main() {
 	//New Router
 	router := gin.Default()
 	// Global middleware
+	router.Use(middleware.Connect())
 	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
