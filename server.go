@@ -38,16 +38,8 @@ func main() {
 	} else {
 		log.SetLevel(log.DebugLevel)
 	}
-	//hook := logrusly.NewLogglyHook(logglyToken, "heyasha.loggly.com", log.InfoLevel)
-	//log.AddHook(hook)
-	log.Infoln("Starting server...")
 
-	//Database error variable and engine
-	//var err error
-	//engine, err = xorm.NewEngine("mysql", "root:123@/test?charset=utf8")
-	//logger := xorm.NewSimpleLogger(log.Logger{})
-	//logger.ShowSQL(true)
-	//engine.SetLogger(logger)
+	log.Infoln("Starting server...")
 
 	//Port to Bind server to
 	port := os.Getenv("PORT")
@@ -59,48 +51,48 @@ func main() {
 	router := gin.Default()
 	// Global middleware
 	router.Use(middleware.Connect())
-	router.Use(gin.Logger())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
-	//router.Use(middleware.TokenAuthMiddleware())
 
 	//Hello!!
 	router.GET("/", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
 
-	//Core REST API routes
-	router.POST("/v1/speech", controllers.SpeechProcess)  //speech recognition
-	router.GET("/v1/chat", controllers.Chat)              //chat with bot
-	router.GET("/v1/extract", controllers.IntentExtract)  //Extract Intent from Text
-	router.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
+	v1 := router.Group("/v1",middleware.TokenAuthMiddleware())
+	{
+		//Core REST API routes
+		v1.POST("/speech", controllers.SpeechProcess)  //speech recognition
+		v1.GET("/chat", controllers.Chat)              //chat with bot
+		v1.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
+		v1.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
 
-	//Communication Platforms
-	router.POST("/v1/chat/slack", platforms.SlackBot)              //SlackBot
-	router.POST("/v1/chat/kik", platforms.KikBot)                  //Kik Bot
-	router.POST("/v1/chat/telegram", platforms.TelegramBot)        //Telegram Bot
-	router.POST("/v1/chat/skype", platforms.SkypeBot)              //Skype Bot
-	router.POST("/v1/chat/messenger", platforms.MessengerBotChat)  //Messenger Bot
-	router.GET("/v1/chat/messenger", platforms.MessengerBotVerify) //Facebook Callback Verification
-	router.POST("/v1/chat/sms", platforms.SmsBot)                  //Sms Bot
-	router.POST("/v1/chat/email", platforms.EmailBot)              //Email Bot
+		//Communication Platforms
+		v1.POST("/chat/slack", platforms.SlackBot)              //SlackBot
+		v1.POST("/chat/kik", platforms.KikBot)                  //Kik Bot
+		v1.POST("/chat/telegram", platforms.TelegramBot)        //Telegram Bot
+		v1.POST("/chat/skype", platforms.SkypeBot)              //Skype Bot
+		v1.POST("/chat/messenger", platforms.MessengerBotChat)  //Messenger Bot
+		v1.GET("/chat/messenger", platforms.MessengerBotVerify) //Facebook Callback Verification
+		v1.POST("/chat/sms", platforms.SmsBot)                  //Sms Bot
+		v1.POST("/chat/email", platforms.EmailBot)              //Email Bot
 
-	//User REST API routes
-	router.POST("/v1/users/", controllers.CreateUser)
-	router.POST("/v1/users/login", controllers.LoginUser)
-	router.POST("/v1/users/logout", controllers.LoginUser)
-	router.GET("/v1/users/{UserId}", controllers.GetUserDetails)
-	router.GET("/v1/users/me", controllers.GetUserDetails)
-	router.PUT("/v1/users/{UserId}", controllers.UpdateUserDetails)
-	router.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
-	router.DELETE("/v1/users/reset_password", controllers.DeleteUser)
-
+		//User REST API routes
+		v1.POST("/users/", controllers.CreateUser)
+		v1.POST("/users/login", controllers.LoginUser)
+		v1.POST("/users/logout", controllers.LoginUser)
+		v1.GET("/users/{UserId}", controllers.GetUserDetails)
+		v1.GET("/users/me", controllers.GetUserDetails)
+		v1.PUT("/users/{UserId}", controllers.UpdateUserDetails)
+		v1.DELETE("/users/{UserId}", controllers.DeleteUser)
+		v1.DELETE("/users/reset_password", controllers.ResetPassword)
+	}
 	//TODO Sessions & Files
 	/*
 		//Sync Adapters
-		router.POST("/v1/sync/contacts")
-		router.POST("/v1/sync/calender")
-		router.POST("/v1/sync/notes")
+		router.POST("/sync/contacts")
+		router.POST("/sync/calender")
+		router.POST("/sync/notes")
 	*/
 
 	//Method not allowed
