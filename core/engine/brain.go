@@ -1,17 +1,26 @@
 package engine
 
 import (
-	"fmt"
-	"github.com/aichaos/rivescript-go"
-	"path/filepath"
+	"github.com/jsgoecke/go-wit"
+	"os"
+	"encoding/json"
+	"log"
+	"net/http"
 )
 
-//  Reply from Brain.
-func BotReply(user_id string, usersay string) string {
+type BotResp struct {
+	ConvoID string `json:"convo_id"`
+	UserSay	string `json:"usersay"`
+	BotSay	string `json:"botsay"`
+}
 
+//BotReply  Reply from Brain.
+func BotReply(user_id string, usersay string) (string, error) {
+
+	client := wit.NewClient("OBU6TR5J7EOJ7RR6HA7LER6W7NP5XRLX")
 	// Process a text message
 	request := &wit.MessageRequest{}
-	request.Query = "Hello world"
+	request.Query = usersay
 	result, err := client.Message(request)
 	if err != nil {
 		println(err)
@@ -21,6 +30,7 @@ func BotReply(user_id string, usersay string) string {
 	data, _ := json.MarshalIndent(result, "", "    ")
 	log.Println(string(data[:]))
 
+	/*
 	// Process an audio/wav message
 	request = &wit.MessageRequest{}
 	request.File = "../audio_sample/helloWorld.wav"
@@ -33,19 +43,18 @@ func BotReply(user_id string, usersay string) string {
 	log.Println(result)
 	data, _ = json.MarshalIndent(result, "", "    ")
 	log.Println(string(data[:]))
+        */
 
-	base := rivescript.New()
-	base.UTF8 = true
-	path, notfound_err := filepath.Abs("./data/brain")
-	if notfound_err != nil {
-		fmt.Println(notfound_err)
-	}
-	err := base.LoadDirectory(path)
+	r := BotResp{}
+	url := "https://asha-ai-api.heyasha.com/chatbot/conversation_start.php"
+	req, err := http.NewRequest("GET", url, nil)
 	if err != nil {
-		fmt.Printf("Error loading from directory: %s", err)
+		log.Println(err)
 	}
-	base.SortReplies()
-	reply := base.Reply(user_id, usersay)
-	return reply
-
+	req.URL.RawQuery = "convo_id="+ user_id +"&say=" + usersay
+	api := &http.Client{}
+	resp, err := api.Do(req)
+	defer resp.Body.Close()
+	err = json.NewDecoder(resp.Body).Decode(&r)
+	return r.BotSay, err
 }

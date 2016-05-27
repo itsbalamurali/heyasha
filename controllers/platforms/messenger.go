@@ -10,6 +10,7 @@ import (
 	"github.com/itsbalamurali/heyasha/models"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"github.com/itsbalamurali/heyasha/core/engine"
 )
 
 const (
@@ -92,7 +93,12 @@ func MessengerBotChat(c *gin.Context) {
 				c.Error(qerr)
 			}
 
-			resp.Text(info.Message.Text)
+			rep, err := engine.BotReply(user.Pid,info.Message.Text)
+			if err != nil {
+				rep = "Whoops my brains not working!!!!"
+				log.Println(err)
+			}
+			resp.Text(rep)
 		}
 	}
 	c.String(http.StatusOK, "Webhook Success!!!")
