@@ -1,8 +1,8 @@
 package engine
 
 import (
-	"github.com/jsgoecke/go-wit"
-	"os"
+	//"github.com/jsgoecke/go-wit"
+	//"os"
 	"encoding/json"
 	"log"
 	"net/http"
@@ -16,7 +16,7 @@ type BotResp struct {
 
 //BotReply  Reply from Brain.
 func BotReply(user_id string, usersay string) (string, error) {
-
+	/*
 	client := wit.NewClient("OBU6TR5J7EOJ7RR6HA7LER6W7NP5XRLX")
 	// Process a text message
 	request := &wit.MessageRequest{}
@@ -29,7 +29,7 @@ func BotReply(user_id string, usersay string) (string, error) {
 	log.Println(result)
 	data, _ := json.MarshalIndent(result, "", "    ")
 	log.Println(string(data[:]))
-
+	*/
 	/*
 	// Process an audio/wav message
 	request = &wit.MessageRequest{}
