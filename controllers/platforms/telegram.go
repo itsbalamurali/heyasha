@@ -37,7 +37,7 @@ func TelegramBot(c *gin.Context) {
 		}
 
 		rep, err := engine.BotReply(strconv.Itoa(msg.Chat.ID),*msg.Text)
-		if err != nil || rep != ""  {
+		if err != nil || rep == ""  {
 			rep = "Whoops my brains not working!!!!"
 			log.Println(err)
 		}
