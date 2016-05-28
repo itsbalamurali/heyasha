@@ -94,7 +94,7 @@ func MessengerBotChat(c *gin.Context) {
 			}
 
 			rep, err := engine.BotReply(user.Pid,info.Message.Text)
-			if err != nil {
+			if err != nil || rep != "" {
 				rep = "Whoops my brains not working!!!!"
 				log.Println(err)
 			}
