@@ -20,12 +20,7 @@
 			"revision": "cd7d1bbe41066b6c1f19780f895901052150a575",
 			"revisionTime": "2016-04-25T09:32:37Z"
 		},
-		{
-			"checksumSHA1": "tG2mxHMcY5zzNwGYThQwNs5kiKY=",
-			"path": "github.com/aichaos/rivescript-go",
-			"revision": "66036bf91f92e74cb112721ccea630a9607ef1cc",
-			"revisionTime": "2016-04-18T02:21:57Z"
-		},
+
 		{
 			"checksumSHA1": "yWCnueUHZXuddtR0Zf+TVCLFZ+M=",
 			"path": "github.com/cenkalti/backoff",
@@ -43,6 +38,12 @@
 			"path": "github.com/dghubble/sling",
 			"revision": "00aa3a32dcef6cef1c7373a554516cc6970c81ea",
 			"revisionTime": "2016-04-10T02:17:24Z"
+		},
+		{
+			"checksumSHA1": "9gC11aaBM9FMtbxKJNRg04qnYDA=",
+			"path": "github.com/eduardonunesp/goaiml",
+			"revision": "5f56cb3eea103cc8b7caa256e69873c85c37c323",
+			"revisionTime": "2016-05-06T02:17:42Z"
 		},
 		{
 			"checksumSHA1": "hb6/A9Q7v30xVxmXtTpEVl15J3g=",
