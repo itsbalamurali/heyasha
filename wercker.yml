@@ -16,14 +16,14 @@ build:
 
     # Get the dependencies
     - script:
-        name: install govendor
+        name: install glide
         code: |
-          go get -u github.com/kardianos/govendor
+          go get -u github.com/Masterminds/glide
 
     - script:
-        name: govendor sync
+        name: glide install
         code: |
-          govendor sync
+          glide install
 
     # Build the project
     - script:
