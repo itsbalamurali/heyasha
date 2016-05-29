@@ -12,7 +12,7 @@ build:
   steps:
     - setup-go-workspace
 
-    - wercker/golint
+    # - wercker/golint
 
     # Get the dependencies
     - script:
