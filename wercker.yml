@@ -1,4 +1,3 @@
-
 box: golang
 
 dev:
@@ -16,14 +15,14 @@ build:
 
     # Get the dependencies
     - script:
-        name: install glide
+        name: install govendor
         code: |
-          go get -u github.com/Masterminds/glide
+          go get -u github.com/kardianos/govendor
 
     - script:
-        name: glide install
+        name: govendor sync
         code: |
-          glide install
+          govendor sync
 
     # Build the project
     - script:

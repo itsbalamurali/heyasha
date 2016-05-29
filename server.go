@@ -8,6 +8,7 @@ package main
 import (
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
+	"github.com/braintree/manners"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
 	"github.com/itsbalamurali/heyasha/core/database"
@@ -53,6 +54,9 @@ func main() {
 	router.Use(middleware.Connect())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
+
+	//Favicon
+	router.StaticFile("/favicon.ico", "./assets/img/favicon.ico")
 
 	//Hello!!
 	router.GET("/", func(c *gin.Context) {
@@ -109,5 +113,5 @@ func main() {
 
 	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
-	log.Infoln(router.Run(":" + port))
+	manners.ListenAndServe(":" + port,router) //Graceful restarts
 }
