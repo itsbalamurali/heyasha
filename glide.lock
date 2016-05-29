@@ -1,0 +1,70 @@
+hash: 2c5d7bf33cb12670c1d9c78dd8d75f62395ba32293dffb0c36e063aa852953ed
+updated: 2016-05-30T01:38:36.1366234+05:30
+imports:
+- name: github.com/braintree/manners
+  version: 82a8879fc5fd0381fa8b2d8033b19bf255252088
+  subpackages:
+  - github.com\braintree\manners
+- name: github.com/BurntSushi/toml
+  version: f0aeabca5a127c4078abb8c8d64298b147264b55
+  subpackages:
+  - github.com\BurntSushi\toml
+- name: github.com/gin-gonic/gin
+  version: f931d1ea80ae95a6fc739213cdd9399bd2967fb6
+  subpackages:
+  - github.com\gin-gonic\gin
+  - github.com\gin-gonic\gin\binding
+  - github.com\gin-gonic\gin\render
+- name: github.com/golang/protobuf
+  version: 2402d76f3d41f928c7902a765dfc872356dd3aad
+  subpackages:
+  - proto
+  - github.com\golang\protobuf\proto
+- name: github.com/iron-io/iron_go3
+  version: d1197926301489b15e418c49a0b17a9c42817acd
+  subpackages:
+  - github.com\iron-io\iron_go3\mq
+  - github.com\iron-io\iron_go3\api
+  - github.com\iron-io\iron_go3\config
+- name: github.com/manucorporat/sse
+  version: ee05b128a739a0fb76c7ebd3ae4810c1de808d6d
+  subpackages:
+  - github.com\manucorporat\sse
+- name: github.com/satori/go.uuid
+  version: f9ab0dce87d815821e221626b772e3475a0d2749
+  subpackages:
+  - github.com\satori\go.uuid
+- name: github.com/Sirupsen/logrus
+  version: 6d9ae300aaf85d6acd2e5424081c7fcddb21dab8
+  subpackages:
+  - github.com\Sirupsen\logrus
+- name: golang.org/x/net
+  version: f315505cf3349909cdf013ea56690da34e96a451
+  subpackages:
+  - context
+  - golang.org\x\net\context
+  - golang.org\x\net\publicsuffix
+- name: golang.org/x/sys
+  version: d4feaf1a7e61e1d9e79e6c4e76c6349e9cab0a03
+  subpackages:
+  - golang.org\x\sys\unix
+- name: gopkg.in/go-playground/validator.v8
+  version: c193cecd124b5cc722d7ee5538e945bdb3348435
+  subpackages:
+  - gopkg.in\go-playground\validator.v8
+- name: gopkg.in/mgo.v2
+  version: b6e2fa371e64216a45e61072a96d4e3859f169da
+  subpackages:
+  - gopkg.in\mgo.v2
+  - gopkg.in\mgo.v2\bson
+  - gopkg.in\mgo.v2\internal\sasl
+  - gopkg.in\mgo.v2\internal\scram
+- name: gopkg.in/resty.v0
+  version: 84e74db089329a2024227e400af9c1d495bb51da
+  subpackages:
+  - gopkg.in\resty.v0
+- name: gopkg.in/yaml.v2
+  version: a83829b6f1293c91addabc89d0571c246397bbf4
+  subpackages:
+  - gopkg.in\yaml.v2
+devImports: []

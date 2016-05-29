@@ -1,0 +1,27 @@
+package: github.com/itsbalamurali/heyasha
+import:
+- package: github.com/BurntSushi/toml
+  subpackages:
+  - github.com\BurntSushi\toml
+- package: github.com/Sirupsen/logrus
+  subpackages:
+  - github.com\Sirupsen\logrus
+- package: github.com/braintree/manners
+  subpackages:
+  - github.com\braintree\manners
+- package: github.com/gin-gonic/gin
+  subpackages:
+  - github.com\gin-gonic\gin
+- package: github.com/iron-io/iron_go3
+  subpackages:
+  - github.com\iron-io\iron_go3\mq
+- package: github.com/satori/go.uuid
+  subpackages:
+  - github.com\satori\go.uuid
+- package: gopkg.in/mgo.v2
+  subpackages:
+  - gopkg.in\mgo.v2
+  - gopkg.in\mgo.v2\bson
+- package: gopkg.in/resty.v0
+  subpackages:
+  - gopkg.in\resty.v0
