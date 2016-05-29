@@ -127,12 +127,6 @@
 			"revisionTime": "2016-02-23T13:38:14Z"
 		},
 		{
-			"checksumSHA1": "lflrleHLqpORhnoOjHVHokpeq54=",
-			"path": "gopkg.in/mgo.v2/internal/sasl",
-			"revision": "b6e2fa371e64216a45e61072a96d4e3859f169da",
-			"revisionTime": "2016-02-23T13:38:14Z"
-		},
-		{
 			"checksumSHA1": "CrciG7woshiINwZxPsxisgDGL3Y=",
 			"path": "gopkg.in/mgo.v2/internal/scram",
 			"revision": "b6e2fa371e64216a45e61072a96d4e3859f169da",
