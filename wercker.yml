@@ -16,9 +16,14 @@ build:
 
     # Get the dependencies
     - script:
-        name: go get
+        name: install govendor
         code: |
-          go get
+          go get -u github.com/kardianos/govendor
+
+    - script:
+        name: govendor sync
+        code: |
+          govendor sync
 
     # Build the project
     - script:
