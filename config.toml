@@ -6,20 +6,10 @@ environment = "dev"
 
 #Mongodb Settings
 mongo_uri = "mongodb://murali:yourass1994@ds011872.mlab.com:11872/heyasha"
+mysql_uri = "mysql://admin_twa:Aydim4VdBK@128.199.81.183:3306/admin_twa"
 
 #SMS settings
 [sms]
 
 #Google Cloud Bucket
 google_cloud_bucket = ""
-
-#PocketSphinx Settings	
-[pocketsphinx]
-	#Language models
-    [pocketsphinx.en]
-        hmm= "data/stt/models/en-us/en-us"
-        dic= "data/stt/models/en-us/cmudict-en-us.dict"
-        disableinfo = false
-        #kws= "path_to_kws"
-        #kws_threshold= "1e-60"
-        #kws_plp= "1e-60"

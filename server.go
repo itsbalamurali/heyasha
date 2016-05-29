@@ -10,11 +10,11 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
+	"github.com/itsbalamurali/heyasha/core/database"
 	"github.com/itsbalamurali/heyasha/middleware"
 	"net/http"
 	"os"
 	"runtime"
-	"github.com/itsbalamurali/heyasha/core/database"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
@@ -59,13 +59,14 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
 
-	v1 := router.Group("/v1",middleware.TokenAuthMiddleware())
+	v1 := router.Group("/v1", middleware.TokenAuthMiddleware())
 	{
 		//Core REST API routes
-		v1.POST("/speech", controllers.SpeechProcess)  //speech recognition
+		v1.POST("/list", controllers.SpeechProcess)    //speech recognition
 		v1.GET("/chat", controllers.Chat)              //chat with bot
 		v1.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
 		v1.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
+		v1.GET("/talk", controllers.SuggestQueries)    //Autocomplete user queries
 
 		//Communication Platforms
 		v1.POST("/chat/slack", platforms.SlackBot)              //SlackBot
@@ -90,10 +91,10 @@ func main() {
 
 	//TODO Sessions & Files
 	/*
-	//Sync Adapters
-	router.POST("/sync/contacts")
-	router.POST("/sync/calender")
-	router.POST("/sync/notes")
+		//Sync Adapters
+		router.POST("/sync/contacts")
+		router.POST("/sync/calender")
+		router.POST("/sync/notes")
 	*/
 
 	//Method not allowed
