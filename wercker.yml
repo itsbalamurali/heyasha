@@ -36,9 +36,16 @@ build:
         code: |
           go test ./...
 
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
+
 deploy:
   steps:
     - heroku-deploy:
         key: $HEROKU_KEY
         user: $HEROKU_USER
         app-name: $HEROKU_APP_NAME
+  after-steps:
+    - wantedly/pretty-slack-notify:
+        webhook_url: $SLACK_WEBHOOK_URL
