@@ -55,7 +55,7 @@ func ConnectMysql()  {
 		log.Printf("Can't connect to MySQL, go error %v\n", err)
 		panic(err.Error())
 	}
-	db.AutoMigrate(&models.ConversationLog{})
+	db.AutoMigrate(&models.ConversationLog{},&models.Intent{})
 	log.Println("Connected to MySQL Server")
 	Db = db
 }
