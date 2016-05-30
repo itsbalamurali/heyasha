@@ -37,8 +37,11 @@ build:
           go test ./...
 
   after-steps:
-    - wantedly/pretty-slack-notify:
-        webhook_url: $SLACK_WEBHOOK_URL
+    - slack-notifier:
+        url: $SLACK_WEBHOOK_URL
+        channel: dev
+        username: WerckerBuild
+        branch: master
 
 deploy:
   steps:
@@ -47,5 +50,8 @@ deploy:
         user: $HEROKU_USER
         app-name: $HEROKU_APP_NAME
   after-steps:
-    - wantedly/pretty-slack-notify:
-        webhook_url: $SLACK_WEBHOOK_URL
+    - slack-notifier:
+        url: $SLACK_WEBHOOK_URL
+        channel: dev
+        username: WerckerDeploy
+        branch: master
