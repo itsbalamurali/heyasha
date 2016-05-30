@@ -11,6 +11,8 @@ import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/jinzhu/gorm"
+	"strconv"
 )
 
 const (
@@ -99,6 +101,15 @@ func MessengerBotChat(c *gin.Context) {
 				log.Println(err)
 			}
 			resp.Text(rep)
+
+			db := c.MustGet("mysql").(*gorm.DB)
+			convlog := &models.ConversationLog{
+				Input:info.Message.Text,
+				Response:rep,
+				UserID: strconv.Atoi(user.Pid),
+				ConvoID:user.Pid,
+			}
+			db.Create(&convlog)
 		}
 	}
 	c.String(http.StatusOK, "Webhook Success!!!")
