@@ -6,11 +6,11 @@
 package models
 
 import (
-	"gopkg.in/mgo.v2/bson"
+	"github.com/jinzhu/gorm"
 )
 
 type User struct {
-	ID bson.ObjectId `json:"id,omitempty" bson:"_id,omitempty"`
+	gorm.Model
 	Pid string `json:"pid" bson:"pid"`
 	Username  string `json:"username" bson:"username"`
 	ProfilePicURL string `json:"profile_pic" bson:"profile_pic"`
@@ -22,9 +22,6 @@ type User struct {
 	Email     string `json:"email"`
 	AuthData  Authdata `json:"auth_data"`
 	Platforms []Platform `json:"platforms"`
-	CreatedOn int64         `json:"created_on" bson:"created_on"`
-	UpdatedOn int64         `json:"updated_on" bson:"updated_on"`
-
 }
 
 type Platform struct {
