@@ -102,14 +102,14 @@ func MessengerBotChat(c *gin.Context) {
 			}
 			resp.Text(rep)
 
-			db := c.MustGet("mysql").(*gorm.DB)
+			mysqldb := c.MustGet("mysql").(*gorm.DB)
 			convlog := &models.ConversationLog{
 				Input:info.Message.Text,
 				Response:rep,
 				UserID: strconv.Atoi(user.Pid),
 				ConvoID:user.Pid,
 			}
-			db.Create(&convlog)
+			mysqldb.Create(&convlog)
 		}
 	}
 	c.String(http.StatusOK, "Webhook Success!!!")
