@@ -101,12 +101,12 @@ func MessengerBotChat(c *gin.Context) {
 				log.Println(err)
 			}
 			resp.Text(rep)
-
+			uid, _ := strconv.Atoi(user.Pid)
 			mysqldb := c.MustGet("mysql").(*gorm.DB)
 			convlog := &models.ConversationLog{
 				Input:info.Message.Text,
 				Response:rep,
-				UserID: strconv.Atoi(user.Pid),
+				UserID: uid,
 				ConvoID:user.Pid,
 			}
 			mysqldb.Create(&convlog)
