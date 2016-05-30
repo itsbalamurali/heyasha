@@ -67,7 +67,7 @@ func Connect() gin.HandlerFunc{
 func MysqlCon() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		db := database.Db
-		defer db.Close()
+		//defer db.Close()
 		c.Set("mysql", db.New())
 		c.Next()
 	}
