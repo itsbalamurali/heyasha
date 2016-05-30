@@ -31,6 +31,12 @@
 			"revisionTime": "2016-04-18T04:36:13Z"
 		},
 		{
+			"checksumSHA1": "4OYV31xqK+c1StcbBjuS0U6Do7o=",
+			"path": "github.com/dghubble/sling",
+			"revision": "5765fe1bdc176ae984b074c8a89980d1f16e6dd8",
+			"revisionTime": "2016-04-23T01:31:43Z"
+		},
+		{
 			"checksumSHA1": "hb6/A9Q7v30xVxmXtTpEVl15J3g=",
 			"path": "github.com/gin-gonic/gin",
 			"revision": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f",
@@ -55,6 +61,12 @@
 			"revisionTime": "2016-05-24T19:56:25Z"
 		},
 		{
+			"checksumSHA1": "F+7lTlQMULu2pqest14vkT8vc7g=",
+			"path": "github.com/google/go-querystring/query",
+			"revision": "9235644dd9e52eeae6fa48efd539fdc351a0af53",
+			"revisionTime": "2016-03-11T01:20:12Z"
+		},
+		{
 			"checksumSHA1": "z5IYXAbLSEkLfTlioVPh7IR1mjc=",
 			"path": "github.com/iron-io/iron_go3/api",
 			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
@@ -71,6 +83,12 @@
 			"path": "github.com/iron-io/iron_go3/mq",
 			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
 			"revisionTime": "2016-03-17T23:05:54Z"
+		},
+		{
+			"checksumSHA1": "nHg8uIWern9W7o8CYn2lvGZ5T6s=",
+			"path": "github.com/jbrukh/bayesian",
+			"revision": "bb8c7464612e6af45dda6cc2ba09094015bc4d2c",
+			"revisionTime": "2016-03-23T01:39:11Z"
 		},
 		{
 			"checksumSHA1": "8sba7NooZnLTY8zidsbqBeDUjxI=",

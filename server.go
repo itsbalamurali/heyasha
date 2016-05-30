@@ -16,6 +16,7 @@ import (
 	"net/http"
 	"os"
 	"runtime"
+	"time"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
@@ -49,8 +50,9 @@ func main() {
 	}
 
 	//New Router
-	router := gin.Default()
+	router := gin.New()
 	// Global middleware
+	router.Use(middleware.Ginrus(log.StandardLogger(),time.RFC3339,true))
 	router.Use(middleware.Connect())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())

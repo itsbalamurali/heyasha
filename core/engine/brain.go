@@ -16,6 +16,18 @@ type BotResp struct {
 
 //BotReply  Reply from Brain.
 func BotReply(user_id string, usersay string) (string, error) {
+
+	/*
+	// Get the intents as determined by each plugin
+	for pluginID, c := range bClassifiers {
+		scores, idx, _ := c.ProbScores(stems)
+		log.Debug("intent score", pluginIntents[pluginID][idx],
+			scores[idx])
+		if scores[idx] > 0.7 {
+			si.Intents = append(si.Intents,
+				string(pluginIntents[pluginID][idx]))
+		}
+	}*/
 	/*
 	client := wit.NewClient("OBU6TR5J7EOJ7RR6HA7LER6W7NP5XRLX")
 	// Process a text message
