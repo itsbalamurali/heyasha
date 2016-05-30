@@ -54,7 +54,7 @@ func TelegramBot(c *gin.Context) {
 		convlog := &models.ConversationLog{
 			Input:*msg.Text,
 			Response:rep,
-			UserID:msg.Chat.ID,
+			UserID:strconv.Itoa(msg.Chat.ID),
 			ConvoID:strconv.Itoa(msg.Chat.ID),
 		}
 		db.Create(&convlog)
