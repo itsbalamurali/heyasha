@@ -64,6 +64,16 @@ func Connect() gin.HandlerFunc{
 	}
 }
 
+func MysqlCon() gin.HandlerFunc {
+	return func(c *gin.Context) {
+		db := database.Db
+		defer db.Close()
+		c.Set("mysql", db.DB())
+		c.Next()
+	}
+
+}
+
 func Ginrus(logger *log.Logger, timeFormat string, utc bool) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()

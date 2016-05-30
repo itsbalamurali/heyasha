@@ -9,6 +9,9 @@ import (
 	"gopkg.in/mgo.v2"
 	"os"
 	"log"
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/mysql"
+	"github.com/itsbalamurali/heyasha/models"
 )
 
 var (
@@ -16,6 +19,8 @@ var (
 	Session *mgo.Session
 	// Mongo stores the mongodb connection string information
 	Mongo *mgo.DialInfo
+	//Mysql Connection
+	Db *gorm.DB
 )
 
 const (
@@ -42,4 +47,15 @@ func Connect() {
 	log.Println("Connected to", uri)
 	Session = s
 	Mongo = mongo
+}
+
+func ConnectMysql()  {
+	db, err := gorm.Open("mysql", "admin_twa:Aydim4VdBK@tcp(128.199.81.183:3306)/admin_twa?charset=utf8&parseTime=True")
+	if err != nil {
+		log.Printf("Can't connect to MySQL, go error %v\n", err)
+		panic(err.Error())
+	}
+	db.AutoMigrate(&models.ConversationLog{})
+	log.Println("Connected to MySQL Server")
+	Db = db
 }

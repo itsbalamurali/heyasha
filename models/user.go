@@ -5,7 +5,9 @@
 //Written by Balamurali Pandranki <balamurali@live.com>, 6/5/2016 7:02 PM
 package models
 
-import "gopkg.in/mgo.v2/bson"
+import (
+	"gopkg.in/mgo.v2/bson"
+)
 
 type User struct {
 	ID bson.ObjectId `json:"id,omitempty" bson:"_id,omitempty"`

@@ -7,14 +7,14 @@ import (
 	"log"
 	"net/http"
 	"github.com/itsbalamurali/heyasha/core/engine"
-	"github.com/iron-io/iron_go3/mq"
 	"strconv"
+	"github.com/jinzhu/gorm"
+	"github.com/itsbalamurali/heyasha/models"
 )
 
 func TelegramBot(c *gin.Context) {
 
 	update := &telegram.Update{}
-	var queue = mq.New("messages");
 
 	apiToken := "213239467:AAGWDAvFMfdfXuwlMkC2dSwKWEaW-NVl4bo"
 	//Decode incoming json
@@ -31,10 +31,12 @@ func TelegramBot(c *gin.Context) {
 			log.Fatal(err)
 		}
 
-		_, qerr := queue.PushString(strconv.Itoa(msg.Chat.ID)+":----:"+*msg.Text)
-		if qerr != nil {
-			c.Error(qerr)
-		}
+		//_, qerr := queue.PushString(strconv.Itoa(msg.Chat.ID)+":----:"+*msg.Text)
+		//if qerr != nil {
+		//	c.Error(qerr)
+		//}
+
+
 
 		rep, err := engine.BotReply(strconv.Itoa(msg.Chat.ID),*msg.Text)
 		if err != nil || rep == ""  {
@@ -47,6 +49,15 @@ func TelegramBot(c *gin.Context) {
 		if err != nil {
 			fmt.Printf("Error sending: %s\n", err)
 		}
+
+		db := c.MustGet("mysql").(*gorm.DB)
+		convlog := &models.ConversationLog{
+			Input:*msg.Text,
+			Response:rep,
+			UserID:msg.Chat.ID,
+			ConvoID:strconv.Itoa(msg.Chat.ID),
+		}
+		db.Create(&convlog)
 
 		fmt.Printf("->%d, To:\t%s, Text: %s\n", outMsg.Message.ID, outMsg.Message.Chat, *outMsg.Message.Text)
 	case telegram.InlineQueryUpdate:

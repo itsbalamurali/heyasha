@@ -9,6 +9,10 @@
 	"ignore": "test",
 	"package": [
 		{
+			"path": "appengine/cloudsql",
+			"revision": ""
+		},
+		{
 			"path": "context",
 			"revision": ""
 		},
@@ -55,6 +59,12 @@
 			"revisionTime": "2016-04-14T23:39:28Z"
 		},
 		{
+			"checksumSHA1": "cT/dcEd4iioWi6q/Pi8sTF9gHiE=",
+			"path": "github.com/go-sql-driver/mysql",
+			"revision": "7ebe0a500653eeb1859664bed5e48dec1e164e73",
+			"revisionTime": "2016-04-11T07:50:31Z"
+		},
+		{
 			"checksumSHA1": "c9gSBxhvqSQZQ0PHNZyBpAYcFLA=",
 			"path": "github.com/golang/protobuf/proto",
 			"revision": "9e6977f30c91c78396e719e164e57f9287fff42c",
@@ -89,6 +99,24 @@
 			"path": "github.com/jbrukh/bayesian",
 			"revision": "bb8c7464612e6af45dda6cc2ba09094015bc4d2c",
 			"revisionTime": "2016-03-23T01:39:11Z"
+		},
+		{
+			"checksumSHA1": "bJ/MkgAvXQuz+VsUnKIR4I28HrY=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "27522453dea253cf90dcb5345286a5fcf0fbed7c",
+			"revisionTime": "2016-05-22T11:10:33Z"
+		},
+		{
+			"checksumSHA1": "w5/naAzcG0+g6aYx63/of1Wbgqw=",
+			"path": "github.com/jinzhu/gorm/dialects/mysql",
+			"revision": "27522453dea253cf90dcb5345286a5fcf0fbed7c",
+			"revisionTime": "2016-05-22T11:10:33Z"
+		},
+		{
+			"checksumSHA1": "BwhKb5ZaJpGR8xO9JF6WvzJ6uwU=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "3272df6c21d04180007eb3349844c89a3856bc25",
+			"revisionTime": "2015-10-09T08:41:29Z"
 		},
 		{
 			"checksumSHA1": "8sba7NooZnLTY8zidsbqBeDUjxI=",

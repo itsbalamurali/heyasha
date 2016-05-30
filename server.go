@@ -23,6 +23,7 @@ var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
 func init() {
 	database.Connect()
+	database.ConnectMysql()
 }
 
 func main() {
@@ -36,6 +37,7 @@ func main() {
 
 	app_env := os.Getenv("ENV")
 	if app_env == "production" {
+		gin.SetMode(gin.ReleaseMode)
 		log.SetLevel(log.WarnLevel)
 	} else {
 		log.SetLevel(log.DebugLevel)
@@ -54,6 +56,7 @@ func main() {
 	// Global middleware
 	router.Use(middleware.Ginrus(log.StandardLogger(),time.RFC3339,true))
 	router.Use(middleware.Connect())
+	router.Use(middleware.MysqlCon())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
 
