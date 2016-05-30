@@ -11,6 +11,6 @@ type ConversationLog struct {
 	gorm.Model
 	Input string
 	Response string
-	UserID int
+	UserID string
 	ConvoID string
 }
