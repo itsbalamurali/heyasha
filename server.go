@@ -17,6 +17,7 @@ import (
 	"os"
 	"runtime"
 	"time"
+	"github.com/itsbalamurali/heyasha/core/engine"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
@@ -24,6 +25,7 @@ var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 func init() {
 	database.Connect()
 	database.ConnectMysql()
+	engine.Boot()
 }
 
 func main() {

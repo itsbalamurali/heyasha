@@ -55,7 +55,17 @@ func ConnectMysql()  {
 		log.Printf("Can't connect to MySQL, go error %v\n", err)
 		panic(err.Error())
 	}
-	db.AutoMigrate(&models.User{},&models.ConversationLog{},&models.Intent{})
+	db.AutoMigrate(&models.User{},&models.ConversationLog{},&models.Intent{},&models.Aiml{},&models.Botpersonality{},&models.SraiLookup{},&models.Wordcensor{})
 	log.Println("Connected to MySQL Server")
 	Db = db
+}
+
+func ConnectMysqlDB() *gorm.DB  {
+	db, err := gorm.Open("mysql", "admin_twa:Aydim4VdBK@tcp(128.199.81.183:3306)/admin_twa?charset=utf8&parseTime=True")
+	if err != nil {
+		log.Printf("Can't connect to MySQL, go error %v\n", err)
+		panic(err.Error())
+	}
+	log.Println("Connected to MySQL Server#2")
+	return db
 }

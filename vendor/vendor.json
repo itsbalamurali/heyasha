@@ -35,6 +35,18 @@
 			"revisionTime": "2016-04-18T04:36:13Z"
 		},
 		{
+			"checksumSHA1": "LTj/ztUpDwhQSUzi5VkaMQBxjEY=",
+			"path": "github.com/dchest/stemmer",
+			"revision": "f1ab276e6cf5fad3f8db813f22e25b1939c8ef70",
+			"revisionTime": "2012-10-01T10:19:17Z"
+		},
+		{
+			"checksumSHA1": "frA1dieH7W9yQwaQZdRlGTRHqlE=",
+			"path": "github.com/dchest/stemmer/porter2",
+			"revision": "f1ab276e6cf5fad3f8db813f22e25b1939c8ef70",
+			"revisionTime": "2012-10-01T10:19:17Z"
+		},
+		{
 			"checksumSHA1": "4OYV31xqK+c1StcbBjuS0U6Do7o=",
 			"path": "github.com/dghubble/sling",
 			"revision": "5765fe1bdc176ae984b074c8a89980d1f16e6dd8",
