@@ -53,17 +53,8 @@ func RequestIdMiddleware() gin.HandlerFunc {
 	}
 }
 
-// Connect middleware clones the database session for each request and
-// makes the `db` object available for each handler
-func Connect() gin.HandlerFunc{
-	return func(c *gin.Context) {
-		s := database.Session.Clone()
-		defer s.Close()
-		c.Set("db", s.DB(database.Mongo.Database))
-		c.Next()
-	}
-}
 
+//Mysql Connection middleware
 func MysqlCon() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		db := database.Db
@@ -103,4 +94,4 @@ func Ginrus(logger *log.Logger, timeFormat string, utc bool) gin.HandlerFunc {
 			entry.Info()
 		}
 	}
-	}
+}

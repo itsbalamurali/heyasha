@@ -6,5 +6,5 @@ type Intent struct {
 	gorm.Model
 	Sentence string
 	Intent   string
-	DomainID string
+	DomainID uint64
 }

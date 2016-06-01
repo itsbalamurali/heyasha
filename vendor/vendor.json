@@ -113,6 +113,12 @@
 			"revisionTime": "2016-03-23T01:39:11Z"
 		},
 		{
+			"checksumSHA1": "yZSsnPa1sbDkCi2O36Zu523g0MY=",
+			"path": "github.com/jinzhu/configor",
+			"revision": "fb7a3183cd987802d006408fe3a4a9e1f6002ece",
+			"revisionTime": "2016-05-31T08:06:56Z"
+		},
+		{
 			"checksumSHA1": "bJ/MkgAvXQuz+VsUnKIR4I28HrY=",
 			"path": "github.com/jinzhu/gorm",
 			"revision": "27522453dea253cf90dcb5345286a5fcf0fbed7c",

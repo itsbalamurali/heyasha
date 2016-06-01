@@ -12,7 +12,7 @@ type Aiml struct {
 	Filename string
 }
 
-type Botpersonality  struct{
+type Personality  struct{
 	gorm.Model
 	Name string
 	Value string

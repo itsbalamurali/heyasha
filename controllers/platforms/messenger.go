@@ -8,8 +8,6 @@ import (
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"net/http"
 	"github.com/itsbalamurali/heyasha/models"
-	"gopkg.in/mgo.v2"
-	"gopkg.in/mgo.v2/bson"
 	"github.com/itsbalamurali/heyasha/core/engine"
 	"github.com/jinzhu/gorm"
 )
@@ -19,7 +17,6 @@ const (
 )
 
 func MessengerBotVerify(c *gin.Context) {
-
 	verify_token := "er7Wq4yREXBKpdRKjhAg"
 	hub_mode := c.Query("hub.mode")
 	hub_challenge := c.Query("hub.challenge")
@@ -30,7 +27,6 @@ func MessengerBotVerify(c *gin.Context) {
 	} else {
 		c.String(http.StatusBadRequest,"Bad Request")
 	}
-
 }
 
 func MessengerBotChat(c *gin.Context) {
@@ -75,6 +71,7 @@ func MessengerBotChat(c *gin.Context) {
 				},
 			}
 
+			/*
 			db := c.MustGet("db").(*mgo.Database)
 
 			count, err := db.C("users").Find(bson.M{"pid": "fb"+info.Sender.ID}).Limit(1).Count()
@@ -89,6 +86,7 @@ func MessengerBotChat(c *gin.Context) {
 					c.Error(err)
 				}
 			}
+			*/
 			_, qerr := queue.PushString(user.Pid+":----:"+info.Message.Text)
 			if qerr != nil {
 				c.Error(qerr)

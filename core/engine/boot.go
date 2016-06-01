@@ -77,7 +77,7 @@ func trainClassifiers() error {
 
 func fetchTrainingSentences() ([]models.Intent) {
 	var Intents = []models.Intent{}
-	db := database.ConnectMysqlDB()
+	db := database.MysqlCon2()
 	db.Find(&Intents)
 	log.Println("Fetching training sentences")
 	return Intents
