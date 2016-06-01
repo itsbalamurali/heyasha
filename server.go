@@ -24,7 +24,6 @@ var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
 func init() {
 	database.MysqlCon()
-	engine.Boot() //Boot and train all intents
 }
 
 func main() {
@@ -118,5 +117,9 @@ func main() {
 
 	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
+
 	manners.ListenAndServe(":" + port,router) //Graceful restarts
+
+	engine.Boot() //Boot and train all intents after starting the server
+
 }
