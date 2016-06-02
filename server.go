@@ -11,19 +11,18 @@ import (
 	"github.com/braintree/manners"
 	"github.com/itsbalamurali/heyasha/controllers"
 	"github.com/itsbalamurali/heyasha/controllers/platforms"
-	"github.com/itsbalamurali/heyasha/core/database"
 	"github.com/itsbalamurali/heyasha/middleware"
 	"net/http"
 	"os"
 	"runtime"
 	"time"
 	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/itsbalamurali/heyasha/core/database"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
 
 func init() {
-	database.MysqlCon()
 	engine.Boot() //Boot and train all intents
 }
 
@@ -56,7 +55,7 @@ func main() {
 	router := gin.New()
 	// Global middleware
 	router.Use(middleware.Ginrus(log.StandardLogger(),time.RFC3339,true))
-	router.Use(middleware.MysqlCon())
+	router.Use(middleware.MysqlConware())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
 
@@ -120,5 +119,7 @@ func main() {
 	log.Infoln("Hi, I am running on port: " + port + " !!")
 
 	manners.ListenAndServe(":" + port,router) //Graceful restarts
+
+	database.MysqlCon()
 
 }

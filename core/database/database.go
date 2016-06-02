@@ -30,7 +30,7 @@ func MysqlCon()  {
 	if len(uri) == 0 {
 		uri = MySQLDBUrl
 	}
-	db, err := gorm.Open("mysql", MySQLDBUrl)
+	db, err := gorm.Open("mysql", uri)
 	if err != nil {
 		log.Printf("Can't connect to MySQL, go error %v\n", err)
 		panic(err.Error())
@@ -46,7 +46,7 @@ func MysqlCon2() *gorm.DB  {
 	if len(uri) == 0 {
 		uri = MySQLDBUrl
 	}
-	db, err := gorm.Open("mysql", MySQLDBUrl)
+	db, err := gorm.Open("mysql", uri)
 	if err != nil {
 		log.Printf("Can't connect to MySQL, go error %v\n", err)
 		panic(err.Error())

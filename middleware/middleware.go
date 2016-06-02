@@ -55,7 +55,7 @@ func RequestIdMiddleware() gin.HandlerFunc {
 
 
 //Mysql Connection middleware
-func MysqlCon() gin.HandlerFunc {
+func MysqlConware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		db := database.Db
 		//defer db.Close()
