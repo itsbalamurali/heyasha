@@ -25,7 +25,7 @@ const (
 )
 
 // Connect connects to mysql
-func MysqlCon()  {
+func MysqlCon() *gorm.DB {
 	uri := os.Getenv("MYSQLDB_URL")
 	if len(uri) == 0 {
 		uri = MySQLDBUrl
@@ -38,19 +38,5 @@ func MysqlCon()  {
 	db.AutoMigrate(&models.User{},&models.ConversationLog{},&models.Intent{},&models.Aiml{},&models.Personality{},&models.SraiLookup{},&models.Wordcensor{},&models.Session{})
 	log.Println("Connected to MySQL Server")
 	Db = db
-}
-
-//Mysql Connection2 for other non handler functions
-func MysqlCon2() *gorm.DB  {
-	uri := os.Getenv("MYSQLDB_URL")
-	if len(uri) == 0 {
-		uri = MySQLDBUrl
-	}
-	db, err := gorm.Open("mysql", uri)
-	if err != nil {
-		log.Printf("Can't connect to MySQL, go error %v\n", err)
-		panic(err.Error())
-	}
-	log.Println("Connected to MySQL Server#2")
-	return db
+	return Db
 }
