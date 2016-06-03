@@ -15,7 +15,7 @@ type BotResp struct {
 }
 
 //BotReply  Reply from Brain.
-func BotReply(user_id string, usersay string) (string, error) {
+func BotReply(user_id string, usersay string, lang ...string) (string, error) {
 
 	/*
 	// Get the intents as determined by each plugin
