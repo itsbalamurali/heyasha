@@ -10,7 +10,7 @@ import (
 	"log"
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/mysql"
-	"github.com/itsbalamurali/heyasha/models"
+	//"github.com/itsbalamurali/heyasha/models"
 )
 
 var (
@@ -35,7 +35,7 @@ func MysqlCon() *gorm.DB {
 		log.Printf("Can't connect to MySQL, go error %v\n", err)
 		panic(err.Error())
 	}
-	db.AutoMigrate(&models.User{},&models.ConversationLog{},&models.Intent{},&models.Aiml{},&models.Personality{},&models.SraiLookup{},&models.Wordcensor{},&models.Session{})
+	//db.AutoMigrate(&models.User{},&models.ConversationLog{},&models.Intent{},&models.Aiml{},&models.Personality{},&models.SraiLookup{},&models.Wordcensor{},&models.Session{})
 	log.Println("Connected to MySQL Server")
 	Db = db
 	return Db
