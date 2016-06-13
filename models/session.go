@@ -3,7 +3,7 @@ import "github.com/jinzhu/gorm"
 
 type Session struct  {
 	gorm.Model
-	UserID uint64
+	UserID uint
 	SessionToken string
 	IPAddress string
 	DeviceType string

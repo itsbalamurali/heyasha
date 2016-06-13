@@ -45,6 +45,12 @@
 			"revisionTime": "2016-04-23T01:31:43Z"
 		},
 		{
+			"checksumSHA1": "QuS/tkVlwzYDM+muHnFamN9BpOY=",
+			"path": "github.com/dgrijalva/jwt-go",
+			"revision": "c04502f106d7c5b3fae17c5da49a1bbdd3006b3c",
+			"revisionTime": "2016-06-07T00:56:07Z"
+		},
+		{
 			"checksumSHA1": "hb6/A9Q7v30xVxmXtTpEVl15J3g=",
 			"path": "github.com/gin-gonic/gin",
 			"revision": "5caaac4c5c712a9e7a7de29e6c24ef46c753017f",
@@ -79,24 +85,6 @@
 			"path": "github.com/google/go-querystring/query",
 			"revision": "9235644dd9e52eeae6fa48efd539fdc351a0af53",
 			"revisionTime": "2016-03-11T01:20:12Z"
-		},
-		{
-			"checksumSHA1": "z5IYXAbLSEkLfTlioVPh7IR1mjc=",
-			"path": "github.com/iron-io/iron_go3/api",
-			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
-			"revisionTime": "2016-03-17T23:05:54Z"
-		},
-		{
-			"checksumSHA1": "/XPOPYH/zwek5OKuv7oyRJMdCcE=",
-			"path": "github.com/iron-io/iron_go3/config",
-			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
-			"revisionTime": "2016-03-17T23:05:54Z"
-		},
-		{
-			"checksumSHA1": "viVk+xdw+Bwt6mGoFLkL+4cmMGE=",
-			"path": "github.com/iron-io/iron_go3/mq",
-			"revision": "d1197926301489b15e418c49a0b17a9c42817acd",
-			"revisionTime": "2016-03-17T23:05:54Z"
 		},
 		{
 			"checksumSHA1": "nHg8uIWern9W7o8CYn2lvGZ5T6s=",

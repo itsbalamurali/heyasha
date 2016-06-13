@@ -12,14 +12,14 @@ import (
 type User struct {
 	gorm.Model
 	Pid string `json:"pid" bson:"pid"`
-	Username  string `json:"username" bson:"username"`
-	ProfilePicURL string `json:"profile_pic" bson:"profile_pic"`
-	Password  string `json:"password" bson:"password"`
-	FirstName string `json:"first_name" bson:"first_name"`
-	LastName  string `json:"last_name" bson:"last_name"`
-	Gender    string `json:"gender" bson:"gender"`
+	Username  string `json:"username" binding:"required"`
+	ProfilePicURL string `json:"profile_pic"`
+	Password  string `json:"password" binding:"required"`
+	FirstName string `json:"first_name"`
+	LastName  string `json:"last_name"`
+	Gender    string `json:"gender"`
 	Phone     string `json:"phone"`
-	Email     string `json:"email"`
+	Email     string `json:"email" binding:"required"`
 	AuthData  Authdata `json:"auth_data"`
 	Platforms []Platform `json:"platforms"`
 }
@@ -53,4 +53,15 @@ type TwitterAuthData struct {
 	ConsumerSecret  string `json:"consumer_secret"`
 	AuthToken       string `json:"auth_token"`
 	AuthTokenSecret string `json:"auth_token_secret"`
+}
+
+type TokenResponse struct {
+	Token string `json:"token"`
+}
+
+//methods
+func GetUserByID(user_id string, db *gorm.DB) *User {
+	user := &User{}
+	db.First(&user,user_id)
+	return user
 }

@@ -11,6 +11,9 @@ import (
 	"path/filepath"
 )
 
+const (
+	AppSecret = "ILoveAsha<3"
+)
 // Info from config file
 type Config struct {
 	Environment string

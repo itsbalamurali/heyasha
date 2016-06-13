@@ -10,7 +10,7 @@ type Message struct  {
 	//FlexIDType      FlexIDType
 	Sentence        string
 	User            *User
-	//StructuredInput *StructuredInput
+	StructuredInput *StructuredInput
 	Stems           []string
 	Plugin          string
 	CreatedAt       *time.Time
@@ -22,4 +22,11 @@ type Message struct  {
 	// individual words.
 	Tokens []string
 	Route  string
+}
+
+type StructuredInput struct {
+	Commands []string
+	Objects  []string
+	Intents  []string
+	Times    []time.Time
 }

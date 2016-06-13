@@ -10,7 +10,9 @@ import (
 	"github.com/satori/go.uuid"
 	"github.com/itsbalamurali/heyasha/core/database"
 	log "github.com/Sirupsen/logrus"
+	jwt_lib "github.com/dgrijalva/jwt-go"
 	"time"
+	"github.com/itsbalamurali/heyasha/config"
 )
 
 
@@ -23,23 +25,30 @@ func respondWithError(code int, message string, c *gin.Context) {
 
 func TokenAuthMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		token := c.Request.Header.Get("X-Auth-Token")
 
+		_, err := jwt_lib.ParseFromRequest(c.Request, func(token *jwt_lib.Token) (interface{}, error) {
+			b := ([]byte(config.AppSecret))
+			return b, nil
+		})
+
+		if err != nil {
+			c.AbortWithError(401, err)
+		}
+
+		/*
+		token := c.Request.Header.Get("X-Auth-Token")
 		if len(token) == 0 {
 			token = c.Query("auth_token")
 		}
-
 		if token == "" {
 			respondWithError(401, "API token required", c)
 			return
 		}
-
 		if token != "mytoken" {
 			respondWithError(401, "Invalid API token", c)
 			return
 		}
-
-		c.Next()
+		c.Next()*/
 	}
 }
 

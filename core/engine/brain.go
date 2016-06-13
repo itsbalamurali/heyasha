@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"github.com/itsbalamurali/heyasha/models"
 )
 
 type BotResp struct {
@@ -14,20 +15,44 @@ type BotResp struct {
 	BotSay	string `json:"botsay"`
 }
 
-//BotReply  Reply from Brain.
-func BotReply(user_id string, usersay string, lang ...string) (string, error) {
-
-	/*
+// newMsg builds a message struct with Tokens, Stems, and a Structured Input.
+func newMsg(u *models.User, msg string) *models.Message {
+	tokens := TokenizeSentence(msg)
+	stems := StemTokens(tokens)
+	//si := ner.classifyTokens(tokens)
+	si := models.StructuredInput{}
 	// Get the intents as determined by each plugin
-	for pluginID, c := range bClassifiers {
+	for domainID, c := range bClassifiers {
 		scores, idx, _ := c.ProbScores(stems)
-		log.Debug("intent score", pluginIntents[pluginID][idx],
+		log.Println("intent score", domainIntents[domainID][idx],
 			scores[idx])
 		if scores[idx] > 0.7 {
-			si.Intents = append(si.Intents,
-				string(pluginIntents[pluginID][idx]))
+			si.Intents = append(si.Intents, string(domainIntents[domainID][idx]))
 		}
-	}*/
+	}
+
+	m := &models.Message{
+		User:            u,
+		Sentence:        msg,
+		Tokens:          tokens,
+		Stems:           stems,
+		//StructuredInput: si,
+	}
+	/*
+		m, err = addContext(db, m)
+		if err != nil {
+			log.Debug(err)
+		}
+	*/
+	return m
+}
+
+//BotReply  Reply from Brain.
+func BotReply(user_id string, usersay string, lang ...string) (string, error) {
+	//db := database.MysqlCon()
+	//user := models.GetUserByID(user_id,db)
+	//msg := newMsg(user,usersay)
+	//Call(msg.StructuredInput.Intents.)
 	/*
 	client := wit.NewClient("OBU6TR5J7EOJ7RR6HA7LER6W7NP5XRLX")
 	// Process a text message

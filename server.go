@@ -60,6 +60,10 @@ func main() {
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
 
+
+	//Static files
+	router.Static("/assets", "./assets")
+
 	//Favicon
 	router.StaticFile("/favicon.ico", "./assets/img/favicon.ico")
 
@@ -68,35 +72,44 @@ func main() {
 		c.JSON(http.StatusOK, gin.H{"version": "1.0", "message": "Hello, I'm listening!"})
 	})
 
-	v1 := router.Group("/v1", middleware.TokenAuthMiddleware())
+	/*
+	admin := router.Group("/ashpanel")
+	{
+		admin.GET("/")
+	}*/
+
+	auth := router.Group("/",middleware.TokenAuthMiddleware())
 	{
 		//Core REST API routes
-		v1.POST("/list", controllers.SpeechProcess)    //speech recognition
-		v1.GET("/chat", controllers.Chat)              //chat with bot
-		v1.GET("/extract", controllers.IntentExtract)  //Extract Intent from Text
-		v1.GET("/suggest", controllers.SuggestQueries) //Autocomplete user queries
-		v1.GET("/talk", controllers.SuggestQueries)    //Autocomplete user queries
-
-		//Communication Platforms
-		v1.POST("/chat/slack", platforms.SlackBot)              //SlackBot
-		v1.POST("/chat/kik", platforms.KikBot)                  //Kik Bot
-		v1.POST("/chat/telegram", platforms.TelegramBot)        //Telegram Bot
-		v1.POST("/chat/skype", platforms.SkypeBot)              //Skype Bot
-		v1.POST("/chat/messenger", platforms.MessengerBotChat)  //Messenger Bot
-		v1.GET("/chat/messenger", platforms.MessengerBotVerify) //Facebook Callback Verification
-		v1.POST("/chat/sms", platforms.SmsBot)                  //Sms Bot
-		v1.POST("/chat/email", platforms.EmailBot)              //Email Bot
+		auth.POST("/v1/listen", controllers.SpeechProcess)    //speech recognition
+		auth.GET("/v1/chat", controllers.Chat)              //chat with bot
+		auth.GET("/v1/extract", controllers.IntentExtract)  //Extract Intent from Text
+		auth.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
+		auth.GET("/v1/talk", controllers.SuggestQueries)    //Text to speech
 
 		//User REST API routes
-		v1.POST("/users/", controllers.CreateUser)
-		v1.POST("/users/login", controllers.LoginUser)
-		v1.POST("/users/logout", controllers.LoginUser)
-		v1.GET("/users/{UserId}", controllers.GetUserDetails)
-		v1.GET("/users/me", controllers.GetUserDetails)
-		v1.PUT("/users/{UserId}", controllers.UpdateUserDetails)
-		v1.DELETE("/users/{UserId}", controllers.DeleteUser)
-		v1.DELETE("/users/reset_password", controllers.ResetPassword)
+		auth.POST("/v1/users/logout", controllers.LoginUser)
+		auth.GET("/v1/users/{UserId}", controllers.GetUserDetails)
+		auth.GET("/v1/users/me", controllers.GetUserDetails)
+		auth.PUT("/v1/users/{UserId}", controllers.UpdateUserDetails)
+		auth.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
 	}
+
+	//User API No Auth
+	router.POST("/v1/users/", controllers.CreateUser)
+	router.POST("/v1/users/login", controllers.LoginUser)
+	router.POST("/v1/users/reset_password", controllers.ResetPassword)
+
+	//Communication Platforms
+	router.POST("/chat/slack", platforms.SlackBot)              //SlackBot
+	router.POST("/chat/kik", platforms.KikBot)                  //Kik Bot
+	router.POST("/chat/telegram", platforms.TelegramBot)        //Telegram Bot
+	router.POST("/chat/skype", platforms.SkypeBot)              //Skype Bot
+	router.POST("/chat/messenger", platforms.MessengerBotChat)  //Messenger Bot
+	router.GET("/chat/messenger", platforms.MessengerBotVerify) //Facebook Callback Verification
+	router.POST("/chat/sms", platforms.SmsBot)                  //Sms Bot
+	router.POST("/chat/email", platforms.EmailBot)              //Email Bot
+
 
 	//TODO Sessions & Files
 	/*
