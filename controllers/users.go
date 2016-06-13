@@ -60,7 +60,10 @@ func LoginUser(c *gin.Context) {
 		c.JSON(http.StatusBadRequest,gin.H{"message":err.Error()})
 	}else {
 		db := c.MustGet("mysql").(*gorm.DB)
-		user := models.GetUserByID("",db)
+		user := models.GetUserByID(login.User,db)
+		//passbyte := []byte(login.Password)
+		//md5pass := md5.Sum(passbyte)
+
 		// Create the token
 		token := jwt_lib.New(jwt_lib.GetSigningMethod("HS256"))
 		// Set some claims

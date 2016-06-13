@@ -13,7 +13,8 @@ import (
 )
 
 const (
-	token = "EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD"
+	//old//token = "EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD"
+	token = "EAAGeBVsm2kQBACeMa1y7xuwd9nD4oNO66oXa1jwOIhyeK4rnVuxochJ1aJGNvCw4WIDCUl4SlymmFkuIfqXf7423hHixjbZBvUh4VGswpfvyrQ96mfHVIUbCjc6TWsrgbg4bgdvC8YAOOGXhaYeOtDKdj8ZAjOltFQye4diwZDZD"
 )
 
 func MessengerBotVerify(c *gin.Context) {
