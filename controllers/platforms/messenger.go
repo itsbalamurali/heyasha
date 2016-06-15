@@ -4,7 +4,6 @@ import (
 	"fmt"
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	"github.com/iron-io/iron_go3/mq"
 	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
 	"net/http"
 	"github.com/itsbalamurali/heyasha/models"
@@ -32,7 +31,6 @@ func MessengerBotVerify(c *gin.Context) {
 
 func MessengerBotChat(c *gin.Context) {
 	var msg = messenger.Receive{}
-	var queue = mq.New("messages");
 
 	err := c.BindJSON(&msg)
 	if err != nil {
@@ -51,49 +49,9 @@ func MessengerBotChat(c *gin.Context) {
 				token,
 				messenger.Recipient{info.Sender.ID},
 			}
-			//fmt.Println("Message: " +info.Message.Text)
-			//fmt.Println("Sender: " + info.Sender.ID)
-			//ai_msg := engine.BotReply(strconv.FormatInt(info.Message.Sender.ID, 10), info.Message.Text)
-			profile, fberr := messenger.ProfileByID(info.Sender.ID,token)
-			if fberr != nil {
-				log.Errorln(err.Error())
-			}
 
-			user := &models.User{
-				Pid: "fb"+info.Sender.ID,
-				FirstName:profile.FirstName,
-				LastName:profile.LastName,
-				ProfilePicURL:profile.ProfilePicURL,
-				Platforms:[]models.Platform{
-					{
-					PlatformID:info.Sender.ID,
-					Name:"facebook",
-					},
-				},
-			}
 
-			/*
-			db := c.MustGet("db").(*mgo.Database)
-
-			count, err := db.C("users").Find(bson.M{"pid": "fb"+info.Sender.ID}).Limit(1).Count()
-			if err != nil {
-				c.Error(err)
-			}
-			if count == 0 {
-				//Document doesnt exist
-				//Insert Document
-				err = db.C("users").Insert(user)
-				if err != nil {
-					c.Error(err)
-				}
-			}
-			*/
-			_, qerr := queue.PushString(user.Pid+":----:"+info.Message.Text)
-			if qerr != nil {
-				c.Error(qerr)
-			}
-
-			rep, err := engine.BotReply(user.Pid,info.Message.Text)
+			rep, err := engine.BotReply(info.Sender.ID,info.Message.Text)
 			if err != nil || rep == "" {
 				rep = "Whoops my brains not working!!!!"
 				log.Println(err)
@@ -103,8 +61,8 @@ func MessengerBotChat(c *gin.Context) {
 			convlog := &models.ConversationLog{
 				Input:info.Message.Text,
 				Response:rep,
-				UserID: user.Pid,
-				ConvoID:user.Pid,
+				UserID: info.Sender.ID,
+				ConvoID: info.Sender.ID,
 			}
 			mysqldb.Create(&convlog)
 		}
