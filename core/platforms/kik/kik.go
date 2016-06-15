@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"net/http"
-	"time"
 )
 
 // Action is used to determine what kind of message a webhook event is.
@@ -50,7 +49,7 @@ type MessageReceived struct {
 	Participants         []string  `json:"participants"`
 	ID                   string    `json:"id"`
 	MessageIDs           []string  `json:"messageIds,omitempty"`
-	Timestamp            time.Time `json:"timestamp"`
+	Timestamp            int64 `json:"timestamp"`
 	ReadReceiptRequested bool      `json:"readReceiptRequested"`
 	Mention              string    `json:"mention"`
 	IsTyping             bool      `json:"isTyping,omitempty"`
