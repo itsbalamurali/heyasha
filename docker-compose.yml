@@ -1,26 +1,42 @@
-web:
-  build: .
-  command: 'bash -c ''heyasha'''
-  working_dir: \go\src
-  environment:
-    PORT: 8080
-    DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
+#Install MySQL
+mysql:
+  image: mysql:5.7.12
   ports:
-    - '8080:8080'
-  links:
-    - herokuPostgresql
-shell:
-  build: .
-  command: bash
-  working_dir: \app\user
-  environment:
-    PORT: 8080
-    DATABASE_URL: 'postgres://postgres:@herokuPostgresql:5432/postgres'
-  ports:
-    - '8080:8080'
-  links:
-    - herokuPostgresql
+  - "3306:3306"
   volumes:
-    - '.:\app\user'
-herokuPostgresql:
-  image: postgres
+  - /var/lib/mysql:/var/lib/mysql
+  restart: always
+
+#Install Redis
+redis:
+  image: redis:3.0
+  ports:
+  - "6379:6379"
+  - "16379:16379"
+  - "26379:26379"
+  restart: always
+
+#Install HeyAsha Engine
+heyasha:
+  image: heyasha/heyasha:latest
+  ports:
+  - "4730:4730"
+  expose:
+  - "4730"
+  links:
+  - "mysql"
+  - "redis"
+  restart: always
+  tty: true
+
+#Load Balancer.
+lb:
+  image: tutum/haproxy:latest
+  links:
+  - heyasha
+  ports:
+  - "80:80"
+  - "443:443"
+  environment:
+  - BACKEND_PORT=4730
+  - BALANCE=roundrobin
