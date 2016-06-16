@@ -5,10 +5,10 @@ import (
 	"net/http"
 	"github.com/itsbalamurali/heyasha/core/engine"
 	"fmt"
+	"time"
 )
 
 func Chat(c *gin.Context) {
-	//message := &models.Message{}
 	chatmsg := c.Query("text")
 	lang := c.Query("lang")
 	rep, err := engine.BotReply("dummyid", chatmsg, lang)
@@ -17,5 +17,9 @@ func Chat(c *gin.Context) {
 		c.Error(err)
 		rep = "Something went wrong"
 	}
-	c.String(http.StatusOK, rep)
+	if rep == ""{
+		rep = "Something went wrong"
+
+	}
+	c.JSON(http.StatusOK, gin.H{"success":true,"timestamp":time.Now().UnixNano(),"userSay":chatmsg,"ashaSay":rep,"body":nil})
 }

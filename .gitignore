@@ -27,3 +27,4 @@ bin/
 *.md
 tmp/
 *.sql
+assets/AdminLTE-2.3.3/

@@ -6,9 +6,10 @@
 package models
 import "github.com/jinzhu/gorm"
 
-type Files struct {
+type File struct {
 	gorm.Model
 	UserID uint64
-	Uri string
+	OriginalName string
 	ContentType string
+	Uuid string
 }

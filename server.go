@@ -73,7 +73,7 @@ func main() {
 	})
 
 	/*
-	admin := router.Group("/ashpanel")
+	admin := router.Group("/admin")
 	{
 		admin.GET("/")
 	}*/
@@ -89,10 +89,13 @@ func main() {
 
 		//User REST API routes
 		auth.POST("/v1/users/logout", controllers.LoginUser)
-		auth.GET("/v1/users/{UserId}", controllers.GetUserDetails)
+		auth.GET("/v1/users/:userId", controllers.GetUserDetails)
 		auth.GET("/v1/users/me", controllers.GetUserDetails)
-		auth.PUT("/v1/users/{UserId}", controllers.UpdateUserDetails)
-		auth.DELETE("/v1/users/{UserId}", controllers.DeleteUser)
+		auth.PUT("/v1/users/:userId", controllers.UpdateUserDetails)
+		auth.DELETE("/v1/users/:userId", controllers.DeleteUser)
+		//Files Upload
+		auth.POST("/v1/files/upload", controllers.FileUpload)
+		auth.GET("/v1/files/:uuid", controllers.FileGetById)
 	}
 
 	//User API No Auth
@@ -111,7 +114,6 @@ func main() {
 	router.POST("/chat/email", platforms.EmailBot)              //Email Bot
 
 
-	//TODO Sessions & Files
 	/*
 		//Sync Adapters
 		router.POST("/sync/contacts")

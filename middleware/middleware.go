@@ -32,8 +32,12 @@ func TokenAuthMiddleware() gin.HandlerFunc {
 		})
 
 		if err != nil {
-			c.AbortWithError(401, err)
+			c.JSON(401,gin.H{"success":false,"message":"unauthorized"})
+			//c.AbortWithError(401, err)
+			c.Abort()
+
 		}
+
 
 		/*
 		token := c.Request.Header.Get("X-Auth-Token")
