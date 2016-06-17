@@ -78,6 +78,11 @@ func main() {
 		admin.GET("/")
 	}*/
 
+	//User API No Auth
+	router.POST("/v1/users/", controllers.CreateUser)
+	router.POST("/v1/users/login", controllers.LoginUser)
+	router.POST("/v1/users/reset_password", controllers.ResetPassword)
+
 	auth := router.Group("/",middleware.TokenAuthMiddleware())
 	{
 		//Core REST API routes
@@ -90,7 +95,7 @@ func main() {
 		//User REST API routes
 		auth.POST("/v1/users/logout", controllers.LoginUser)
 		auth.GET("/v1/users/me", controllers.GetUserDetails)
-		auth.GET("/v1/users/:userId", controllers.GetUserDetails)
+		auth.GET("/v1/users/profile/:userId", controllers.GetUserDetails)
 		auth.PUT("/v1/users/:userId", controllers.UpdateUserDetails)
 		auth.DELETE("/v1/users/:userId", controllers.DeleteUser)
 		//Files Upload
@@ -98,10 +103,6 @@ func main() {
 		auth.GET("/v1/files/:uuid", controllers.FileGetById)
 	}
 
-	//User API No Auth
-	router.POST("/v1/users/", controllers.CreateUser)
-	router.POST("/v1/users/login", controllers.LoginUser)
-	router.POST("/v1/users/reset_password", controllers.ResetPassword)
 
 	//Communication Platforms
 	router.POST("/chat/slack", platforms.SlackBot)              //SlackBot
