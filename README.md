@@ -2,7 +2,6 @@ Asha: Artificial Intelligent Friend
 ====================================
 [![GitHub release](https://img.shields.io/github/release/itsbalamurali/heyasha.svg?maxAge=2592000)](https://github.com/itsbalamurali/heyasha)
 [![GitHub tag](https://img.shields.io/github/tag/itsbalamurali/heyasha.svg?maxAge=2592000)](https://github.com/itsbalamurali/heyasha)
-[![GitHub issues](https://img.shields.io/github/issues/itsbalamurali/heyasha.svg?maxAge=2592000)](https://github.com/itsbalamurali/heyasha)
 [![Build Status](https://travis-ci.com/itsbalamurali/heyasha.svg?token=C7gvCDMuFC47B18pMTgy&branch=master)](https://travis-ci.com/itsbalamurali/heyasha)
 [![Build Status](https://semaphoreci.com/api/v1/projects/b0cffd25-cf7f-44b5-8dbf-4f365e0eccd0/836471/badge.svg)](https://semaphoreci.com/itsbalamurali/heyasha)
 
@@ -50,7 +49,7 @@ $ asha-cli
 
 ## Rest API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+REST API Documentation can be found here : https://docs.heyasha.com 
 
 ## Tests
 To run tests run 
@@ -62,4 +61,4 @@ $ go test
 ## License
 
 Copyright (C) 2016 Balamurali Pandranki - All Rights Reserved
-Unauthorized copying of this file, via any medium is strictly prohibited
+Unauthorized copying of this file, via any medium is strictly prohibited.
