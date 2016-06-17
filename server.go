@@ -98,9 +98,16 @@ func main() {
 		auth.GET("/v1/users/profile/:userId", controllers.GetUserDetails)
 		auth.PUT("/v1/users/:userId", controllers.UpdateUserDetails)
 		auth.DELETE("/v1/users/:userId", controllers.DeleteUser)
+
 		//Files Upload
 		auth.POST("/v1/files/upload", controllers.FileUpload)
 		auth.GET("/v1/files/:uuid", controllers.FileGetById)
+
+		//TODO Sync Adapters
+		auth.POST("/sync/contacts", controllers.SyncContacts)
+		auth.POST("/sync/calender", controllers.SyncCalender)
+		auth.POST("/sync/notes", controllers.SyncNotes)
+
 	}
 
 
@@ -114,13 +121,6 @@ func main() {
 	router.POST("/chat/sms", platforms.SmsBot)                  //Sms Bot
 	router.POST("/chat/email", platforms.EmailBot)              //Email Bot
 
-
-	/*
-		//Sync Adapters
-		router.POST("/sync/contacts")
-		router.POST("/sync/calender")
-		router.POST("/sync/notes")
-	*/
 
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {

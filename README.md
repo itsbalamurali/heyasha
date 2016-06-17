@@ -4,7 +4,7 @@ Asha: Artificial Intelligent Friend
 [![GitHub tag](https://img.shields.io/github/tag/itsbalamurali/heyasha.svg?maxAge=2592000)](https://github.com/itsbalamurali/heyasha)
 [![Build Status](https://travis-ci.com/itsbalamurali/heyasha.svg?token=C7gvCDMuFC47B18pMTgy&branch=master)](https://travis-ci.com/itsbalamurali/heyasha)
 [![Build Status](https://semaphoreci.com/api/v1/projects/b0cffd25-cf7f-44b5-8dbf-4f365e0eccd0/836471/badge.svg)](https://semaphoreci.com/itsbalamurali/heyasha)
-
+[![wercker status](https://app.wercker.com/status/3525d3de6c81369ed4000fb74353921d/m "wercker status")](https://app.wercker.com/project/bykey/3525d3de6c81369ed4000fb74353921d)
 ### Overview
 
 A Virtual & Extensible AI Friend(Bot) available on multiple platforms like:
