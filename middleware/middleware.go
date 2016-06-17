@@ -61,6 +61,7 @@ func RequestIdMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		uuid := uuid.NewV4().String()
 		c.Writer.Header().Set("X-Request-Id", uuid)
+		c.Writer.Header().Set("X-Asha-Version", "1.0")
 		c.Set("x-request-id",uuid)
 		c.Next()
 	}

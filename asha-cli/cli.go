@@ -12,6 +12,7 @@ import (
 	"gopkg.in/urfave/cli.v1"
 	"os"
 	"strconv"
+	"encoding/csv"
 )
 
 func main() {
@@ -52,12 +53,24 @@ func main() {
 			Usage:  "migratedb",
 			Action: migrateDatabase,
 		},
+		{
+			Name:   "csv",
+			Usage:  "csv --file intents.csv",
+
+			Action: loadFromCSV,
+			Flags: []cli.Flag{
+				cli.StringFlag{
+					Name:  "file, f",
+					Usage: "File Name",
+				},
+			},
+		},
 	}
 
 	app.Run(os.Args)
 }
 
-func createNewIntent(c *cli.Context) {
+func createNewIntent(c *cli.Context) error {
 	db := database.MysqlCon()
 	dbfile := &models.Intent{
 		Sentence: c.String("sentence"),
@@ -66,10 +79,60 @@ func createNewIntent(c *cli.Context) {
 	}
 	db.Save(&dbfile)
 	fmt.Println("Success: Created Intent Successfully with id: "+ strconv.Itoa(int(dbfile.ID)))
+	return nil
 }
 
-func migrateDatabase(c *cli.Context) {
+func loadFromCSV(c *cli.Context) error {
+
+	//if c.String("file") == "" {
+	//	return errors.New("a file name is required eg: asha-cli csv --file=intents.csv")
+	//}
+
+	csvfile, err := os.Open(c.String("file"))
+
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	defer csvfile.Close()
+
+	reader := csv.NewReader(csvfile)
+
+	reader.FieldsPerRecord = -1 // see the Reader struct information below
+
+	rawCSVdata, err := reader.ReadAll()
+
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	db := database.MysqlCon()
+
+	// sanity check, display to standard output
+	for _, each := range rawCSVdata {
+		Did,err := strconv.ParseUint(each[2],10,64)
+		if err != nil {
+			fmt.Println(err)
+			return err
+		}
+		dbfile := &models.Intent{
+			Sentence: each[0],
+			Intent:   each[1],
+			DomainID: Did,
+		}
+		db.Create(&dbfile)
+	}
+
+	fmt.Println("Success: Migrated Intents from CSV file")
+
+	return nil
+}
+
+func migrateDatabase(c *cli.Context) error {
 	db := database.MysqlCon()
 	db.AutoMigrate(&models.User{}, &models.ConversationLog{}, &models.Intent{}, &models.Aiml{}, &models.Personality{}, &models.SraiLookup{}, &models.Wordcensor{}, &models.Session{}, &models.File{})
 	fmt.Println("Success: Migrated All models!")
+	return nil
 }

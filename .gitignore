@@ -24,7 +24,6 @@ _testmain.go
 *.prof
 .idea
 bin/
-*.md
 tmp/
 *.sql
 assets/AdminLTE-2.3.3/

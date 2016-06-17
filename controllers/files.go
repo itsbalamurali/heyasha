@@ -17,7 +17,7 @@ import (
 func FileUpload(c *gin.Context)  {
 	db := c.MustGet("mysql").(*gorm.DB)
 	dbfile := &models.File{
-		UserID: "",
+		UserID: 1,
 		OriginalName: "",
 		ContentType: "",
 		Uuid: "",
