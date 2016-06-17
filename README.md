@@ -61,4 +61,4 @@ $ go test
 ## License
 
 Copyright (C) 2016 Balamurali Pandranki - All Rights Reserved
-Unauthorized copying of this file, via any medium is strictly prohibited.
+Unauthorized copying of this project, via any medium is strictly prohibited.

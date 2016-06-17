@@ -89,8 +89,8 @@ func main() {
 
 		//User REST API routes
 		auth.POST("/v1/users/logout", controllers.LoginUser)
-		auth.GET("/v1/users/:userId", controllers.GetUserDetails)
 		auth.GET("/v1/users/me", controllers.GetUserDetails)
+		auth.GET("/v1/users/:userId", controllers.GetUserDetails)
 		auth.PUT("/v1/users/:userId", controllers.UpdateUserDetails)
 		auth.DELETE("/v1/users/:userId", controllers.DeleteUser)
 		//Files Upload
