@@ -32,9 +32,9 @@ func EmailBot(c *gin.Context) {
 	)
 
 	header := make(map[string]string)
-	header["From"] = from
+	header["From"] = "Asha <asha@heyasha.com>"
 	header["To"] = sender
-	header["Subject"] = encodeRFC2047("RE: "+subject)
+	header["Subject"] = "RE: "+subject
 	header["MIME-Version"] = "1.0"
 	header["Content-Type"] = "text/html; charset=\"utf-8\""
 	header["Content-Transfer-Encoding"] = "base64"
@@ -43,7 +43,7 @@ func EmailBot(c *gin.Context) {
 	for k, v := range header {
 		message += fmt.Sprintf("%s: %s\r\n", k, v)
 	}
-	body := "<html><body> Hi "+ from +", <br> Thanks for mailing me. <br> Currently i am still learning to read and replying to your emails <br> Regards, Yours Asha ;) </body></html>"
+	body := "<html><body> Hi "+ from +", <br><br> Thanks for mailing me. <br> Currently i am still learning to read and replying to your emails <br><br> Regards,<br> Yours Asha :) . </body></html>"
 	message += "\r\n" + base64.StdEncoding.EncodeToString([]byte(body))
 
 
