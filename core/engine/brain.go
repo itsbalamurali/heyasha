@@ -95,3 +95,7 @@ func BotReply(user_id string, usersay string, lang ...string) (string, error) {
 	err = json.NewDecoder(resp.Body).Decode(&r)
 	return r.BotSay, err
 }
+
+func EntityParser()  {
+	
+}

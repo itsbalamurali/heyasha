@@ -2,31 +2,35 @@ package platforms
 
 import (
 	"github.com/gin-gonic/gin"
+	//"github.com/hectane/hectane/queue"
+	//"github.com/hectane/hectane/email"
+	"net/smtp"
+	"log"
 )
 
 func EmailBot(c *gin.Context) {
-	//json.NewDecoder(r.Body).Decode(update)
-	//r.MultipartForm.Value
-	/*mediaType, params, err := mime.ParseMediaType(msg.Header.Get("Content-Type"))
-	if err != nil {
-		log.Fatal(err)
+	sender,_ := c.GetPostForm("sender")
+	from,_ := c.GetPostForm("from")
+
+	// Set up authentication information.
+	auth := smtp.PlainAuth(
+		"",
+		"postmaster@heyasha.com",
+		"915dc442862acfda08672c116d117be2",
+		"smtp.mailgun.org",
+	)
+	// Connect to the server, authenticate, set the sender and recipient,
+	// and send the email all in one step.
+	merr := smtp.SendMail(
+		"smtp.mailgun.org:25",
+		auth,
+		"asha@heyasha.com",
+		[]string{sender},
+		[]byte("<html><body> Hi "+ from +", <br> Thanks for mailing me. <br> Currently i am still learning to read and replying to your emails <br> Regards, Yours Asha ;) </body></html>"),
+	)
+	if merr != nil {
+		log.Fatal(merr)
 	}
-	if strings.HasPrefix(mediaType, "multipart/") {
-		mr := multipart.NewReader(msg.Body, params["boundary"])
-		for {
-			p, err := mr.NextPart()
-			if err == io.EOF {
-				return
-			}
-			if err != nil {
-				log.Fatal(err)
-			}
-			slurp, err := ioutil.ReadAll(p)
-			if err != nil {
-				log.Fatal(err)
-			}
-			fmt.Printf("Part %q: %q\n", p.Header.Get("Foo"), slurp)
-		}
-	}
-	*/
+
+	c.JSON(200,gin.H{"message":"Mail Received thanks :)"})
 }

@@ -87,6 +87,24 @@
 			"revisionTime": "2016-03-11T01:20:12Z"
 		},
 		{
+			"checksumSHA1": "om/et/oGtvZQX7e5juhd/Vu3CaM=",
+			"path": "github.com/hectane/go-nonblockingchan",
+			"revision": "a5c3fb0f46b221ee575b2b7892a3ccf0557bcb5e",
+			"revisionTime": "2015-11-05T01:58:26Z"
+		},
+		{
+			"checksumSHA1": "AFbgapdMPWRB8Z1c5ICgOF8nHtQ=",
+			"path": "github.com/hectane/hectane/email",
+			"revision": "46f50acc021cf3139c322c53201ab70d5a405762",
+			"revisionTime": "2016-05-24T02:24:52Z"
+		},
+		{
+			"checksumSHA1": "bruXGOFJcFM2/jQX4zgraqRU7n4=",
+			"path": "github.com/hectane/hectane/queue",
+			"revision": "46f50acc021cf3139c322c53201ab70d5a405762",
+			"revisionTime": "2016-05-24T02:24:52Z"
+		},
+		{
 			"checksumSHA1": "nHg8uIWern9W7o8CYn2lvGZ5T6s=",
 			"path": "github.com/jbrukh/bayesian",
 			"revision": "bb8c7464612e6af45dda6cc2ba09094015bc4d2c",
@@ -117,10 +135,22 @@
 			"revisionTime": "2015-10-09T08:41:29Z"
 		},
 		{
+			"checksumSHA1": "pKLf7rG7pFlJkmidkpmxusC567o=",
+			"path": "github.com/kennygrant/sanitize",
+			"revision": "ce9fd1f6ce32afaa38b51feea32320fc8875e8e4",
+			"revisionTime": "2015-10-03T19:43:56Z"
+		},
+		{
 			"checksumSHA1": "8sba7NooZnLTY8zidsbqBeDUjxI=",
 			"path": "github.com/manucorporat/sse",
 			"revision": "ee05b128a739a0fb76c7ebd3ae4810c1de808d6d",
 			"revisionTime": "2016-01-26T18:01:36Z"
+		},
+		{
+			"checksumSHA1": "5iwep10gHtQtkfaE/3I1PU908pM=",
+			"path": "github.com/pborman/uuid",
+			"revision": "c55201b036063326c5b1b89ccfe45a184973d073",
+			"revisionTime": "2016-02-16T16:37:10Z"
 		},
 		{
 			"checksumSHA1": "kg+yk3GiS678Sc6Xc+xrmGZRKxw=",
@@ -133,6 +163,18 @@
 			"path": "golang.org/x/net/context",
 			"revision": "30db96677b74e24b967e23f911eb3364fc61a011",
 			"revisionTime": "2016-05-25T13:11:03Z"
+		},
+		{
+			"checksumSHA1": "vqc3a+oTUGX8PmD0TS+qQ7gmN8I=",
+			"path": "golang.org/x/net/html",
+			"revision": "1961d9def2b2d7a28d7958926d2457d05a178ecd",
+			"revisionTime": "2016-06-15T20:37:29Z"
+		},
+		{
+			"checksumSHA1": "00eQaGynDYrv3tL+C7l9xH0IDZg=",
+			"path": "golang.org/x/net/html/atom",
+			"revision": "1961d9def2b2d7a28d7958926d2457d05a178ecd",
+			"revisionTime": "2016-06-15T20:37:29Z"
 		},
 		{
 			"checksumSHA1": "GIGmSrYACByf5JDIP9ByBZksY80=",

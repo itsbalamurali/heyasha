@@ -132,7 +132,7 @@ func loadFromCSV(c *cli.Context) error {
 
 func migrateDatabase(c *cli.Context) error {
 	db := database.MysqlCon()
-	db.AutoMigrate(&models.User{}, &models.ConversationLog{}, &models.Intent{}, &models.Aiml{}, &models.Personality{}, &models.SraiLookup{}, &models.Wordcensor{}, &models.Session{}, &models.File{})
+	db.AutoMigrate(&models.User{}, &models.UsersPlatform{} ,&models.UsersAuthdata{} ,&models.UsersAnonymousAuthData{} ,&models.UsersFacebookAuthData{} ,&models.UsersTwitterAuthData{}  ,&models.Entity{}, &models.EntityValue{}, &models.ConversationLog{}, &models.Intent{}, &models.Aiml{}, &models.Personality{}, &models.SraiLookup{}, &models.Wordcensor{}, &models.Session{}, &models.File{})
 	fmt.Println("Success: Migrated All models!")
 	return nil
 }

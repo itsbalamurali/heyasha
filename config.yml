@@ -1,0 +1,24 @@
+#Environment Dev/Prod?
+ENVIRONMENT: dev
+
+APP_SECRET: test
+
+#SMTP email settings
+SMTP:
+  HOSTNAME: smtp.mailgun.org
+  USERNAME: postmaster@heyasha.com
+  PASSWORD: 915dc442862acfda08672c116d117be2
+  PORT: 25
+
+#Database Settings
+MONGO_URI: "mongodb://murali:yourass1994@ds011872.mlab.com:11872/heyasha"
+MYSQL_URI: "mysql://admin_twa:Aydim4VdBK@128.199.81.183:3306/admin_twa"
+
+#SMS settings
+SMS: test
+  HOSTNAME: test
+  API_KEY: test
+
+#Google Cloud Bucket
+GCS:
+  BucketName: hey-asha.appspot.com

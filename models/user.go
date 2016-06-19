@@ -20,33 +20,33 @@ type User struct {
 	Gender    string `json:"gender"`
 	Phone     string `json:"phone"`
 	Email     string `json:"email" binding:"required"`
-	AuthData  Authdata `json:"auth_data"`
-	Platforms []Platform `json:"platforms"`
+	AuthData  UsersAuthdata `json:"auth_data"`
+	Platforms []UsersPlatform `json:"platforms"`
 }
 
-type Platform struct {
+type UsersPlatform struct {
 	PlatformID string `json:"profile_id"`
 	Name string `json:"name"`
 }
 
 
-type Authdata struct {
-	Facebook  FacebookAuthData `json:"facebook"`
-	Twitter   TwitterAuthData `json:"twitter"`
-	Anonymous AnonymousAuthData `json:"anonymous"`
+type UsersAuthdata struct {
+	Facebook  UsersFacebookAuthData `json:"facebook"`
+	Twitter   UsersTwitterAuthData `json:"twitter"`
+	Anonymous UsersAnonymousAuthData `json:"anonymous"`
 }
 
-type AnonymousAuthData struct {
-	Id string `json:"id"`
+type UsersAnonymousAuthData struct {
+	ID string `json:"id"`
 }
 
-type FacebookAuthData struct {
-	Id          string `json:"id"`
+type UsersFacebookAuthData struct {
+	ID          string `json:"id"`
 	AccessToken string `json:"access_token"`
 	ExpiryDate  string `json:"expiry_date"`
 }
 
-type TwitterAuthData struct {
+type UsersTwitterAuthData struct {
 	Id              string `json:"id"`
 	ScreenName      string `json:"screen_name"`
 	ConsumerKey     string `json:"consumer_key"`
@@ -57,11 +57,4 @@ type TwitterAuthData struct {
 
 type TokenResponse struct {
 	Token string `json:"token"`
-}
-
-//methods
-func GetUserByID(user_id string, db *gorm.DB) *User {
-	user := &User{}
-	db.First(&user,user_id)
-	return user
 }

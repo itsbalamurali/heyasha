@@ -5,41 +5,34 @@
 //Written by Balamurali Pandranki <balamurali@live.com>, 25/4/2016 4:30 PM
 package config
 
-import (
-	"github.com/BurntSushi/toml"
-	log "github.com/Sirupsen/logrus"
-	"path/filepath"
-)
-
 const (
 	AppSecret = "ILoveAsha<3"
 )
-// Info from config file
-type Config struct {
-	Environment string
-	MongoURI    string `toml:"mongo_uri"`
-	Email       email  `toml:"email"`
-	Sms         sms    `toml:"sms"`
-	CloudBucket string `toml:"google_cloud_bucket"`
-}
 
-type email struct {
-}
+var Config = struct {
+	ENVIRONMENT string `default:"production"`
 
-type sms struct {
-}
+	//Databases
+	MYSQL_URI string
+	MONGO_URI string
 
-// Reads info from config file
-func LoadConfig() Config {
-	configfile, err := filepath.Abs("config.toml") //flag.Configfile
-	if err != nil {
-		log.Fatalln("Config file is missing: ", configfile)
+	SMTP struct {
+		HOSTNAME  string `required:"true"`
+		USERNAME string `required:"true"`
+		PASSWORD string `required:"true"`
+		PORT string `required:"true"`
 	}
 
-	var config Config
-	if _, err := toml.DecodeFile(configfile, &config); err != nil {
-		log.Fatalln(err)
+
+	SMS []struct{
+		HOSTNAME string
+		API_KEY string
 	}
-	log.Infoln("Loaded configuration file: config.toml")
-	return config
-}
+
+	//GoogleCloudStorage
+	GCS struct{
+		BucketName string `required:"true"`
+
+	}
+}{}
+
