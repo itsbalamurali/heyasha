@@ -26,4 +26,8 @@ _testmain.go
 bin/
 tmp/
 *.sql
-assets/AdminLTE-2.3.3/
+*.md
+LICENSE
+AUTHORS
+CONTRIBUTORS
+README
