@@ -6,18 +6,19 @@
 package main
 
 import (
-	log "github.com/Sirupsen/logrus"
-	"github.com/gin-gonic/gin"
-	"github.com/braintree/manners"
-	"github.com/itsbalamurali/heyasha/controllers"
-	"github.com/itsbalamurali/heyasha/controllers/platforms"
-	"github.com/itsbalamurali/heyasha/middleware"
 	"net/http"
 	"os"
 	"runtime"
 	"time"
-	"github.com/itsbalamurali/heyasha/core/engine"
+
+	log "github.com/Sirupsen/logrus"
+	"github.com/braintree/manners"
+	"github.com/gin-gonic/gin"
+	"github.com/itsbalamurali/heyasha/controllers"
+	"github.com/itsbalamurali/heyasha/controllers/platforms"
 	"github.com/itsbalamurali/heyasha/core/database"
+	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/itsbalamurali/heyasha/middleware"
 )
 
 var logglyToken string = "09af9fc7-1db3-4c39-a452-f923467e3af1"
@@ -55,11 +56,10 @@ func main() {
 	//New Router
 	router := gin.New()
 	// Global middleware
-	router.Use(middleware.Ginrus(log.StandardLogger(),time.RFC3339,true))
+	router.Use(middleware.Ginrus(log.StandardLogger(), time.RFC3339, true))
 	router.Use(middleware.MysqlConware())
 	router.Use(gin.Recovery())
 	router.Use(middleware.RequestIdMiddleware())
-
 
 	//Static files
 	router.Static("/assets", "./assets")
@@ -73,24 +73,24 @@ func main() {
 	})
 
 	/*
-	admin := router.Group("/admin")
-	{
-		admin.GET("/")
-	}*/
+		admin := router.Group("/admin")
+		{
+			admin.GET("/")
+		}*/
 
 	//User API No Auth
 	router.POST("/v1/users/", controllers.CreateUser)
 	router.POST("/v1/users/login", controllers.LoginUser)
 	router.POST("/v1/users/reset_password", controllers.ResetPassword)
 
-	auth := router.Group("/",middleware.TokenAuthMiddleware())
+	auth := router.Group("/", middleware.TokenAuthMiddleware())
 	{
 		//Core REST API routes
-		auth.POST("/v1/stt", controllers.SpeechProcess)    //speech recognition
+		auth.POST("/v1/stt", controllers.SpeechProcess)     //speech recognition
 		auth.GET("/v1/text", controllers.Chat)              //chat with bot
-		auth.GET("/v1/intent", controllers.IntentExtract)  //Extract Intent from Text
+		auth.GET("/v1/intent", controllers.IntentExtract)   //Extract Intent from Text
 		auth.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
-		auth.GET("/v1/tts", controllers.SuggestQueries)    //Text to speech
+		auth.GET("/v1/tts", controllers.SuggestQueries)     //Text to speech
 
 		//User REST API routes
 		auth.POST("/v1/users/logout", controllers.LoginUser)
@@ -105,6 +105,7 @@ func main() {
 
 		//TODO Sync Adapters
 		auth.POST("/sync/contacts", controllers.SyncContacts)
+		auth.POST("/sync/texts", controllers.SyncContacts)
 		auth.POST("/sync/calender", controllers.SyncCalender)
 		auth.POST("/sync/notes", controllers.SyncNotes)
 	}
@@ -121,15 +122,15 @@ func main() {
 
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {
-		c.JSON(http.StatusMethodNotAllowed, gin.H{"status":"error","message": "method not allowed"})
+		c.JSON(http.StatusMethodNotAllowed, gin.H{"status": "error", "message": "method not allowed"})
 	})
 
 	//404 Handler
 	router.NoRoute(func(c *gin.Context) {
-		c.JSON(http.StatusNotFound, gin.H{"status":"error","message": "method not found"})
+		c.JSON(http.StatusNotFound, gin.H{"status": "error", "message": "method not found"})
 	})
 
 	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
-	manners.ListenAndServe(":" + port,router) //Graceful restarts
+	manners.ListenAndServe(":"+port, router) //Graceful restarts
 }

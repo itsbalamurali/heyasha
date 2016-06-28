@@ -6,13 +6,13 @@
 package main
 
 import (
+	"encoding/csv"
 	"fmt"
 	"github.com/itsbalamurali/heyasha/core/database"
 	"github.com/itsbalamurali/heyasha/models"
 	"gopkg.in/urfave/cli.v1"
 	"os"
 	"strconv"
-	"encoding/csv"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	app.Usage = "asha-cli "
 	app.Version = "v0.0.1-alpha"
 	app.Authors = []cli.Author{
-		cli.Author{
+		{
 			Name:  "Balamurali Pandranki",
 			Email: "balamurali@live.com",
 		},
@@ -30,7 +30,7 @@ func main() {
 	app.EnableBashCompletion = true
 	app.Commands = []cli.Command{
 		{
-			Name:"newintent",
+			Name:   "newintent",
 			Usage:  "newintent --name [intent_name] --sentence [sample sentence] --domain [domain id]",
 			Action: createNewIntent,
 			Flags: []cli.Flag{
@@ -54,8 +54,8 @@ func main() {
 			Action: migrateDatabase,
 		},
 		{
-			Name:   "csv",
-			Usage:  "csv --file intents.csv",
+			Name:  "csv",
+			Usage: "csv --file intents.csv",
 
 			Action: loadFromCSV,
 			Flags: []cli.Flag{
@@ -78,7 +78,7 @@ func createNewIntent(c *cli.Context) error {
 		DomainID: uint64(c.Int("domain")),
 	}
 	db.Save(&dbfile)
-	fmt.Println("Success: Created Intent Successfully with id: "+ strconv.Itoa(int(dbfile.ID)))
+	fmt.Println("Success: Created Intent Successfully with id: " + strconv.Itoa(int(dbfile.ID)))
 	return nil
 }
 
@@ -112,7 +112,7 @@ func loadFromCSV(c *cli.Context) error {
 
 	// sanity check, display to standard output
 	for _, each := range rawCSVdata {
-		Did,err := strconv.ParseUint(each[2],10,64)
+		Did, err := strconv.ParseUint(each[2], 10, 64)
 		if err != nil {
 			fmt.Println(err)
 			return err
@@ -132,7 +132,7 @@ func loadFromCSV(c *cli.Context) error {
 
 func migrateDatabase(c *cli.Context) error {
 	db := database.MysqlCon()
-	db.AutoMigrate(&models.User{}, &models.UsersPlatform{} ,&models.UsersAuthdata{} ,&models.UsersAnonymousAuthData{} ,&models.UsersFacebookAuthData{} ,&models.UsersTwitterAuthData{}  ,&models.Entity{}, &models.EntityValue{}, &models.ConversationLog{}, &models.Intent{}, &models.Aiml{}, &models.Personality{}, &models.SraiLookup{}, &models.Wordcensor{}, &models.Session{}, &models.File{})
+	db.AutoMigrate(&models.User{}, &models.UsersPlatform{}, &models.UsersAuthdata{}, &models.UsersAnonymousAuthData{}, &models.UsersFacebookAuthData{}, &models.UsersTwitterAuthData{}, &models.Entity{}, &models.EntityValue{}, &models.ConversationLog{}, &models.Intent{}, &models.Aiml{}, &models.Personality{}, &models.SraiLookup{}, &models.Wordcensor{}, &models.Session{}, &models.File{})
 	fmt.Println("Success: Migrated All models!")
 	return nil
 }

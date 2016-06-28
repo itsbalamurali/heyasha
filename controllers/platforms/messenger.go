@@ -2,18 +2,20 @@ package platforms
 
 import (
 	"fmt"
+	"net/http"
+
 	log "github.com/Sirupsen/logrus"
 	"github.com/gin-gonic/gin"
-	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
-	"net/http"
-	"github.com/itsbalamurali/heyasha/models"
 	"github.com/itsbalamurali/heyasha/core/engine"
+	"github.com/itsbalamurali/heyasha/core/platforms/messenger"
+	"github.com/itsbalamurali/heyasha/models"
 	"github.com/jinzhu/gorm"
 )
 
 const (
-	token = "EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD"
+	//token = "EAAGeBVsm2kQBALYaKjHZBVlMhf4nFx5LLztRiHMnpUjvb4gHAIzxqM6srWraxu2VtPWZAPEOtZCbZCha5MEiOQF5wcXojnQYgrTPTuoxV5YQZCAQ5qbx9mlfrKxv2TcG0e4m9xgAGbELW9uEoNChAsRFZCo0UOSbujn9OZArQNGXgZDZD"
 	//token = "EAAGeBVsm2kQBACeMa1y7xuwd9nD4oNO66oXa1jwOIhyeK4rnVuxochJ1aJGNvCw4WIDCUl4SlymmFkuIfqXf7423hHixjbZBvUh4VGswpfvyrQ96mfHVIUbCjc6TWsrgbg4bgdvC8YAOOGXhaYeOtDKdj8ZAjOltFQye4diwZDZD"
+	token = "EAAGeBVsm2kQBAJ68rBB1G34JGAeR5dxpDIQU8m7kp0DwRwZBsMHKt4ddunpJweF3JY5qrsuk9EJAVpdu7zhhQY3drrCqZCtvSJcC3QUPUpsZBCtxBYf2aMfKrY8jyIIY79WTjkzlB7z5fWKMf9aIIaRqgBoMm9wopJKLggRIwZDZD"
 )
 
 func MessengerBotVerify(c *gin.Context) {
@@ -25,7 +27,7 @@ func MessengerBotVerify(c *gin.Context) {
 		c.Header("Hub Mode", hub_mode)
 		c.String(http.StatusOK, hub_challenge)
 	} else {
-		c.String(http.StatusBadRequest,"Bad Request")
+		c.String(http.StatusBadRequest, "Bad Request")
 	}
 }
 
@@ -50,8 +52,7 @@ func MessengerBotChat(c *gin.Context) {
 				messenger.Recipient{info.Sender.ID},
 			}
 
-
-			rep, err := engine.BotReply(info.Sender.ID,info.Message.Text)
+			rep, err := engine.BotReply(info.Sender.ID, info.Message.Text)
 			if err != nil || rep == "" {
 				rep = "Whoops my brains not working!!!!"
 				log.Println(err)
@@ -59,10 +60,10 @@ func MessengerBotChat(c *gin.Context) {
 			resp.Text(rep)
 			mysqldb := c.MustGet("mysql").(*gorm.DB)
 			convlog := &models.ConversationLog{
-				Input:info.Message.Text,
-				Response:rep,
-				UserID: info.Sender.ID,
-				ConvoID: info.Sender.ID,
+				Input:    info.Message.Text,
+				Response: rep,
+				UserID:   info.Sender.ID,
+				ConvoID:  info.Sender.ID,
 			}
 			mysqldb.Create(&convlog)
 		}
