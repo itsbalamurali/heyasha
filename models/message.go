@@ -6,8 +6,6 @@ import (
 
 type Message struct  {
 	ID              uint64
-	FlexID          string
-	//FlexIDType      FlexIDType
 	Sentence        string
 	User            *User
 	StructuredInput *StructuredInput

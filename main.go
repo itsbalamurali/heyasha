@@ -86,11 +86,11 @@ func main() {
 	auth := router.Group("/",middleware.TokenAuthMiddleware())
 	{
 		//Core REST API routes
-		auth.POST("/v1/listen", controllers.SpeechProcess)    //speech recognition
-		auth.GET("/v1/chat", controllers.Chat)              //chat with bot
-		auth.GET("/v1/extract", controllers.IntentExtract)  //Extract Intent from Text
+		auth.POST("/v1/stt", controllers.SpeechProcess)    //speech recognition
+		auth.GET("/v1/text", controllers.Chat)              //chat with bot
+		auth.GET("/v1/intent", controllers.IntentExtract)  //Extract Intent from Text
 		auth.GET("/v1/suggest", controllers.SuggestQueries) //Autocomplete user queries
-		auth.GET("/v1/talk", controllers.SuggestQueries)    //Text to speech
+		auth.GET("/v1/tts", controllers.SuggestQueries)    //Text to speech
 
 		//User REST API routes
 		auth.POST("/v1/users/logout", controllers.LoginUser)
@@ -107,9 +107,7 @@ func main() {
 		auth.POST("/sync/contacts", controllers.SyncContacts)
 		auth.POST("/sync/calender", controllers.SyncCalender)
 		auth.POST("/sync/notes", controllers.SyncNotes)
-
 	}
-
 
 	//Communication Platforms
 	router.POST("/chat/slack", platforms.SlackBot)              //SlackBot
@@ -121,20 +119,17 @@ func main() {
 	router.POST("/chat/sms", platforms.SmsBot)                  //Sms Bot
 	router.POST("/chat/email", platforms.EmailBot)              //Email Bot
 
-
 	//Method not allowed
 	router.NoMethod(func(c *gin.Context) {
-		c.JSON(http.StatusMethodNotAllowed, gin.H{"message": "method not allowed"})
+		c.JSON(http.StatusMethodNotAllowed, gin.H{"status":"error","message": "method not allowed"})
 	})
 
 	//404 Handler
 	router.NoRoute(func(c *gin.Context) {
-		c.JSON(http.StatusNotFound, gin.H{"message": "method not found"})
+		c.JSON(http.StatusNotFound, gin.H{"status":"error","message": "method not found"})
 	})
 
 	//Start server
 	log.Infoln("Hi, I am running on port: " + port + " !!")
-
 	manners.ListenAndServe(":" + port,router) //Graceful restarts
-
 }

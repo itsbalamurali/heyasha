@@ -7,6 +7,8 @@ import (
 	"log"
 	"net/http"
 	"github.com/itsbalamurali/heyasha/models"
+	"github.com/itsbalamurali/heyasha/core/database"
+	"fmt"
 )
 
 type BotResp struct {
@@ -19,7 +21,7 @@ type BotResp struct {
 func newMsg(u *models.User, msg string) *models.Message {
 	tokens := TokenizeSentence(msg)
 	stems := StemTokens(tokens)
-	//si := ner.classifyTokens(tokens)
+	//si := ClassifyTokens(tokens)
 	si := models.StructuredInput{}
 	// Get the intents as determined by each plugin
 	for domainID, c := range bClassifiers {
@@ -49,9 +51,11 @@ func newMsg(u *models.User, msg string) *models.Message {
 
 //BotReply  Reply from Brain.
 func BotReply(user_id string, usersay string, lang ...string) (string, error) {
-	//db := database.MysqlCon()
-	//user := models.GetUserByID(user_id,db)
-	//msg := newMsg(user,usersay)
+	db := database.MysqlCon()
+	user := &models.User{}
+	db.Where("email = ?","balamurali@live.com").First(&user)
+	msg := newMsg(user,usersay)
+	fmt.Printf("%+v",msg)
 	//Call(msg.StructuredInput.Intents.)
 	/*
 	client := wit.NewClient("OBU6TR5J7EOJ7RR6HA7LER6W7NP5XRLX")
