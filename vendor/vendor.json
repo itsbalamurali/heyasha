@@ -9,6 +9,12 @@
 	"ignore": "test",
 	"package": [
 		{
+			"checksumSHA1": "c63+lU4h+JDwjpg9touKckwGR24=",
+			"path": "github.com/BurntSushi/toml",
+			"revision": "f0aeabca5a127c4078abb8c8d64298b147264b55",
+			"revisionTime": "2016-04-26T10:16:13Z"
+		},
+		{
 			"checksumSHA1": "+fwKLbzCR8HTudsW785E+IeH6u8=",
 			"path": "github.com/Sirupsen/logrus",
 			"revision": "6d9ae300aaf85d6acd2e5424081c7fcddb21dab8",

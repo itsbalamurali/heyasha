@@ -1,17 +1,17 @@
-sudo: required
+#sudo: required
 
 language: go
 
 go:
   - tip
 
-services:
-  - docker
+#services:
+#  - docker
 
 cache:
   - apt
 
-before_install:
+#before_install:
   #- docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
   #- docker build -t itsbalamurali/heyasha .
   #- docker push itsbalamurali/heyasha
